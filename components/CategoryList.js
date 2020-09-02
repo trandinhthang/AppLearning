@@ -10,13 +10,12 @@ import translate from "../assests/translate.png";
 import vocabulary from "../assests/vocabulary.png";
 
 export default function CategoryList(props) {
-    const {category,onPress}=props;
+    const {onPress}=props;
         return(
-            <TouchableOpacity activeOpacity={0.2} onPress={onPress}
-            >
+            <TouchableOpacity activeOpacity={0.2} onPress={onPress}>
             <View style={styles.container} >
                 <Image style={styles.translateImage} source={translate}/>
-                <Text style={styles.title}>{category.name}</Text>
+                <Text style={styles.title}>{props.name}</Text>
             </View>
             </TouchableOpacity>  
         );     
@@ -32,6 +31,8 @@ const styles= StyleSheet.create({
         // shadowOpacity:0.3,
         // shadowRadius:10,
         // shadowOffset:{width:0,height:0}
+        // paddingLeft:16,
+        // paddingRight:16,
         marginBottom:10,
         marginTop:10
     },
