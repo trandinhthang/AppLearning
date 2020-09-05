@@ -1,47 +1,55 @@
 import React, {Component} from 'react';
 import {
-  Switch,
   Text,
   TextInput,
-  View,
-  StyleSheet
+  ScrollView,
+  StyleSheet,
+  Input,
 } from 'react-native';
-// import {styles} from './styles'
+import Styles from '../styles/Styles';
+
 const FranceVietNam = require('../json/France_VietNam.json')
-// const vietnam2english = require('../data/JsonTranslate/vietnam_english.json')
+const Fr_VnExam = require('../json/Fr_VnExam.json')
 
 export default class TranslateList extends Component {
   constructor(props) {
       super(props)
       this.state = {
           input: '',
-          output: ''
+          outputEx:'',
+          output: ''   
       }
   }
   render() {
     return (
-      <View >
-          <Text >          
-          </Text>
-          <TextInput text={ this.state.input }
-                style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
-                onChangeText={(e) => this.setState({input: e})}
-                onSubmitEditing={(e) => this.showMeaning(e) }
-          />
-          <Text>
-          </Text>
-          <Text >
-              { this.state.output }
-          </Text>
-      </View>
+      <ScrollView  >  
+        <TextInput
+              placeholder="Pháp-Việt" 
+              style={Styles.textinput}
+              onChangeText={(e) => this.setState({input: e})}
+              onSubmitEditing={(e) => this.showMeaning(e) }
+          />  
+        <Text  style={Styles.text1}>France-Vietnamese</Text>
+        <Text  style={Styles.text2}>
+          { this.state.output }
+        </Text>
+        <Text style={Styles.text1}>Exam</Text>
+        <Text  style={Styles.text3}>
+          { this.state.outputEx }
+        </Text>
+      </ScrollView>
     )
   }
   showMeaning(e) {
-      const meaning = this.state.input in FranceVietNam ? 
-                    FranceVietNam[this.state.input] : 
+      const exam = this.state.input in Fr_VnExam ? 
+                    Fr_VnExam[this.state.input] : 
                     "Not Found";
-      // Update the state
-      this.setState({output: meaning || 'Not Found'})
+      const meaning = this.state.input in FranceVietNam ? 
+      FranceVietNam[this.state.input] : 
+      "Not Found";
+      
+      this.setState({outputEx: exam || "Not Found"})
+      this.setState({output: meaning ||"Not Found"})
   }
 }
    

@@ -1,12 +1,13 @@
 import React,{Component} from 'react';
+import {ScrollView} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import loupe from "../assests/loupe.png";
 import TranslateList from '../components/TranslateList';
 
 export default function TranslateScreen({ navigation }) {
-
   return (
-    <TranslateList/>
+    <ScrollView style={{backgroundColor:"#c2bebe"}}>     
+     <TranslateList />
+    </ScrollView>
   );
 }

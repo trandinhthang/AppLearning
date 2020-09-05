@@ -6,44 +6,20 @@ import{
     StyleSheet,
     TouchableOpacity
 } from "react-native";
-import translate from "../assests/translate.png";
-import vocabulary from "../assests/vocabulary.png";
+import Styles from '../styles/Styles';
+import books from "../assests/images/books.png";
 
 export default function CategoryList(props) {
     const {onPress}=props;
+    const {category}=props;
         return(
             <TouchableOpacity activeOpacity={0.2} onPress={onPress}>
-            <View style={styles.container} >
-                <Image style={styles.translateImage} source={translate}/>
-                <Text style={styles.title}>{props.name}</Text>
+            <View style={Styles.container} >
+                <Image style={Styles.translateImage} source={books}/>
+                <Text style={Styles.title}>{category.name1}</Text>
+                <Text style={Styles.title1}>{category.name}</Text>
+
             </View>
             </TouchableOpacity>  
         );     
 }
-
-const styles= StyleSheet.create({
-    container: {
-        alignItems:'center',
-        padding:16,
-        borderRadius:4,
-        backgroundColor:'#ff9900',
-        // shadowColor:'red',
-        // shadowOpacity:0.3,
-        // shadowRadius:10,
-        // shadowOffset:{width:0,height:0}
-        // paddingLeft:16,
-        // paddingRight:16,
-        marginBottom:10,
-        marginTop:10
-    },
-    translateImage:{
-        width:64,
-        height:64
-    },
-    title:{
-        textTransform:'uppercase',
-        marginBottom:8,
-        fontWeight:'700'
-    }
-
-});
