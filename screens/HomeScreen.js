@@ -38,6 +38,8 @@ const HomeScreen =({navigation})=>{
                     <Text style={Styles.title1}>Ngữ pháp</Text>
                 </View>
             </TouchableOpacity> 
+   
+            
         </ScrollView> 
 );     
 }

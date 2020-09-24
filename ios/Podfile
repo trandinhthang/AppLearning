@@ -10,6 +10,10 @@ target 'LearnApp' do
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
+  pod 'RNSound', :path => '../node_modules/react-native-sound'
+
+  pod 'react-native-video', :path => '../node_modules/react-native-video'
+
   target 'LearnAppTests' do
     inherit! :complete
     # Pods for testing

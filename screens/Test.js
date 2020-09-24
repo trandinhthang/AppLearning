@@ -5,10 +5,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import GrammarList from '../components/GrammarList';
 
-export default function GrammarScreen({ navigation }) {
+export default function Test({ navigation }) {
   return (   
     <GrammarList/>
       
   );
 }
-

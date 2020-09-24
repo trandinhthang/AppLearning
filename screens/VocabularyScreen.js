@@ -1,15 +1,11 @@
 import React,{Component} from 'react';
-import { Button, View, Text,StyleSheet } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import {View, Text} from 'react-native';
+import VocabularyList from '../components/VocabularyList';
 
-export default function VocabularyScreen({ navigation }) {
+const VocabularyScreen = ({navigation}) => {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Details Screen</Text>
-      <Button
-        title="Go to Details... again"
-      />
-    </View>
+    <VocabularyList/>
   );
 }
+
+export default VocabularyScreen;

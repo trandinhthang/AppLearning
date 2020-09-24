@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import TranslateList from '../components/TranslateList';
 
-export default function TranslateScreen({ navigation }) {
+export default function TranslateScreen() {
   return (
     <ScrollView style={{backgroundColor:"#c2bebe"}}>     
      <TranslateList />
