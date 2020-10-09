@@ -1,55 +1,62 @@
-import React, { Component } from 'react';
-import { 
-      ActivityIndicator, 
-      FlatList, 
-      Text, 
-      View,
-      TouchableOpacity,
-      Image,
-      Dimensions,
-      SafeAreaView,
-      ScrollView
+import React,{Component} from 'react';
+import {
+    ActivityIndicator, 
+    FlatList, 
+    Text, 
+    View,
+    TouchableOpacity,
+    Image,
+    Dimensions,
+    SafeAreaView,
+    ScrollView
 } from 'react-native';
-import Icon from 'react-native-vector-icons/Fontisto';
+
+import VocaDetail from './VocabularyDetail';
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+import Icon from 'react-native-vector-icons/Ionicons';
+import Icon_ from 'react-native-vector-icons/Ionicons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Foundation from 'react-native-vector-icons/Foundation';
+
 import Swiper from 'react-native-swiper';
 import Video from 'react-native-video';
 import Styles from '../styles/Styles';
 
 var {height,width}= Dimensions.get("window");
-export default class VocabularyList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      dataThemes: [],
-      dataVocabulary: [],
-      selectThemes:0,
 
-      isLoading: true,
+class VocaHome extends Component{
+     constructor(props) {
+        super(props);
+        this.state = {
+          dataThemes: [],
+          dataVocabulary: [],
+          selectThemes:0,
 
-      paused: true,
-    };
-  }
-  componentDidMount() {
-    fetch('http://192.168.1.5:3000/db')
-      .then((response) => response.json())
-      .then((json) => {
-        this.setState({ dataThemes: json.themes, dataVocabulary:json.vocabulary });
-      })
-      .catch((error) => console.error(error))
-      .finally(() => {
-        this.setState({ isLoading: false });
-      });
-  }
-  onEnd=(data)=>{
-      this.setState({paused:true});
-        this.player.seek(0);
-  }
+          isLoading: true,
 
-  render() {
-    const { dataThemes, dataVocabulary,isLoading,selectThemes } = this.state;
-    return (
-      <SafeAreaView style={{backgroundColor:"#e1e1e6"}}>
+          paused: true,
+          
+          iconName: "star"
+        };
+      }
+      componentDidMount() {
+        fetch('http://192.168.1.4:3000/db')
+          .then((response) => response.json())
+          .then((json) => {
+            this.setState({ dataThemes: json.themes, dataVocabulary:json.vocabulary });
+          })
+          .catch((error) => console.error(error))
+          .finally(() => {
+            this.setState({ isLoading: false });
+          });
+      }
+    render(){
+      const { dataThemes, dataVocabulary,isLoading,selectThemes } = this.state;
+      return(
+        <SafeAreaView style={{backgroundColor:"#ffe4b5"}}>
         <View  style={{width:width,borderRadius:20,paddingTop:8,backgroundColor:'white'}}>
         {isLoading ? <ActivityIndicator/> : (
           <FlatList
@@ -60,7 +67,7 @@ export default class VocabularyList extends Component {
           /> 
         )}
         </View>
-        <View style={{width:width,borderRadius:20,marginTop:5,paddingBottom:150,backgroundColor:'white'}}>
+        <View style={{width:width,borderRadius:20,marginTop:5,paddingBottom:170,backgroundColor:'white'}}>
           {isLoading ? <ActivityIndicator/> : (  
           <FlatList
             data={dataVocabulary}
@@ -71,60 +78,9 @@ export default class VocabularyList extends Component {
         </View>
       </SafeAreaView>
     );
-  }
-  _renderItemVoca(item){
-    let theme=this.state.selectThemes
-    if(theme==0||theme==item.categorie){
-       return(
-        <SafeAreaView >        
-          {/* <TouchableOpacity  style={{width:20,borderRadius:20,paddingTop:8,backgroundColor:'red'}}
-            onPress={()=>this.setState({paused: !this.state.paused})}>
-            <Icon name='star'/>
-            <Video
-                ref={(ref) => {this.player = ref}}  
-                source={{ uri: item.url }} 
-                paused={this.state.paused}
-                onEnd={this.onEnd}
-            />
-          </TouchableOpacity> */}
-          <View style={Styles.feedItem}  >
-            <Image style={{width:70,height:40}} resizeMode="contain" source={{uri:item.image}}/>
-            <View style={{flex:1}}>
-              <View style={{flexDirection:"row",justifyContent:"space-between",alignItems:"center"}}>
-                <View>
-                  <Text style={Styles.vocaFrTitle}>{item.nameFr}</Text>
-                  <Text style={Styles.vocaVnTitle}>{item.nameVn}</Text>
-                </View> 
-                <View >
-                  <Icon
-                    name="star"
-                    color="white"
-                    size={20}
-                    onPress={() => alert('Đã thêm vào yêu thích')}
-                  />  
-                  <Ionicons name="volume-high-outline"
-                    color="white"
-                    size={20}
-                    onPress={()=>this.setState({paused: !this.state.paused})}
-                  >
-                    <Video
-                      ref={(ref) => {this.player = ref}}  
-                      source={{ uri: item.url }} 
-                      paused={this.state.paused}
-                      onEnd={this.onEnd}
-                    />
-                  </Ionicons>
-                    
-                     
-                </View>  
-              </View>
-            </View>
-          </View> 
-        </SafeAreaView>
-    );
+
     }
-  }
-  _renderItem(item){
+    _renderItem(item){
     return(
       <TouchableOpacity 
       onPress={()=>this.setState({selectThemes:item.id})}
@@ -133,11 +89,58 @@ export default class VocabularyList extends Component {
           resizeMode="contain"
           source={{uri:item.image}}
         />
-        <Text >
+        <Text style={{color:"#0033ff"}} >
           {item.name}
         </Text>
       </TouchableOpacity>
     )
   }
+  _renderItemVoca(item){
+    const {navigate} = this.props.navigation;
+    let theme=this.state.selectThemes
+    if(theme==0||theme==item.categorie){
+       return(
+        <SafeAreaView >        
+          <View style={Styles.feedItem}  >
+            <Image style={{width:70,height:40}} resizeMode="contain" source={{uri:item.image}}/>
+            <View style={{flex:1}}>
+              <View style={{flexDirection:"row",justifyContent:"space-between",alignItems:"center"}}>
+                <View >
+                  <Text style={Styles.vocaFrTitle}>{item.nameFr}</Text>
+                  <Text style={Styles.vocaVnTitle}>{item.nameVn}</Text>
+                </View> 
+                <View >
+                  <Foundation
+                    name='book'
+                    color="white"
+                    size={26}
+                    onPress={() => navigate('DetailVoca', item)}   
+                  />  
+                  <Icon_
+                    name='md-heart-circle'
+                    color="white"
+                    size={21}
+                    onPress={() => this.setState({iconName:"cloud-up"})}
+                  />  
+                </View>  
+              </View>
+            </View>
+          </View> 
+        </SafeAreaView>
+    );
+    }
+  }  
+}
+
+
+
+const VocaStack = createStackNavigator();
+export default function VocabularyList() {
+  return (
+    <VocaStack.Navigator initialRouteName="homeVoca" >
+      <VocaStack.Screen name="homeVoca" component={VocaHome}/>
+      <VocaStack.Screen name="DetailVoca" component={VocaDetail}/>
+    </VocaStack.Navigator>
+  );
 }
 

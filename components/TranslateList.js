@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import Styles from '../styles/Styles';
 import AudioTranslate from './AudioTranslate';
+import AudioTraslate_ from './AudioTraslate_';
 
 const FranceVietNam = require('../json/France_VietNam.json')
 const VietNamFrance = require('../json/VietNam_France.json')
@@ -26,15 +27,24 @@ export default class TranslateList extends Component {
   render() {
     return (
       <ScrollView style={Styles.parent}   >  
-        <Text style={Styles.text1} >
+        <Text style={Styles.textTo} >
           {this.state.from} --- {this.state.to}
         </Text>
-        <TextInput
-          placeholder="Tìm kiếm/Chercher"
-          style={Styles.textinput}
-          onChangeText={(e) => this.setState({input: e})}
-          onSubmitEditing={(e) => this.showMeaning(e) }
-        />  
+        <View style={{flex:1}}>
+          <View style={{flexDirection:"row"}}>
+            <View>
+              <TextInput
+              placeholder="Tìm kiếm/Chercher"
+              style={Styles.textInput}
+              onChangeText={(e) => this.setState({input: e})}
+              onSubmitEditing={(e) => this.showMeaning(e) }
+            />  
+            </View>
+            <View style={{backgroundColor:'#FFF',height:36,width:40,marginTop:5,paddingLeft:2,paddingTop:8}}>
+              <AudioTraslate_/>
+            </View>
+          </View>
+        </View> 
         <View style={Styles.fixToText}>
           <Button 
             title="Việt-Pháp"
@@ -49,8 +59,8 @@ export default class TranslateList extends Component {
             value={this.state.France}
           />
         </View>
-        <Text  style={Styles.text1}>{this.state.to}</Text> 
-        <Text style={Styles.text3}>{ this.state.output } <AudioTranslate /> </Text>  
+        <Text  style={Styles.textTo}>{this.state.to}</Text> 
+        <Text style={Styles.textOutput}>{ this.state.output } <AudioTranslate /> </Text>  
       </ScrollView>
     )
   }

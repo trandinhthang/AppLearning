@@ -1,0 +1,199 @@
+{
+  "themes": [
+    {
+      "id": 1,
+      "name": "Transport",
+      "color": "#fbc831",
+      "image": "https://cdn2.iconfinder.com/data/icons/scenarium-vol-3-1/128/049_airplane_transport_clouds_fly_flight-256.png"
+    },
+    {
+      "id": 2,
+      "name": "Fruits",
+      "color": "#9fd236",
+      "image": "https://www.flaticon.com/premium-icon/icons/svg/528/528407.svg"
+    },
+    {
+      "id": 3,
+      "name": "Animaux",
+      "color": "orange",
+      "image": "https://www.flaticon.com/premium-icon/icons/svg/449/449631.svg"
+    },
+    {
+      "id": 4,
+      "name": "Météo",
+      "color": "#b3ff00",
+      "image": "https://www.flaticon.com/premium-icon/icons/svg/3059/3059351.svg"
+    },
+    {
+      "id": 5,
+      "name": "Naturels",
+      "color": "#ff2600",
+      "image": "https://www.flaticon.com/premium-icon/icons/svg/2970/2970098.svg"
+    },
+    {
+      "id": 6,
+      "name": "Musique",
+      "color": "#009dff",
+      "image": "https://www.flaticon.com/premium-icon/icons/svg/3124/3124991.svg"
+    }
+  ], 
+
+  "vocabulary": [
+    {
+      "key":1,
+      "nameFr": "Avion",
+      "nameVn": "Máy bay",
+      "categorie": 1,
+      "image": "https://cdn2.iconfinder.com/data/icons/scenarium-vol-3-1/128/049_airplane_transport_clouds_fly_flight-256.png",
+      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0002020.mp3",
+      "IPA":"[avjɔ̃]",
+      "gramma":"Nom masculin(Danh từ giống đực)",
+      "exVn":"Máy bay của Hải quân sẽ có vẻ thua kém và Tổng thống sẽ phải cần tới siêu chiến đấu cơ của tôi",
+      "exFr":"Les avions de la marine auront l'air inféri et le président voudra avoir mon superjet"
+    },
+    {
+      "key":2,
+      "nameFr": "Hélicoptère",
+      "nameVn": "Trực thăng",
+      "categorie": 1,
+      "image": "https://cdn4.iconfinder.com/data/icons/transportation-32/130/_Private_Helicopter-256.png",
+      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0040140.mp3",
+      "IPA":"[elikɔptɛʀ]",
+      "gramma":"Nom masculin(Danh từ giống đực)",
+      "exVn":"Cử trực thăng đi đưa họ về và kiểm tra cô ấy đi.",
+      "exFr":"Envoyer un hélicoptère, les faire sortir et la tester."
+    },
+    {
+      "key":3,
+      "nameFr": "Ambulance",
+      "nameVn": "Xe cứu thương",
+      "categorie": 1,
+      "image": "https://cdn4.iconfinder.com/data/icons/jetflat-2-vehicles-vol-1/60/001_010_car_ambulance_transport_aid_doctor-256.png",
+      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0002780.mp3"
+    },
+
+    {
+      "key":1,
+      "nameFr": "Ananas",
+      "nameVn": "Trái dứa",
+      "categorie": 2,
+      "image": "https://cdn2.iconfinder.com/data/icons/food-98/64/Food_pineapple-256.png",
+      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0064640.mp3"
+    },
+    {
+      "key":2,
+      "nameFr": "Pomme",
+      "nameVn": "Trái táo",
+      "categorie": 2,
+      "image": "https://cdn3.iconfinder.com/data/icons/unigrid-flat-fruits-vegetables/90/010_008_apple_fruit_food-256.png",
+      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0003820.mp3"
+    },
+    {
+      "key":3,
+      "nameFr": "Banane",
+      "nameVn": "Trái chuối",
+      "categorie": 2,
+      "image": "https://cdn2.iconfinder.com/data/icons/food-98/64/Food_banana-256.png",
+      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0006470.mp3"
+    },
+    {
+      "key":4,
+      "nameFr": "Fraise",
+      "nameVn": "Dâu tây",
+      "categorie": 2,
+      "image": "https://cdn4.iconfinder.com/data/icons/fruits-collection-full-color/150/Fruits_Collection-33-256.png",
+      "url": "https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0086070.mp3"
+    },
+    {
+      "key":5,
+      "nameFr": "Noix De Coco",
+      "nameVn": "Trái dừa",
+      "categorie": 2,
+      "image": "https://cdn4.iconfinder.com/data/icons/fruits-collection-full-color/150/Fruits_Collection-06-256.png",
+      "url": "https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0017180.mp3"
+    }
+  ],
+
+  "search": [
+    {
+      "id": 1,
+      "nameFr": "aller",
+      "API": "[ale]",
+      "nameVn": "đi",
+      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0036840.mp3",
+      "gramma":"nội động từ",
+      "synonym":"",
+      "image":""
+    },
+    {
+      "id": 2,
+      "nameFr": "année",
+      "API": "[ane]",
+      "nameVn": "năm",
+      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0101210.mp3",
+      "gramma":"danh từ cái",
+      "synonym":"",
+      "image":""
+    },
+    {
+      "id": 3,
+      "nameFr": "aujourd'hui",
+      "API": "[oʒuʀdɥi]",
+      "nameVn": "hôm nay",
+      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/fr_aujourd_hui.mp3",
+      "gramma":"trạng từ",
+      "synonym":"",
+      "image":""
+    },
+    {
+      "id": 4,
+      "nameFr": "égayer",
+      "API": "[eɡeje]",
+      "nameVn": "làm sáng lên",
+      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/fr_egayer.mp3",
+      "gramma":"động từ",
+      "synonym":"",
+      "image":""
+    },
+    {
+      "id": 5,
+      "nameFr": "élever",
+      "API": "[el(ə)ve]",
+      "nameVn": "nâng cao",
+      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0010890.mp3",
+      "gramma":"động từ",
+      "synonym":"",
+      "image":""
+    },
+    {
+      "id": 6,
+      "nameFr": "évaser",
+      "API": "[evɑze]",
+      "nameVn": "bùng sáng",
+      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/fr_evase.mp3",
+      "gramma":"động từ",
+      "synonym":"",
+      "image":""
+    },
+    {
+      "id": 7,
+      "nameFr": "fabuleux",
+      "API": "[fabylø]",
+      "nameVn": "tuyệt vời",
+      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0030960.mp3",
+      "gramma":"tính từ",
+      "synonym":"",
+      "image":""
+    },
+    {
+      "id": 8,
+      "nameFr": "facturer",
+      "API": "[faktyʀe]",
+      "nameVn": "sạc điện",
+      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0045150.mp3",
+      "gramma":"động từ",
+      "synonym":"",
+      "image":""
+    }
+  ]
+}

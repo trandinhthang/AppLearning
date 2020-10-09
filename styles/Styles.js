@@ -2,12 +2,12 @@ import {StyleSheet} from 'react-native';
 const Styles= StyleSheet.create({
     container: {
         alignItems:"center",
-        padding:5,
+        padding:6,
         borderRadius:20,
         backgroundColor:"white",
-        marginBottom:10,
-        marginTop:10 ,
-        backgroundColor:'#ff8800'
+        marginBottom:7,
+        marginTop:8 ,
+        backgroundColor:'#ff5959'
     },
     translateImage:{
         width:50,
@@ -24,27 +24,25 @@ const Styles= StyleSheet.create({
     parent: {
         marginLeft:5
     },
-    textinput:{
-        padding:8,
+    textInput:{   
+        marginTop:5,//lề trên
+        marginLeft:5,
+        backgroundColor:"white",
+        width:330,
+    },
+    textTo:{
         marginTop:5,//lề trên
         marginLeft:5,
         marginRight:5,
-        borderRadius:10,
-        backgroundColor:"white"
+        color:"#0400ff"
     },
-    text1:{
-        marginTop:5,//lề trên
-        marginLeft:5,
-        marginRight:5
-    },
-    text3:{
+    textOutput:{
         backgroundColor:"white",
         marginLeft:5,
         marginTop:5,
         marginRight:5,
         height: 100,
-        padding:8,
-        borderRadius:10,
+        padding:8
     },
     fixToText:{
         borderRadius:10,
@@ -52,7 +50,8 @@ const Styles= StyleSheet.create({
         marginRight:5,
         marginTop:5,
         flexDirection: 'row', 
-        justifyContent: 'space-between'     
+        justifyContent: 'space-between'
+        
     },
     divThemes:{
         alignItems:'center',
@@ -71,16 +70,34 @@ const Styles= StyleSheet.create({
     },
     feedItem:{
         margin:15,
-        backgroundColor:'#ff8800',
+        backgroundColor:'#f58e27',
         borderRadius:15,
-        padding:8,
+        padding:5,
         flexDirection:"row",
         marginVertical:8
-    }
-    
-    
-    
-
-        
+    },
+    vocaDetail:{
+        padding:5,
+        backgroundColor:'#ffe4b5'
+    },
+    vocaHeader:{
+        backgroundColor:'white',
+        padding:5,
+        height:50
+    },
+    vocaText:{
+        color:"#0033ff",
+        fontSize:15
+    },
+    searchDetail:{
+        padding:5,
+        backgroundColor:'#a7f299'
+    },
+    vocDesc:{
+        backgroundColor:'white',
+        padding:5,
+        height:370,
+        marginTop:10
+    }            
 });
 export default Styles;

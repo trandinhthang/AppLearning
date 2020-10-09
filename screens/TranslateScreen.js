@@ -6,7 +6,7 @@ import TranslateList from '../components/TranslateList';
 
 export default function TranslateScreen() {
   return (
-    <ScrollView style={{backgroundColor:"#c2bebe"}}>     
+    <ScrollView style={{backgroundColor:"#afc6f0"}}>     
      <TranslateList />
     </ScrollView>
   );

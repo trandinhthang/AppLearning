@@ -1,7 +1,5 @@
 {
-    "bonjour":"Bonjour[bɔ̃ʒuʀ] : Xin chào",
-    "comment": "Comment[kɔmɑ̃] : Thế nào",
-    "je":" Je/je/ - Tôi",
-    "oui":"vâng, đúng",
-    "non":"sai, không"
+    "comment vous vous appelez?":"bạn tên là gì?",
+    "moi aussi?":"tôi cũng vậy",
+    "je ne sais pas":"tôi không biết"
 }

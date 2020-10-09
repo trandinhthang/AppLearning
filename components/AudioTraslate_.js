@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Fontisto';
 const audioList=[
   {
     title:'salut',
-    url:'https://www.collinsdictionary.com/sounds/hwd_sounds/fr_bonjour.mp3'
+    url:'https://www.collinsdictionary.com/sounds/hwd_sounds/fr_merci.mp3'
   }
 ];
 var sound1,sound2,sound3;
@@ -33,13 +33,13 @@ function playSound(item,index){
     });
   }
 }
-export default class AudioTranslate extends Component {
+export default class AudioTranslate_ extends Component {
   render(){
     return (
      <View >
       {audioList.map((item,index)=>{
         return(
-          <View key={item.title} style={{marginLeft:320}}>
+          <View key={item.title} >
             <TouchableOpacity onPress={()=>{
             return playSound(item,index);
             }}>

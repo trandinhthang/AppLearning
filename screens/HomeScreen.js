@@ -16,12 +16,12 @@ import vocabulary from "../assests/images/vocabulary.png";
 //gọi các Screen khác từ đây sang App.js
 const HomeScreen =({navigation})=>{
     return(
-        <ScrollView style={{backgroundColor:"#e1e1e6",paddingLeft:50,paddingRight:50}}>
+        <ScrollView style={{backgroundColor:"#f2dada",paddingLeft:60,paddingRight:60,borderRadius:5}}>
             <TouchableOpacity activeOpacity={0.2} onPress={() => navigation.navigate('Translate')}>
                 <View style={Styles.container} >
                     <Image style={Styles.translateImage} source={research}/>
-                    <Text style={Styles.title}>Traduire mots</Text>
-                    <Text style={Styles.title1}>Dịch từ</Text>
+                    <Text style={Styles.title}>Traduire Phrases</Text>
+                    <Text style={Styles.title1}>Dịch câu</Text>
                 </View>
             </TouchableOpacity> 
             <TouchableOpacity activeOpacity={0.2} onPress={() => navigation.navigate('Vocabulary')}>
@@ -37,10 +37,22 @@ const HomeScreen =({navigation})=>{
                     <Text style={Styles.title}>Grammaire</Text>
                     <Text style={Styles.title1}>Ngữ pháp</Text>
                 </View>
-            </TouchableOpacity> 
-   
-            
-        </ScrollView> 
+            </TouchableOpacity>  
+             <TouchableOpacity activeOpacity={0.2} onPress={() => navigation.navigate('Grammar')}>
+                <View style={Styles.container} >
+                    <Image style={Styles.translateImage} source={books}/>
+                    <Text style={Styles.title}>Grammaire</Text>
+                    <Text style={Styles.title1}>Ngữ pháp</Text>
+                </View>
+            </TouchableOpacity>  
+             <TouchableOpacity activeOpacity={0.2} onPress={() => navigation.navigate('Grammar')}>
+                <View style={Styles.container} >
+                    <Image style={Styles.translateImage} source={books}/>
+                    <Text style={Styles.title}>Grammaire</Text>
+                    <Text style={Styles.title1}>Ngữ pháp</Text>
+                </View>
+            </TouchableOpacity>  
+        </ScrollView>   
 );     
 }
 export default HomeScreen;
