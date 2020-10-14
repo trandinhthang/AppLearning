@@ -38,7 +38,7 @@ const HomeScreen =({navigation})=>{
                     <Text style={Styles.title1}>Ngữ pháp</Text>
                 </View>
             </TouchableOpacity>  
-             <TouchableOpacity activeOpacity={0.2} onPress={() => navigation.navigate('Grammar')}>
+             {/* <TouchableOpacity activeOpacity={0.2} onPress={() => navigation.navigate('Grammar')}>
                 <View style={Styles.container} >
                     <Image style={Styles.translateImage} source={books}/>
                     <Text style={Styles.title}>Grammaire</Text>
@@ -51,7 +51,7 @@ const HomeScreen =({navigation})=>{
                     <Text style={Styles.title}>Grammaire</Text>
                     <Text style={Styles.title1}>Ngữ pháp</Text>
                 </View>
-            </TouchableOpacity>  
+            </TouchableOpacity>   */}
         </ScrollView>   
 );     
 }

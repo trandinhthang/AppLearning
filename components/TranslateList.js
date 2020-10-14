@@ -90,6 +90,6 @@ export default class TranslateList extends Component {
     if (meaningDe) {
         this.switchLanguage(true)
     }
-    this.setState({output: meaning || meaningDe || 'Not Found'})
+    this.setState({output: meaning || meaningDe || alert('Câu của bạn không tìm thấy!!!')})
   }
 }

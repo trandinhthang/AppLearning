@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {  FlatList,ActivityIndicator,View,TouchableOpacity } from "react-native";
+import {  FlatList,ActivityIndicator,View } from "react-native";
 import { Container, Header, Item, Input, Icon,
         Button,Content, List, ListItem, Left, Body, 
         Right, Thumbnail, Text
@@ -7,12 +7,7 @@ import { Container, Header, Item, Input, Icon,
 import { SearchBar } from 'react-native-elements';
 import _ from 'lodash';
 
-import SearchDetails from './SearchDetails';
-
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-
-class SearchHome extends Component {
+export default class SearchHome extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -30,7 +25,7 @@ class SearchHome extends Component {
     //fetch data từ server
     requestAPISearch= _.debounce(()=>{
         this.setState({loading:true})
-        const apiURL="http://192.168.1.4:3000/search"
+        const apiURL="http://192.168.56.1:3000/search"
         fetch(apiURL).then((res)=>res.json())
         .then((resJson)=>{
             this.setState({
@@ -107,14 +102,4 @@ class SearchHome extends Component {
         </Container>
         ); 
     }
-}
-
-const SearchStack = createStackNavigator();
-export default function SearchList() {
-  return (
-    <SearchStack.Navigator initialRouteName="homeSearch" >
-      <SearchStack.Screen name="homeSearch" component={SearchHome} />
-      <SearchStack.Screen name="detailSearch" component={SearchDetails}/>
-    </SearchStack.Navigator>
-  );
 }

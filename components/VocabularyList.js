@@ -43,7 +43,7 @@ class VocaHome extends Component{
         };
       }
       componentDidMount() {
-        fetch('http://192.168.1.4:3000/db')
+        fetch('http://192.168.56.1:3000/db')
           .then((response) => response.json())
           .then((json) => {
             this.setState({ dataThemes: json.themes, dataVocabulary:json.vocabulary });

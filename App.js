@@ -15,7 +15,9 @@ import VocabularyScreen from "./screens/VocabularyScreen";
 import GrammarScreen from "./screens/GrammarScreen";
 
 import SettingScreen from "./screens/SettingScreen";
-import SearchScreen from "./screens/SearchScreen";
+
+import SearchHome from './components/SearchList';
+import SearchDetails from './components/SearchDetails';
 
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
@@ -140,31 +142,29 @@ function SearchStackScreen({navigation}) {
       headerTitleStyle: {
       fontWeight: '100',//nét chữ
       },
-    }}
-    >
-    <SearchStack.Screen options={{
-        headerTitle: "Search",
-        headerLeft: () => (
-        <Icon.Button
-          name="menuunfold"
-          size={20}
-          color="white"
-          backgroundColor="#23d400"
-          onPress={() => navigation.openDrawer()}
-        />      
-        ),
-        headerRight: () => (
-        <MaterialCommunityIcons
-          style={{margin:8}}
-          name="cloud-search-outline"
-          size={25}
-          color="white"
-        />  
-        ),
-      }}  
-      name="Search"
-      component={SearchScreen}
-    />
+      headerRight: () => (
+      <MaterialCommunityIcons
+        style={{margin:8}}
+        name="cloud-search-outline"
+        size={25}
+        color="white"
+      />  
+      ),
+    }}>
+      <SearchStack.Screen options={{
+          headerLeft: () => (
+          <Icon.Button
+            name="menuunfold"
+            size={20}
+            color="white"
+            backgroundColor="#23d400"
+            onPress={() => navigation.openDrawer()}
+          />      
+          ),
+        }}  name="Search" component={SearchHome}
+      />
+      <SearchStack.Screen name="detailSearch" component={SearchDetails} options={{headerTitle: "Search",}} 
+      />
     </SearchStack.Navigator>
   );
 }

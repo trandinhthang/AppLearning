@@ -118,6 +118,9 @@
     {
       "id": 1,
       "nameFr": "aller",
+      "data": ["Pizza", "Burger", "Risotto"],
+      "nghia":"1",
+      "nghia1":"2",
       "API": "[ale]",
       "nameVn": "đi",
       "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0036840.mp3",
@@ -194,6 +197,30 @@
       "gramma":"động từ",
       "synonym":"",
       "image":""
+    }
+  ],
+  "DATA" : [
+    {
+      "key": "1",
+      "nameFr": "facturer",
+      "API": "[faktyʀe]",
+      "nameVn": "sạc điện",
+      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0045150.mp3",
+      "gramma":"động từ",
+      "synonym":"",
+      "image":"",
+      "data": ["aaa", "bbb", "ccc"]
+    },
+    {
+      "key": "2",
+      "nameFr": "merci",
+      "API": "[mesi]",
+      "nameVn": "sạc điện",
+      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0045150.mp3",
+      "gramma":"động từ",
+      "synonym":"",
+      "image":"",
+      "data": ["eee", "zzz", "www"]
     }
   ]
 }

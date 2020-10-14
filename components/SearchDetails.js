@@ -1,19 +1,11 @@
-import React,{useState,useEffect, Component} from 'react';
+import React,{useState} from 'react';
 import {
-    ActivityIndicator, 
-    FlatList, 
     Text, 
     View,
-    TouchableOpacity,
-    Image,
-    Dimensions,
-    SafeAreaView,
-    ScrollView
 } from 'react-native';
-import { Container, Header, Tab, Tabs, ScrollableTab } from 'native-base';
+import { Container,Tab, Tabs, ScrollableTab } from 'native-base';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import Swiper from 'react-native-swiper';
 import Video from 'react-native-video';
 import Styles from '../styles/Styles';
 
@@ -23,11 +15,6 @@ function SearchDetails({route,navigation}) {
   const [isPaused, setPaused] = useState(true);
   return (
     <Container>
-      <View style={{backgroundColor:'#97f086',padding:5}}>
-        <Ionicons name='arrow-back-outline' size={20}  color='blue' activeOpacity={0.2} onPress={() => navigation.navigate('homeSearch')}>
-          <Text style={{fontSize:12}}>back</Text>
-        </Ionicons>
-      </View>
       <View  hasTabs/>
       <Tabs renderTabBar={()=> <ScrollableTab  />}>
         <Tab tabStyle={{backgroundColor:'#97f086',borderWidth:2,borderColor:'white'}} textStyle={{color:'#0208c4'}} heading="PHÁP - VIỆT">  
