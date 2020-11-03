@@ -83,15 +83,13 @@ class SettingScreen extends Component {
      _renderItemSearch= ({item}) =>{
         const {navigate} = this.props.navigation;
         return(       
-            <ListItem avatar >
-                <Body>
+            <View> 
                     <Text style={{color:'#041700', fontSize:14}} >{item}</Text> 
-                </Body>
-                <Right>
+                {/* <Right>
                     <Icon name="ios-search" style={{fontSize: 20, color: '#136e02'}} 
                             onPress={() => navigate('detailSearch', item)}  />
-                </Right>
-            </ListItem>                                 
+                </Right> */}
+            </View>                                 
         );
     }
   render() {

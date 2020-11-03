@@ -82,22 +82,34 @@ const Styles= StyleSheet.create({
     },
     vocaHeader:{
         backgroundColor:'white',
-        padding:5,
+        padding:10,
         height:50
     },
     vocaText:{
         color:"#0033ff",
-        fontSize:15
-    },
-    searchDetail:{
-        padding:5,
-        backgroundColor:'#a7f299'
+        fontSize:15,
     },
     vocDesc:{
         backgroundColor:'white',
         padding:5,
         height:370,
         marginTop:10
-    }            
+    },
+    searchDetail:{
+        padding:10,
+        backgroundColor:'#afc6f0'
+    },  
+    searchTab:{
+        backgroundColor:'#afc6f0',
+        borderWidth:2,
+        borderColor:'white'
+    },
+    searchText:{
+        padding:10,
+        marginTop:5,
+        height:350,
+        backgroundColor:'white'
+    }
+
 });
 export default Styles;

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import {  FlatList,ActivityIndicator,View } from "react-native";
+import {  FlatList,ActivityIndicator,View,TouchableOpacity} from "react-native";
 import { Container, Header, Item, Input, Icon,
-        Button,Content, List, ListItem, Left, Body, 
+        Content, List, ListItem, Left, Body, 
         Right, Thumbnail, Text
 } from 'native-base';
 import { SearchBar } from 'react-native-elements';
@@ -49,17 +49,25 @@ export default class SearchHome extends Component {
     //rerder list từ điển
     _renderItemSearch= ({item,index}) =>{
         const {navigate} = this.props.navigation;
-        return(       
-            <ListItem avatar >
+        return(   
+            <ListItem avatar >                                               
+                <Left>
+                    <Icon name="ios-search" style={{fontSize: 20, color: '#0208c4'}} 
+                            onPress={() => navigate('detailSearch', item)}  />
+                </Left>
+
                 <Body>
-                    <Text style={{color:'#041700', fontSize:14}} >{item.nameFr} {item.API}</Text>
-                    <Text style={{color:'#4c6148',fontSize:14}} >{item.nameVn}</Text>  
+                    <TouchableOpacity onPress={() => navigate('detailSearch', item)} >
+                        <Text style={{color:'#041700', fontSize:14}} >{item.nameFr} {item.IPA}</Text> 
+                        <Text style={{color:'#4c6148',fontSize:14}} >{item.data}</Text>      
+                    </TouchableOpacity>
                 </Body>
                 <Right>
-                    <Icon name="ios-search" style={{fontSize: 20, color: '#136e02'}} 
+                    <Icon name="ios-rocket-outline" style={{fontSize: 20, color: '#0208c4'}} 
                             onPress={() => navigate('detailSearch', item)}  />
-                </Right>
-            </ListItem>                                 
+                </Right>                                   
+            </ListItem>          
+                                       
         );
     }
     //xử lý function tra từ
@@ -79,7 +87,7 @@ export default class SearchHome extends Component {
             <SearchBar
                 lightTheme 
                 inputStyle={{backgroundColor:'white',fontSize:15,marginTop:5}}
-                containerStyle={{backgroundColor:'#97f086'}}
+                containerStyle={{backgroundColor:'#afc6f0'}}
                 inputContainerStyle={{backgroundColor:'white',borderRadius:30,height:30}}
                 placeholder="Tra từ Pháp sang Việt"
                 onChangeText={this.handleSearch}
@@ -91,14 +99,15 @@ export default class SearchHome extends Component {
                     <Input placeholder="Tra từ " onChangeText={this.handleSearch} />
                 </Item>
             </Header> */}
-            <List style={{backgroundColor:'#a7f299'}}>
+            
+            <List style={{backgroundColor:'#afc6f0',marginBottom:48}}>
                 <FlatList
                     data={this.state.data}
                     renderItem={this._renderItemSearch}
                     keyExtractor={(item,index)=>index.toString()}
                     ListFooterComponent={this.renderFooter}
                 />
-            </List>         
+            </List>        
         </Container>
         ); 
     }

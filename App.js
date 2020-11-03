@@ -71,7 +71,7 @@ function HomeStackScreen({navigation}) {
         <MaterialCommunityIcons
           style={{marginRight:8}}
           name="google-translate"
-          size={25}
+          size={30}
           color="white"
         />      
         ),
@@ -83,10 +83,10 @@ function HomeStackScreen({navigation}) {
           "height": 40,
         },
         headerRight: () => (
-        <MaterialCommunityIcons
+        <IconT
           style={{marginRight:8}}
-          name="book-minus"
-          size={25}
+          name="ios-logo-buffer"
+          size={30}
           color="white"
         />      
         ),
@@ -135,7 +135,7 @@ function SearchStackScreen({navigation}) {
     <SearchStack.Navigator screenOptions={{
       headerTitleAlign:'center',
       headerStyle: {
-      backgroundColor: '#23d400',//màu nền
+      backgroundColor: '#005eff',//màu nền 23d400
       "height": 40,
       },
       headerTintColor: '#fff',//màu nút mũi tên
@@ -143,10 +143,10 @@ function SearchStackScreen({navigation}) {
       fontWeight: '100',//nét chữ
       },
       headerRight: () => (
-      <MaterialCommunityIcons
+      <IconT
         style={{margin:8}}
-        name="cloud-search-outline"
-        size={25}
+        name="ios-nutrition"
+        size={30}
         color="white"
       />  
       ),
@@ -157,7 +157,7 @@ function SearchStackScreen({navigation}) {
             name="menuunfold"
             size={20}
             color="white"
-            backgroundColor="#23d400"
+            backgroundColor="#005eff"
             onPress={() => navigation.openDrawer()}
           />      
           ),
