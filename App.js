@@ -9,6 +9,7 @@ import IconT from 'react-native-vector-icons/Ionicons';
 import Octicons from 'react-native-vector-icons/Octicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
+import {DrawerContent}  from './screens/DrawerContent';
 import HomeScreen from "./screens/HomeScreen";
 import TranslateScreen from "./screens/TranslateScreen";
 import VocabularyScreen from "./screens/VocabularyScreen";
@@ -18,6 +19,7 @@ import SettingScreen from "./screens/SettingScreen";
 
 import SearchHome from './components/SearchList';
 import SearchDetails from './components/SearchDetails';
+import SearchDeTwo from './components/SearchDeTwo';
 
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
@@ -31,7 +33,8 @@ function HomeStackScreen({navigation}) {
       headerTitleAlign:'center',
       headerTintColor: '#fff',//màu nút mũi tên
       headerTitleStyle: {
-      fontWeight: '100',//nét chữ
+      fontFamily:"Vaptimi",
+      fontSize: 25,//nét chữ
       },
     }}>
       <HomeStack.Screen name="Home" component={HomeScreen}  options={{
@@ -50,15 +53,15 @@ function HomeStackScreen({navigation}) {
         />      
         ),
         headerRight: () => (
-        // <Octicons
-        //   style={{marginRight:8}}
-        //   name="home"
-        //   size={25}
-        //   color="white"
-        // />   
-        <Image style={{width:50,height:35,marginRight:5}} 
-            source={{uri: 'https://t4.ftcdn.net/jpg/01/03/24/93/240_F_103249357_XRB7kytn7IBk6UK2bheSzwThqrlPeH42.jpg'}}
-        />         
+        <IconT
+          style={{marginRight:8}}
+          name="logo-react"
+          size={30}
+          color="white"
+        />   
+        // <Image style={{width:50,height:35,marginRight:5}} 
+        //     source={{uri: 'https://t4.ftcdn.net/jpg/01/03/24/93/240_F_103249357_XRB7kytn7IBk6UK2bheSzwThqrlPeH42.jpg'}}
+        // />         
         ),
       }}/>
       <HomeStack.Screen name="Translate" component={TranslateScreen} options={{
@@ -85,7 +88,7 @@ function HomeStackScreen({navigation}) {
         headerRight: () => (
         <IconT
           style={{marginRight:8}}
-          name="ios-logo-buffer"
+          name="logo-apple"
           size={30}
           color="white"
         />      
@@ -135,17 +138,18 @@ function SearchStackScreen({navigation}) {
     <SearchStack.Navigator screenOptions={{
       headerTitleAlign:'center',
       headerStyle: {
-      backgroundColor: '#005eff',//màu nền 23d400
-      "height": 40,
+        backgroundColor: '#005eff',//màu nền 23d400
+        "height": 40,
       },
       headerTintColor: '#fff',//màu nút mũi tên
       headerTitleStyle: {
-      fontWeight: '100',//nét chữ
+        fontFamily:"Vaptimi",
+        fontSize: 25,//nét chữ//nét chữ
       },
       headerRight: () => (
       <IconT
         style={{margin:8}}
-        name="ios-nutrition"
+        name="logo-snapchat"
         size={30}
         color="white"
       />  
@@ -165,6 +169,8 @@ function SearchStackScreen({navigation}) {
       />
       <SearchStack.Screen name="detailSearch" component={SearchDetails} options={{headerTitle: "Search",}} 
       />
+      <SearchStack.Screen name="deTwoSearch" component={SearchDeTwo} options={{headerTitle: "Search Two",}} 
+      />
     </SearchStack.Navigator>
   );
 }
@@ -175,7 +181,7 @@ function TabsScreen(){
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
           if (route.name === 'Home') {
-            iconName = focused ? 'information-circle' : 'information-circle-outline';
+            iconName = focused ? 'ios-home' : 'ios-home-outline';
           } else if (route.name === 'Settings') {
             iconName = focused ? 'settings' : 'settings-outline';
           }  else if (route.name === 'Search') {
@@ -198,7 +204,7 @@ function TabsScreen(){
 export default function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator>
+      <Drawer.Navigator drawerContent={props => <DrawerContent {... props}/>} >
         <Drawer.Screen name="Home" component={TabsScreen} />
         <Drawer.Screen name="Feedback" component={SettingsStackScreen} />
       </Drawer.Navigator>    

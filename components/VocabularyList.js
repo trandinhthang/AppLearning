@@ -28,71 +28,79 @@ import Styles from '../styles/Styles';
 var {height,width}= Dimensions.get("window");
 
 class VocaHome extends Component{
-     constructor(props) {
-        super(props);
-        this.state = {
-          dataThemes: [],
-          dataVocabulary: [],
-          selectThemes:0,
+    constructor(props) {
+      super(props);
+      this.state = {
+        dataThemes: [],
+        dataVocabulary: [],
+        selectThemes:0,
 
-          isLoading: true,
+        isLoading: true,
 
-          paused: true,
-          
-          iconName: "star"
-        };
-      }
-      componentDidMount() {
-        fetch('http://192.168.56.1:3000/db')
-          .then((response) => response.json())
-          .then((json) => {
-            this.setState({ dataThemes: json.themes, dataVocabulary:json.vocabulary });
-          })
-          .catch((error) => console.error(error))
-          .finally(() => {
-            this.setState({ isLoading: false });
-          });
-      }
+        paused: true,
+        
+        iconName: "star"
+      };
+    }
+    componentDidMount() {
+      fetch('https://my-json-server.typicode.com/trandinhthang/mockjson/db')
+        .then((response) => response.json())
+        .then((json) => {
+          this.setState({ dataThemes: json.themes, dataVocabulary:json.vocabulary });
+        })
+        .catch((error) => console.error(error))
+        .finally(() => {
+          this.setState({ isLoading: false });
+        });
+    }
+    renderFooter=()=>{
+      if(!this.state.isLoading) return null
+      return (         
+          <View style={{height:530,width:400,backgroundColor:"#ffe4b5",justifyContent:"center"}}>
+              <ActivityIndicator size="small" color="#ff8000" />
+          </View>
+      )
+    }
     render(){
-      const { dataThemes, dataVocabulary,isLoading,selectThemes } = this.state;
+      const { dataThemes, dataVocabulary,selectThemes } = this.state;
       return(
         <SafeAreaView style={{backgroundColor:"#ffe4b5"}}>
-        <View  style={{width:width,borderRadius:20,paddingTop:8,backgroundColor:'white'}}>
-        {isLoading ? <ActivityIndicator/> : (
-          <FlatList
-            horizontal={true}
-            data={dataThemes}
-            keyExtractor={(item,index)=>index.toString()}
-            renderItem={({item})=>this._renderItem(item)}
-          /> 
-        )}
-        </View>
-        <View style={{width:width,borderRadius:20,marginTop:5,paddingBottom:170,backgroundColor:'white'}}>
-          {isLoading ? <ActivityIndicator/> : (  
-          <FlatList
-            data={dataVocabulary}
-            renderItem={({item})=>this._renderItemVoca(item)}
-            keyExtractor={(item,index)=>index.toString()}
-          />
-          )}
-        </View>
+          <View  style={{width:width,borderRadius:20,backgroundColor:'white'}}>
+            <FlatList
+              horizontal={true}
+              data={dataThemes}
+              keyExtractor={(item,index)=>index.toString()}
+              renderItem={({item})=>this._renderItem(item)}
+              ListFooterComponent={this.renderFooter}
+            /> 
+          </View>
+          <View style={{width:width,borderRadius:20,marginTop:5,height:450,backgroundColor:'white'}}>
+            <FlatList
+              data={dataVocabulary}
+              renderItem={({item})=>this._renderItemVoca(item)}
+              keyExtractor={(item,index)=>index.toString()}
+            />
+          </View>
       </SafeAreaView>
     );
 
     }
     _renderItem(item){
     return(
-      <TouchableOpacity 
-      onPress={()=>this.setState({selectThemes:item.id})}
-      style={[Styles.divThemes,{backgroundColor:item.color}]}>
-        <Image style={{width:70,height:40}}
-          resizeMode="contain"
-          source={{uri:item.image}}
-        />
-        <Text style={{color:"#0033ff"}} >
-          {item.name}
-        </Text>
-      </TouchableOpacity>
+      <View style={{paddingTop:8}}>
+        <TouchableOpacity 
+            onPress={()=>this.setState({selectThemes:item.id})}
+            style={[Styles.divThemes,{backgroundColor:item.color}]}>
+              <Image style={{width:70,height:40}}
+                resizeMode="contain"
+                source={{uri:item.image}}
+              />
+              <Text style={{color:"#0033ff"}} >
+                {item.name}
+              </Text>
+        </TouchableOpacity>
+      </View>
+      
     )
   }
   _renderItemVoca(item){
@@ -131,9 +139,6 @@ class VocaHome extends Component{
     }
   }  
 }
-
-
-
 const VocaStack = createStackNavigator();
 export default function VocabularyList() {
   return (

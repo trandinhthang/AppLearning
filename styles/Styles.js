@@ -15,11 +15,11 @@ const Styles= StyleSheet.create({
     },
     title1:{
         fontWeight:'100',  
-        color:"white"  
+        color:"white"
     },
     title:{
-        fontWeight:'bold' ,
-        color:"white"    
+        color:"white",
+        fontFamily:"Vaptimi"   
     },
     parent: {
         marginLeft:5
@@ -70,7 +70,7 @@ const Styles= StyleSheet.create({
     },
     feedItem:{
         margin:15,
-        backgroundColor:'#f58e27',
+        backgroundColor:'#ff8000',
         borderRadius:15,
         padding:5,
         flexDirection:"row",
@@ -87,29 +87,46 @@ const Styles= StyleSheet.create({
     },
     vocaText:{
         color:"#0033ff",
-        fontSize:15,
+        fontSize:15
     },
     vocDesc:{
         backgroundColor:'white',
         padding:5,
         height:370,
         marginTop:10
-    },
-    searchDetail:{
-        padding:10,
-        backgroundColor:'#afc6f0'
-    },  
+    }, 
     searchTab:{
         backgroundColor:'#afc6f0',
-        borderWidth:2,
+        borderWidth:1,
         borderColor:'white'
     },
-    searchText:{
+    searchDetail:{
+        paddingTop:5,
+        paddingRight:10,
+        paddingLeft:10,
+        paddingBottom:15,
+        backgroundColor:'#afc6f0'
+    }, 
+    searchDetailName:{
+        backgroundColor:'white',
+        paddingLeft:10,
+        paddingRight:10,
+        height:50,
+        borderRadius:5
+    },
+    searchDetailContent:{
         padding:10,
         marginTop:5,
-        height:350,
-        backgroundColor:'white'
-    }
+        height:420,
+        backgroundColor:'white',
+        borderRadius:5
+    },
+    searchAntonym:{
+        padding:10,
+        height:475,
+        backgroundColor:'white',
+        borderRadius:5
+    },
 
 });
 export default Styles;

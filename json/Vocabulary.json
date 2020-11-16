@@ -1,296 +1,302 @@
 {
-  "themes": [
-    {
-      "id": 1,
-      "name": "Transport",
-      "color": "#fbc831",
-      "image": "https://cdn2.iconfinder.com/data/icons/scenarium-vol-3-1/128/049_airplane_transport_clouds_fly_flight-256.png"
-    },
-    {
-      "id": 2,
-      "name": "Fruits",
-      "color": "#9fd236",
-      "image": "https://www.flaticon.com/premium-icon/icons/svg/528/528407.svg"
-    },
-    {
-      "id": 3,
-      "name": "Animaux",
-      "color": "orange",
-      "image": "https://www.flaticon.com/premium-icon/icons/svg/449/449631.svg"
-    },
-    {
-      "id": 4,
-      "name": "Météo",
-      "color": "#b3ff00",
-      "image": "https://www.flaticon.com/premium-icon/icons/svg/3059/3059351.svg"
-    },
-    {
-      "id": 5,
-      "name": "Naturels",
-      "color": "#ff2600",
-      "image": "https://www.flaticon.com/premium-icon/icons/svg/2970/2970098.svg"
-    },
-    {
-      "id": 6,
-      "name": "Musique",
-      "color": "#009dff",
-      "image": "https://www.flaticon.com/premium-icon/icons/svg/3124/3124991.svg"
-    }
-  ], 
+	"themes": [
+		{
+		  "id": 1,
+		  "name": "Transport",
+		  "color": "#fbc831",
+		  "image": "https://cdn2.iconfinder.com/data/icons/scenarium-vol-3-1/128/049_airplane_transport_clouds_fly_flight-256.png"
+		},
+		{
+		  "id": 2,
+		  "name": "Fruits",
+		  "color": "#9fd236",
+		  "image": "https://www.flaticon.com/premium-icon/icons/svg/528/528407.svg"
+		},
+		{
+		  "id": 3,
+		  "name": "Animaux",
+		  "color": "orange",
+		  "image": "https://www.flaticon.com/premium-icon/icons/svg/449/449631.svg"
+		},
+		{
+		  "id": 4,
+		  "name": "Météo",
+		  "color": "#b3ff00",
+		  "image": "https://www.flaticon.com/premium-icon/icons/svg/3059/3059351.svg"
+		},
+		{
+		  "id": 5,
+		  "name": "Naturels",
+		  "color": "#ff2600",
+		  "image": "https://www.flaticon.com/premium-icon/icons/svg/2970/2970098.svg"
+		},
+		{
+		  "id": 6,
+		  "name": "Musique",
+		  "color": "#009dff",
+		  "image": "https://www.flaticon.com/premium-icon/icons/svg/3124/3124991.svg"
+		}
+	], 
 
-  "vocabulary": [
-    {
-      "key":1,
-      "nameFr": "Avion",
-      "nameVn": "Máy bay",
-      "categorie": 1,
-      "image": "https://cdn2.iconfinder.com/data/icons/scenarium-vol-3-1/128/049_airplane_transport_clouds_fly_flight-256.png",
-      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0002020.mp3",
-      "IPA":"[avjɔ̃]",
-      "gramma":"Nom masculin(Danh từ giống đực)",
-      "exVn":"Máy bay của Hải quân sẽ có vẻ thua kém và Tổng thống sẽ phải cần tới siêu chiến đấu cơ của tôi",
-      "exFr":"Les avions de la marine auront l'air inféri et le président voudra avoir mon superjet"
-    },
-    {
-      "key":2,
-      "nameFr": "Hélicoptère",
-      "nameVn": "Trực thăng",
-      "categorie": 1,
-      "image": "https://cdn4.iconfinder.com/data/icons/transportation-32/130/_Private_Helicopter-256.png",
-      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0040140.mp3",
-      "IPA":"[elikɔptɛʀ]",
-      "gramma":"Nom masculin(Danh từ giống đực)",
-      "exVn":"Cử trực thăng đi đưa họ về và kiểm tra cô ấy đi.",
-      "exFr":"Envoyer un hélicoptère, les faire sortir et la tester."
-    },
-    {
-      "key":3,
-      "nameFr": "Ambulance",
-      "nameVn": "Xe cứu thương",
-      "categorie": 1,
-      "image": "https://cdn4.iconfinder.com/data/icons/jetflat-2-vehicles-vol-1/60/001_010_car_ambulance_transport_aid_doctor-256.png",
-      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0002780.mp3"
-    },
+	"vocabulary": [
+		{
+		  "key":1,
+		  "nameFr": "Avion",
+		  "nameVn": "Máy bay",
+		  "categorie": 1,
+		  "image": "https://cdn2.iconfinder.com/data/icons/scenarium-vol-3-1/128/049_airplane_transport_clouds_fly_flight-256.png",
+		  "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0002020.mp3",
+		  "IPA":"[avjɔ̃]",
+		  "gramma":"Nom masculin(Danh từ giống đực)",
+		  "exVn":"Máy bay của Hải quân sẽ có vẻ thua kém và Tổng thống sẽ phải cần tới siêu chiến đấu cơ của tôi",
+		  "exFr":"Les avions de la marine auront l'air inféri et le président voudra avoir mon superjet"
+		},
+		{
+		  "key":2,
+		  "nameFr": "Hélicoptère",
+		  "nameVn": "Trực thăng",
+		  "categorie": 1,
+		  "image": "https://cdn4.iconfinder.com/data/icons/transportation-32/130/_Private_Helicopter-256.png",
+		  "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0040140.mp3",
+		  "IPA":"[elikɔptɛʀ]",
+		  "gramma":"Nom masculin(Danh từ giống đực)",
+		  "exVn":"Cử trực thăng đi đưa họ về và kiểm tra cô ấy đi.",
+		  "exFr":"Envoyer un hélicoptère, les faire sortir et la tester."
+		},
+		{
+		  "key":3,
+		  "nameFr": "Ambulance",
+		  "nameVn": "Xe cứu thương",
+		  "categorie": 1,
+		  "image": "https://cdn4.iconfinder.com/data/icons/jetflat-2-vehicles-vol-1/60/001_010_car_ambulance_transport_aid_doctor-256.png",
+		  "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0002780.mp3"
+		},
 
-    {
-      "key":1,
-      "nameFr": "Ananas",
-      "nameVn": "Trái dứa",
-      "categorie": 2,
-      "image": "https://cdn2.iconfinder.com/data/icons/food-98/64/Food_pineapple-256.png",
-      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0064640.mp3"
-    },
-    {
-      "key":2,
-      "nameFr": "Pomme",
-      "nameVn": "Trái táo",
-      "categorie": 2,
-      "image": "https://cdn3.iconfinder.com/data/icons/unigrid-flat-fruits-vegetables/90/010_008_apple_fruit_food-256.png",
-      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0003820.mp3"
-    },
-    {
-      "key":3,
-      "nameFr": "Banane",
-      "nameVn": "Trái chuối",
-      "categorie": 2,
-      "image": "https://cdn2.iconfinder.com/data/icons/food-98/64/Food_banana-256.png",
-      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0006470.mp3"
-    },
-    {
-      "key":4,
-      "nameFr": "Fraise",
-      "nameVn": "Dâu tây",
-      "categorie": 2,
-      "image": "https://cdn4.iconfinder.com/data/icons/fruits-collection-full-color/150/Fruits_Collection-33-256.png",
-      "url": "https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0086070.mp3"
-    },
-    {
-      "key":5,
-      "nameFr": "Noix De Coco",
-      "nameVn": "Trái dừa",
-      "categorie": 2,
-      "image": "https://cdn4.iconfinder.com/data/icons/fruits-collection-full-color/150/Fruits_Collection-06-256.png",
-      "url": "https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0017180.mp3"
-    }
-  ],
+		{
+		  "key":1,
+		  "nameFr": "Ananas",
+		  "nameVn": "Trái dứa",
+		  "categorie": 2,
+		  "image": "https://cdn2.iconfinder.com/data/icons/food-98/64/Food_pineapple-256.png",
+		  "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0064640.mp3"
+		},
+		{
+		  "key":2,
+		  "nameFr": "Pomme",
+		  "nameVn": "Trái táo",
+		  "categorie": 2,
+		  "image": "https://cdn3.iconfinder.com/data/icons/unigrid-flat-fruits-vegetables/90/010_008_apple_fruit_food-256.png",
+		  "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0003820.mp3"
+		},
+		{
+		  "key":3,
+		  "nameFr": "Banane",
+		  "nameVn": "Trái chuối",
+		  "categorie": 2,
+		  "image": "https://cdn2.iconfinder.com/data/icons/food-98/64/Food_banana-256.png",
+		  "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0006470.mp3"
+		},
+		{
+		  "key":4,
+		  "nameFr": "Fraise",
+		  "nameVn": "Dâu tây",
+		  "categorie": 2,
+		  "image": "https://cdn4.iconfinder.com/data/icons/fruits-collection-full-color/150/Fruits_Collection-33-256.png",
+		  "url": "https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0086070.mp3"
+		},
+		{
+		  "key":5,
+		  "nameFr": "Noix De Coco",
+		  "nameVn": "Trái dừa",
+		  "categorie": 2,
+		  "image": "https://cdn4.iconfinder.com/data/icons/fruits-collection-full-color/150/Fruits_Collection-06-256.png",
+		  "url": "https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0017180.mp3"
+		}
+	],
 
-  "search": [
-    {
-      "id": 1,
-      "nameFr": "absent",
-      "data": ["vắng mặt,"," thiếu"],
-      "IPA": "[apsɑ̃]",
-      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0000210.mp3",
-      "gramma":"Danh từ giống đực",
-      "exam":["abc","xyz"],
-      "speciality":"",
-      "antonym":"Présent: Có mặt, hiện tại, này",
-      "image":""
+	"search": [
+		{
+		  "id": 1,
+		  "nameFr": "absent",
+		  "data": ["vắng mặt,"," thiếu"],
+		  "IPA": "[apsɑ̃]",
+		  "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0000210.mp3",
+		  "gramma":"Danh từ giống đực",
+      "exam":["Vắng mặt","-- Il est absent de son bureau","-> Ông ta không có mặt ở văn phòng",
+				"Thiếu","-- La gaieté est absente de cette maison","-> Căn nhà này thiếu sự vui tươi"
+			],
+		  "speciality":"",
+		  "antonym":["Présent","Có mặt, hiện tại, này",
+        "--Dire du mal des absents","->Nói xấu những người vắng mặt"
+			],
+		  "image":""
+		},
+		{
+		  "id": 2,
+		  "nameFr": "aller",
+		  "data": ["đi"],
+		  "IPA": "[ale]",
+		  "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0036840.mp3",
+		  "gramma":"Nội động từ",
+      "exam":["Đi","-- Aller à pied /à cheval /en voiture ","-> Đi bộ/đi ngựa/đi xe ô-tô",
+        "-- Allez plus vite ! ","-> Đi nhanh lên!"
+		  ],
+		  "speciality":"",
+		  "antonym":["Rester","Còn lại, ở lại",
+				"--Château dont il ne reste que des ruines","-> Lâu đài chỉ còn lại những tàn tích"
+			],
+		  "image":""
+		},
+		{
+		  "id": 3,
+		  "nameFr": "année",
+		  "data": ["năm,", " tuổi"],
+		  "IPA": "[ane]",
+		  "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0101210.mp3",
+		  "gramma":"Danh từ giống cái",
+		  "exam":["Năm","-- Etudiant de deuxième année","-> Sinh viên năm hai",
+				"Tuổi","-- Elle est dans sa dix-huitième année","-> Cô ta đang tuổi mười tám"
+		  ],
+		  "speciality":"",
+      "antonym":[
+      ],     
+		  "image":""
+		},
+		{
+		  "id": 4,
+		  "nameFr": "aujourd'hui",
+		  "data": ["hôm nay,", " ngày nay,", " đời nay"],
+		  "IPA": "[oʒuʀdɥi]",
+		  "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/fr_aujourd_hui.mp3",
+		  "gramma":"Trạng từ",
+      "exam":["Hôm nay","-- Il doit partir dès aujourd'hui","-> Nó phải ra đi ngay ngày hôm nay",
+				"Ngày nay, Đời nay ","-- Les jeunes d'aujourd'hui","-> Thanh niên thời nay"
+		  ],
+		  "speciality":"",
+      "antonym":[
+      ],
+		  "image":""
+		},
+		{
+		  "id": 5,
+		  "nameFr": "bon",
+		  "data": ["tốt,"," hay,", " được!"],
+		  "IPA": "[bɔ̃]",
+		  "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0032500.mp3",
+		  "gramma":"Tính từ",
+      "exam":["Tốt","-- Avoir une bonne vue","-> Có thị giác tốt",
+				"Hay","-- Un bon mot","-> Một lời hay",
+				"Được!","-- Bon ! Vous pouvez partir","-> Được, anh có thể đi!"
+		  ],
+		  "speciality":"",
+		  "antonym":["Méchant","Độc ác, ác",
+        "-- Homme méchant","-> Người độc ác","-- Méchante langue","-> Miệng lưỡi độc ác"
+      ],
+		  "image":""
+		}, 
+		{
+		  "id": 6,
+		  "nameFr": "croître ",
+		  "data": ["mọc,"," sinh trưởng"],
+		  "IPA": "[kʀwatʀ]",
+		  "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/fr_croitre.mp3",
+		  "gramma":"Động từ",
+      "exam":["Sinh trưởng, mọc","-- Les végétaux croissent lentement","-> Cây sinh trưởng chậm"
+		  ],
+		  "speciality":"Tăng trưởng( trong ngành kinh tế )",
+		  "antonym":["Baisser","Hạ thấp",
+        "-- Baisser un tableau","-> Hạ thấp bức tranh"
+      ],
+		  "image":""
+		}, 
+		{
+		  "id": 7,
+		  "nameFr": "économie",
+		  "IPA": "[ekɔnɔmi]",
+		  "data": ["tiết kiệm"],
+		  "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0027870.mp3",
+		  "gramma":"Danh từ giống cái",
+      "exam":["Tiết kiệm","-- Avoir le sens de l'économie","-> Có tính tiết kiệm"
+		  ],
+		  "speciality":["Kinh tế, kinh tế học( trong ngành kinh tế)", "-- Économie d'un pays","-> Nền kinh tế của một nước"],
+		  "antonym":[
+      ],
+		  "image":""
+		},
+		{
+		  "id": 8,
+		  "nameFr": "élever",
+		  "IPA": "[el(ə)ve]",
+		  "data": ["chăn nuôi,", " nuôi nấng"],
+		  "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0010890.mp3",
+		  "gramma":"Động từ",
+      "exam":["Chăn nuôi","-- Élever des lapins","-> Nuôi thỏ",
+				"Nuôi nắng","-- Élever un enfant","-> Nuôi nấng một đứa trẻ"
+		  ],
+		  "speciality":"",
+		  "antonym":[
+      ],
+		  "image":""
+		},
+		{
+		  "id": 9,
+		  "nameFr": "érable",
+		  "IPA": "[eʀabl]",
+		  "data": ["cây thích"],
+		  "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0052010.mp3",
+		  "gramma":"Danh từ giống đực",
+      "exam":[
+		  ],
+		  "speciality":"",
+		  "antonym":[
+      ],
+		  "image":""
+		},
+		{
+		  "id": 10,
+		  "nameFr": "fabuleux",
+		  "IPA": "[fabylø]",
+		  "data": ["hoang đường,"," phi thường"],
+		  "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0030960.mp3",
+		  "gramma":"Tính từ",
+		  "exam":["Hoang đường","-- Personnage fabuleux","-> Nhân vật hoang đường",
+				"Phi thường","-- Un courage fabuleux","-> Lòng dũng cảm phi thường",
+				"","",""
+		  ],
+		  "speciality":"",
+		  "antonym":["certain","Chắc chắn, chắc",
+        "-- Un fait certain","-> Một sự việc chắc chắn"
+      ],
+		  "image":""
     },
     {
-      "id": 2,
-      "nameFr": "aller",
-      "data": ["đi,"," được,", " sắp sửa"],
-      "IPA": "[ale]",
-      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0036840.mp3",
-      "gramma":"Nội động từ",
-      "exam":["Je dois aller faire les courses, je reviens dans une heure. — Tôi đi mua sắm một chút, một tiếng sau trở lại.",
-            "",
-            ""
+		  "id": 10,
+		  "nameFr": "je",
+		  "IPA": "[ʒe]",
+		  "data": ["tôi,"," ta","tao","tớ"],
+		  "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0042280.mp3",
+		  "gramma":"Danh từ giống đực",
+		  "exam":["Tôi","-- Je ne sais pourquoi","-> Tôi không biết tại sao",
+				"-- Je ne viendrai pas","-> Tôi sẽ không tới"
+		  ],
+		  "speciality":"",
+		  "antonym":[
       ],
-      "speciality":"",
-      "antonym":"",
-      "image":""
-    },
-    {
-      "id": 3,
-      "nameFr": "année",
-      "data": ["năm,", " tuổi,", " niên"],
-      "IPA": "[ane]",
-      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0101210.mp3",
-      "gramma":"Danh từ giống cái",
-      "exam":["La virtuosité exige des années d'exercice quotidien depuis l'enfance. — Tài điêu luyện đòi hỏi nhiều năm thực hành hằng ngày từ thuở ấu thơ.",
-        "",
-        ""
-      ],
-      "speciality":"",
-      "antonym":"",
-      "image":""
-    },
-    {
-      "id": 4,
-      "nameFr": "aujourd'hui",
-      "data": ["hôm nay,"," dạo này,", " ngày nay,", " đời nay"],
-      "IPA": "[oʒuʀdɥi]",
-      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/fr_aujourd_hui.mp3",
-      "gramma":"Trạng từ",
-      "exam":["J'ai complètement oublié qu'il y avait cours aujourd'hui. — Tôi quên mất hôm nay có buổi học.",
-        "",
-        ""
-      ],
-      "speciality":"",
-      "antonym":"",
-      "image":""
-    },
-    {
-      "id": 5,
-      "nameFr": "bon",
-      "data": ["tốt,"," hay,", " ngon"],
-      "IPA": "[bɔ̃]",
-      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0032500.mp3",
-      "gramma":"Tính từ",
-      "exam":["Cette année les vendanges ont été plutôt bonnes, les vignerons ne pouvaient espérer mieux — Năm nay vụ hái nho khá tốt, các người trồng nho không thể hy vọng tốt hơn.",
-        "",
-        ""
-      ],
-      "speciality":"",
-      "antonym":"Mauvais: Tệ, xấu, tồi",
-      "image":""
-    }, 
-    {
-      "id": 6,
-      "nameFr": "bon",
-      "data": ["tốt,"," hay,", " ngon"],
-      "IPA": "[bɔ̃]",
-      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0032500.mp3",
-      "gramma":"Tính từ",
-      "exam":["Cette année les vendanges ont été plutôt bonnes, les vignerons ne pouvaient espérer mieux — Năm nay vụ hái nho khá tốt, các người trồng nho không thể hy vọng tốt hơn.",
-        "",
-        ""
-      ],
-      "speciality":"",
-      "antonym":"Mauvais: Tệ, xấu, tồi",
-      "image":""
-    }, 
-    {
-      "id": 7,
-      "nameFr": "croître ",
-      "data": ["mọc,"," sinh trưởng"],
-      "IPA": "[kʀwatʀ]",
-      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/fr_croitre.mp3",
-      "gramma":"Động từ",
-      "exam":["Et en fait de cette cicatrice croît. — Và từ vết sẹo đó mọc ra",
-        "",
-        ""
-      ],
-      "speciality":"Tăng trưởng( trong ngành kinh tế )",
-      "antonym":"Baisser: Cúi, hạ, xuống.",
-      "image":""
-    }, 
-    {
-      "id": 8,
-      "nameFr": "économie",
-      "IPA": "[ekɔnɔmi]",
-      "data": ["tiết kiệm"],
-      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0027870.mp3",
-      "gramma":"Danh từ giống cái",
-      "exam":["Et pour tout vous dire, cette voiture représentait toutes mes économies. — Và như bác biết, tải sản cả đời cháu tiết kiệm là chiếc xe đó.",
-        "",
-        ""
-      ],
-      "speciality":"Kinh tế, kinh tế học.",
-      "antonym":"",
-      "image":""
-    },
-    {
-      "id": 9,
-      "nameFr": "élever",
-      "IPA": "[el(ə)ve]",
-      "data": ["chăn nuôi,"," cất cao,", " nuôi nấng"],
-      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0010890.mp3",
-      "gramma":"Động từ",
-      "exam":["Ses habitants élèvent des moutons et des bovins, et cultivent des céréales et des légumes. — Warialda là vùng chăn nuôi cừu, bò, trồng ngũ cốc và các vụ mùa khác.",
-        "",
-        ""
-      ],
-      "speciality":"",
-      "antonym":"",
-      "image":""
-    },
-    {
-      "id": 10,
-      "nameFr": "érable",
-      "IPA": "[eʀabl]",
-      "data": ["cây phong"],
-      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0052010.mp3",
-      "gramma":"Danh từ giống đực",
-      "exam":["Donc, pour mesurer la distance sur laquelle un seul érable circiné. — Vậy nên để đo khoảng cách mà một cây thích.",
-        "",
-        ""
-      ],
-      "speciality":"",
-      "antonym":"",
-      "image":""
-    },
-    {
-      "id": 11,
-      "nameFr": "fabuleux",
-      "IPA": "[fabylø]",
-      "data": ["hoang đường,"," phi thường,", " hư truyền"],
-      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0030960.mp3",
-      "gramma":"Tính từ",
-      "exam":["Ils ont créé une danse fabuleuse appelée 'Biome'. — Họ xây dựng một màn vũ đạo hơi hoang đường gọi là 'Biome'.",
-        "",
-        ""
-      ],
-      "speciality":"",
-      "antonym":"",
-      "image":""
-    },
-    {
-      "id": 12,
-      "nameFr": "occupé",
-      "IPA": "[ɔkype]",
-      "data": ["bận rộn"],
-      "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0012260.mp3",
-      "gramma":"Tính từ",
-      "exam":["Comme je suis très occupé, ne compte pas sur moi. — Vì tôi rất bận, bạn đừng trông cậy vào tôi.",
-        "",
-        ""
-      ],
-      "speciality":"",
-      "antonym":"Libre: Tự do, rãnh rỗi. ",
-      "image":""
-    }
-  ]
+		  "image":""
+		},
+		{
+	  "id": 11,
+	  "nameFr": "occupé",
+	  "IPA": "[ɔkype]",
+	  "data": ["bận bịu"],
+	  "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0012260.mp3",
+	  "gramma":"Tính từ",
+	  "exam":[
+    ],
+	  "speciality":"",
+	  "antonym":[
+    ],
+	  "image":""
+	}
+	]
 }

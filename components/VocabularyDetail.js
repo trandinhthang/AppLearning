@@ -25,9 +25,7 @@ function VocaDetail({route,navigation}) {
     <View style={Styles.vocaDetail}>
       <Ionicons name='arrow-back-outline' size={20} color='#d40000' activeOpacity={0.2} onPress={() => navigation.navigate('homeVoca')}>
         <Text style={{fontSize:12}}>back</Text>
-      </Ionicons>
-
-        
+      </Ionicons>   
       <View style={Styles.vocaHeader}>
         <View style={{flex:1}}>
           <View style={{flexDirection:"row",justifyContent:"space-between",alignItems:"center"}}>

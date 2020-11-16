@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import {  FlatList,ActivityIndicator,View,TouchableOpacity} from "react-native";
 import { Container, Header, Item, Input, Icon,
-        Content, List, ListItem, Left, Body, 
-        Right, Thumbnail, Text
+        List, ListItem, Left, Body, 
+        Right, Text
 } from 'native-base';
 import { SearchBar } from 'react-native-elements';
 import _ from 'lodash';
@@ -25,7 +25,7 @@ export default class SearchHome extends Component {
     //fetch data từ server
     requestAPISearch= _.debounce(()=>{
         this.setState({loading:true})
-        const apiURL="http://192.168.56.1:3000/search"
+        const apiURL="https://my-json-server.typicode.com/trandinhthang/mockjson/search"
         fetch(apiURL).then((res)=>res.json())
         .then((resJson)=>{
             this.setState({
@@ -40,10 +40,10 @@ export default class SearchHome extends Component {
     }, 250)
     renderFooter=()=>{
         if(!this.state.loading) return null
-        return (
-        <View style={{paddingVertical:20,boderTopWidth:1,borderColor:"red"}}>
-            <ActivityIndicator animating size="large"/>
-        </View>
+        return (         
+            <View style={{height:480,width:"100%",backgroundColor:"#afc6f0",justifyContent:"center"}}>
+                <ActivityIndicator size="small" color="#0000ff" />
+            </View>
         )
     }
     //rerder list từ điển
@@ -59,7 +59,9 @@ export default class SearchHome extends Component {
                 <Body>
                     <TouchableOpacity onPress={() => navigate('detailSearch', item)} >
                         <Text style={{color:'#041700', fontSize:14}} >{item.nameFr} {item.IPA}</Text> 
-                        <Text style={{color:'#4c6148',fontSize:14}} >{item.data}</Text>      
+                        <Text>{item.data.map((item,index)=>
+                            <Text style={{color:'#4c6148',fontSize:14}} key={index}>‣{item} </Text>)}
+                        </Text>
                     </TouchableOpacity>
                 </Body>
                 <Right>
@@ -86,7 +88,7 @@ export default class SearchHome extends Component {
         <Container>
             <SearchBar
                 lightTheme 
-                inputStyle={{backgroundColor:'white',fontSize:15,marginTop:5}}
+                inputStyle={{backgroundColor:'white',fontSize:15,marginTop:0}}
                 containerStyle={{backgroundColor:'#afc6f0'}}
                 inputContainerStyle={{backgroundColor:'white',borderRadius:30,height:30}}
                 placeholder="Tra từ Pháp sang Việt"
