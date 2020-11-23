@@ -1,3 +1,4 @@
+
 import * as React from 'react';
 import { View, Image} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
@@ -34,13 +35,13 @@ function HomeStackScreen({navigation}) {
       headerTintColor: '#fff',//màu nút mũi tên
       headerTitleStyle: {
       fontFamily:"Vaptimi",
-      fontSize: 25,//nét chữ
+      fontSize: 20,//nét chữ
       },
     }}>
       <HomeStack.Screen name="Home" component={HomeScreen}  options={{
-        headerTitle: "F-Learn",
+        headerTitle: "F-Bonjour",
         headerStyle: {
-          backgroundColor: '#fc0000',//màu nền
+          backgroundColor: '#e67a6e',//màu nền
           "height": 40,
         },
         headerLeft: () => (
@@ -48,7 +49,7 @@ function HomeStackScreen({navigation}) {
           name="menuunfold"
           size={20}
           color="white"
-          backgroundColor="#fc0000"
+          backgroundColor="#e67a6e"
           onPress={() => navigation.openDrawer()}
         />      
         ),
@@ -58,10 +59,7 @@ function HomeStackScreen({navigation}) {
           name="logo-react"
           size={30}
           color="white"
-        />   
-        // <Image style={{width:50,height:35,marginRight:5}} 
-        //     source={{uri: 'https://t4.ftcdn.net/jpg/01/03/24/93/240_F_103249357_XRB7kytn7IBk6UK2bheSzwThqrlPeH42.jpg'}}
-        // />         
+        />         
         ),
       }}/>
       <HomeStack.Screen name="Translate" component={TranslateScreen} options={{
@@ -144,7 +142,7 @@ function SearchStackScreen({navigation}) {
       headerTintColor: '#fff',//màu nút mũi tên
       headerTitleStyle: {
         fontFamily:"Vaptimi",
-        fontSize: 25,//nét chữ//nét chữ
+        fontSize: 20,//nét chữ//nét chữ
       },
       headerRight: () => (
       <IconT
@@ -169,7 +167,7 @@ function SearchStackScreen({navigation}) {
       />
       <SearchStack.Screen name="detailSearch" component={SearchDetails} options={{headerTitle: "Search",}} 
       />
-      <SearchStack.Screen name="deTwoSearch" component={SearchDeTwo} options={{headerTitle: "Search Two",}} 
+      <SearchStack.Screen name="deTwoSearch" component={SearchDeTwo} options={{headerTitle: "Search",}} 
       />
     </SearchStack.Navigator>
   );

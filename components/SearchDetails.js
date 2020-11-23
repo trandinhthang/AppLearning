@@ -21,7 +21,8 @@ function SearchDetails({route,navigation}) {
     <Container>
       <View  hasTabs/>
       <Tabs renderTabBar={()=> <ScrollableTab style={{height:35}} />}>
-        <Tab activeTabStyle={{backgroundColor:'#5b91f5'}}  tabStyle={[Styles.searchTab]} textStyle={{color:'#0033ff'}} heading="PHÁP - VIỆT">  
+        <Tab activeTabStyle={{backgroundColor:'#5b91f5'}}  tabStyle={[Styles.searchTab]} textStyle={{color:'#0033ff'}} 
+          heading="Pháp-Việt">  
           <View style={Styles.searchDetail}>
             <View style={Styles.searchDetailName}>
               <View style={{flex:1}}>
@@ -46,12 +47,13 @@ function SearchDetails({route,navigation}) {
               {data.map((item,index)=><Text style={{fontSize:15}} key={index}>➵{item.charAt(0).toUpperCase()}{item.substr(1)}</Text>)}
               <View style={{paddingLeft:15}}>
                 <Text>{examFr1.split(" ").map((item,index)=><Text key={index}>
-                  <Text  onPress={()=> navigation.navigate('deTwoSearch',{nameFr:item})} style={{textDecorationLine: "underline",color:"#0033ff"}} >{item}</Text>
+                  <Text  onPress={()=> navigation.navigate('deTwoSearch',{value:item})} 
+                    style={{color:"#0033ff"}} >{item}</Text>
                   <Text > </Text></Text>)} 
                 </Text>    
                 <Text style={{}}>{examVn1}</Text>  
                 <Text>{examFr2.split(" ").map((item,index)=><Text key={index}>
-                  <Text onPress={()=> alert(item)} style={{textDecorationLine: "underline",color:"#0033ff"}}>{item}</Text>
+                  <Text onPress={()=> alert(item)} style={{color:"#0033ff"}}>{item}</Text>
                   <Text> </Text></Text>)} 
                 </Text>       
                 <Text style={{}}>{examVn2}</Text>      
@@ -71,7 +73,8 @@ function SearchDetails({route,navigation}) {
             </View>
           </View>
         </Tab>
-        <Tab activeTabStyle={{backgroundColor:'#5b91f5'}} tabStyle={Styles.searchTab} textStyle={{color:'#0033ff'}} heading="TRÁI NGHĨA">   
+        <Tab activeTabStyle={{backgroundColor:'#5b91f5'}} tabStyle={Styles.searchTab} textStyle={{color:'#0033ff'}} 
+          heading="Trái Nghĩa">   
           <View style={Styles.searchDetail}>  
             <View style={Styles.searchAntonym}>
               {antonym.map((item,index)=><Text style={{fontSize:15}} key={index}>{item}</Text>)}
@@ -79,7 +82,7 @@ function SearchDetails({route,navigation}) {
           </View>
         </Tab>
         <Tab activeTabStyle={{backgroundColor:'#5b91f5'}} tabStyle={Styles.searchTab} textStyle={{color:'#0033ff'}} 
-            heading="HÌNH ẢNH"> 
+          heading="Hình Ảnh"> 
           <View style={{alignItems:"center"}}>  
               <Image style={{width:250,height:250}} resizeMode="contain" source={{uri:image}}/>          
           </View>

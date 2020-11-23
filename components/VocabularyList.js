@@ -10,7 +10,7 @@ import {
     SafeAreaView,
     ScrollView
 } from 'react-native';
-
+import Swiper from 'native-base'
 import VocaDetail from './VocabularyDetail';
 
 import { NavigationContainer } from '@react-navigation/native';
@@ -21,7 +21,6 @@ import Icon_ from 'react-native-vector-icons/Ionicons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Foundation from 'react-native-vector-icons/Foundation';
 
-import Swiper from 'react-native-swiper';
 import Video from 'react-native-video';
 import Styles from '../styles/Styles';
 
@@ -56,7 +55,7 @@ class VocaHome extends Component{
     renderFooter=()=>{
       if(!this.state.isLoading) return null
       return (         
-          <View style={{height:530,width:400,backgroundColor:"#ffe4b5",justifyContent:"center"}}>
+          <View style={{width:width,alignItems:"center"}}>
               <ActivityIndicator size="small" color="#ff8000" />
           </View>
       )
@@ -64,76 +63,77 @@ class VocaHome extends Component{
     render(){
       const { dataThemes, dataVocabulary,selectThemes } = this.state;
       return(
-        <SafeAreaView style={{backgroundColor:"#ffe4b5"}}>
-          <View  style={{width:width,borderRadius:20,backgroundColor:'white'}}>
+        <SafeAreaView style={{backgroundColor:'#f7f0e6'}}>
+          <Text style={[Styles.textTheme,{padding:5}]}>Chủ đề</Text>
+          <View  style={{width:width,height:120,borderRadius:20,paddingLeft:8,paddingRight:16}}>
             <FlatList
               horizontal={true}
               data={dataThemes}
               keyExtractor={(item,index)=>index.toString()}
               renderItem={({item})=>this._renderItem(item)}
-              ListFooterComponent={this.renderFooter}
+              
             /> 
           </View>
-          <View style={{width:width,borderRadius:20,marginTop:5,height:450,backgroundColor:'white'}}>
+          <Text style={[Styles.textTheme,{paddingLeft:5}]}>Từ vựng</Text>
+          <View style={{width:width,marginTop:5,paddingBottom:120,height:450}}>          
             <FlatList
               data={dataVocabulary}
               renderItem={({item})=>this._renderItemVoca(item)}
               keyExtractor={(item,index)=>index.toString()}
+              ListFooterComponent={this.renderFooter}
             />
           </View>
       </SafeAreaView>
     );
-
     }
     _renderItem(item){
     return(
-      <View style={{paddingTop:8}}>
-        <TouchableOpacity 
-            onPress={()=>this.setState({selectThemes:item.id})}
-            style={[Styles.divThemes,{backgroundColor:item.color}]}>
-              <Image style={{width:70,height:40}}
-                resizeMode="contain"
-                source={{uri:item.image}}
-              />
-              <Text style={{color:"#0033ff"}} >
-                {item.name}
-              </Text>
-        </TouchableOpacity>
-      </View>
-      
+      <TouchableOpacity 
+        onPress={()=>this.setState({selectThemes:item.id})}
+        style={[Styles.divThemes,{backgroundColor:'white',borderWidth: 2,borderColor: 'orange'}]}
+      >
+            <Image style={{width:100,height:70}}
+              resizeMode="contain"
+              source={{uri:item.image}}
+            />
+            <Text style={{color:"#0033ff"}} >
+              {item.name}
+            </Text>
+            <Text style={{color:"#3d7ef5"}} >
+              {item.vietsub}
+            </Text>
+      </TouchableOpacity>   
     )
   }
   _renderItemVoca(item){
     const {navigate} = this.props.navigation;
     let theme=this.state.selectThemes
     if(theme==0||theme==item.categorie){
-       return(
-        <SafeAreaView >        
-          <View style={Styles.feedItem}  >
-            <Image style={{width:70,height:40}} resizeMode="contain" source={{uri:item.image}}/>
-            <View style={{flex:1}}>
-              <View style={{flexDirection:"row",justifyContent:"space-between",alignItems:"center"}}>
-                <View >
-                  <Text style={Styles.vocaFrTitle}>{item.nameFr}</Text>
-                  <Text style={Styles.vocaVnTitle}>{item.nameVn}</Text>
-                </View> 
-                <View >
-                  <Foundation
-                    name='book'
-                    color="white"
-                    size={26}
-                    onPress={() => navigate('DetailVoca', item)}   
-                  />  
-                  <Icon_
-                    name='md-heart-circle'
-                    color="white"
-                    size={21}
-                    onPress={() => this.setState({iconName:"cloud-up"})}
-                  />  
-                </View>  
-              </View>
-            </View>
-          </View> 
+      return(
+        <SafeAreaView style={Styles.feedItem}>
+          <Image style={{width:120,height:120}} resizeMode="contain" source={{uri:item.image}}/>
+          <View style={{flex:1}}>
+            <View style={{flexDirection:"row",justifyContent:"space-between",alignItems:"center"}}>
+              <View style={{paddingLeft:20}} >
+                <Text style={Styles.vocaFrTitle}>{item.nameFr}</Text>
+                <Text style={[Styles.vocaVnTitle,{color:'#3d7ef5'}]}>{item.nameVn}</Text>
+              </View> 
+              <View style={{paddingRight:5}}>
+                <Foundation
+                name='book'
+                color="#000b5e"
+                size={30}
+                onPress={() => navigate('DetailVoca', item)}   
+                />  
+                {/* <Icon_
+                  name='md-heart-circle'
+                  color="white"
+                  size={21}
+                  onPress={() => this.setState({iconName:"cloud-up"})}
+                />   */}
+              </View>  
+            </View>       
+          </View>
         </SafeAreaView>
     );
     }

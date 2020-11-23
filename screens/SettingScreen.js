@@ -1,42 +1,89 @@
-import React, { Component } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  SafeAreaView,
-  SectionList,
-  ActivityIndicator
-} from "react-native";
+// import React, { Component } from "react";
+// import { Image } from 'react-native';
+// import { Container, Header, View, DeckSwiper, Card, CardItem, Thumbnail, Text, Left, Body, Icon } from 'native-base';
+// const cards = [
+//   {
+//     text: 'Card One',
+//     name: 'One',
+//     image: require('../assests/images/books.png'),
+//   }
+// ];
 
-
-class SettingScreen extends Component {
+// class SettingScreen extends Component {
    
-  render() {
-    return (
-       <View>
-           <Text>TTTTT</Text>
-       </View>
-    );
-  }
-}
+//   render() {
+//     return (
+//        <Container>
+//         <View>
+//           <DeckSwiper
+//             dataSource={cards}
+//             renderItem={item =>
+//               <Card style={{ elevation: 3 }}>
+//                 <CardItem>
+//                   <Left>
+//                     <Thumbnail source={item.image} />
+//                     <Body>
+//                       <Text>{item.text}</Text>
+//                       <Text note>NativeBase</Text>
+//                     </Body>
+//                   </Left>
+//                 </CardItem>
+//                 <CardItem cardBody>
+//                   <Image style={{ height: 300, flex: 1 }} source={item.image} />
+//                 </CardItem>
+//                 <CardItem>
+//                   <Icon name="heart" style={{ color: '#ED4A6A' }} />
+//                   <Text>{item.name}</Text>
+//                 </CardItem>
+//               </Card>
+//             }
+//           />
+//         </View>
+//       </Container>
+//     );
+//   }
+// }
 
+
+// export default SettingScreen;
+
+import React, { Component } from "react";
+import { StyleSheet, Text, View,Button } from 'react-native'
+
+
+const data=[
+  {
+    "name":"Thang",
+    "date":"20/11"
+  },
+  {
+    "name":"Tran",
+    "date":"28/11",
+  }
+]
+export default function SettingScreen(){
+  return (
+    <View style={styles.container}>
+       <Text>TTT</Text>
+    </View>
+  )
+}
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginHorizontal: 16
+    backgroundColor: "#F5FCFF"
   },
-  item: {
-    backgroundColor: "#f9c2ff",
-    padding: 20,
-    marginVertical: 8
+  card: {
+    flex: 1,
+    borderRadius: 4,
+    borderWidth: 2,
+    borderColor: "#E8E8E8",
+    justifyContent: "center",
+    backgroundColor: "white"
   },
-  header: {
-    fontSize: 32,
-    backgroundColor: "#fff"
-  },
-  title: {
-    fontSize: 24
+  text: {
+    textAlign: "center",
+    fontSize: 50,
+    backgroundColor: "transparent"
   }
 });
-
-export default SettingScreen;

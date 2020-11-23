@@ -1,25 +1,75 @@
 import {StyleSheet} from 'react-native';
 const Styles= StyleSheet.create({
-    container: {
-        alignItems:"center",
-        padding:6,
+    textHeader:{
+        paddingHorizontal:20,
+        fontSize:35,
+        paddingTop:20,
+        fontWeight:'bold',
+        color:'white'
+    },
+    viewInput:{
+        flexDirection:'row',
+        alignItems:'center',
+        backgroundColor:'white',
+        borderRadius:12,
+        marginHorizontal:20,
+        marginTop:20,
+        paddingLeft:25,
+        height:38
+    },
+    viewContent:{
+        flexDirection:'row',
+        alignItems:'center',
+        backgroundColor:'white',
         borderRadius:20,
-        backgroundColor:"white",
-        marginBottom:7,
-        marginTop:8 ,
-        backgroundColor:'#ff5959'
+        marginHorizontal:20,
+        marginTop:25,
+        paddingLeft:30,
+        paddingVertical:10,
+        backgroundColor:'#fcf1e8'
+    },
+    textContent:{
+        color:'#239dad',
+        fontSize:20,
+        fontWeight:'bold',
+        paddingRight:100
+    },
+    touchContent:{
+        flexDirection:'row',
+        alignItems:'center',
+        width:150,
+        backgroundColor:'#fabc91',
+        borderRadius:14,
+        paddingHorizontal:10,
+        marginTop:15,
+        paddingVertical:10
+    },
+    imageContent:{
+        marginLeft:-130,
+        marginTop: 60,
+        width:110,
+        height:100
+    },
+    viewCategories:{
+        flexDirection:'row',
+        alignItems:'center',
+        backgroundColor:'#f79b7c',
+        borderRadius:20,
+        marginHorizontal:20,
+        marginTop:5,
+        paddingLeft:20,
+        paddingVertical:20
+    },
+    textContent_2:{
+        color:'#239dad',
+        fontSize:20,
+        fontWeight:'bold',
+        paddingHorizontal:20,
+        marginTop:10
     },
     translateImage:{
         width:50,
         height:50
-    },
-    title1:{
-        fontWeight:'100',  
-        color:"white"
-    },
-    title:{
-        color:"white",
-        fontFamily:"Vaptimi"   
     },
     parent: {
         marginLeft:5
@@ -56,23 +106,35 @@ const Styles= StyleSheet.create({
     divThemes:{
         alignItems:'center',
         borderRadius:10,
-        marginLeft:5,
+        marginLeft:7,
         marginBottom:5
     },
+    textTheme:{
+        color:'#ff8000',
+        fontSize:20,
+        fontWeight:'bold',
+        paddingRight:100
+    },
     vocaFrTitle:{
-        fontSize:15,
-        color:'white',
+        fontSize:25,
+        color:'#001dfc',
         fontWeight:'bold'    
     },
     vocaVnTitle:{
-        color:'white',
+        fontSize:20,
+        color:'#2239f0',
         fontWeight:'100'    
     },
     feedItem:{
+        height:250,
+        width:330,
         margin:15,
-        backgroundColor:'#ff8000',
+        backgroundColor:'white',
         borderRadius:15,
+        borderWidth: 2,
+        borderColor: 'orange',
         padding:5,
+        alignItems:"center",
         flexDirection:"row",
         marginVertical:8
     },
@@ -97,7 +159,7 @@ const Styles= StyleSheet.create({
     }, 
     searchTab:{
         backgroundColor:'#afc6f0',
-        borderWidth:1,
+        borderWidth:2,
         borderColor:'white'
     },
     searchDetail:{
@@ -117,13 +179,13 @@ const Styles= StyleSheet.create({
     searchDetailContent:{
         padding:10,
         marginTop:5,
-        height:420,
+        height:375,
         backgroundColor:'white',
         borderRadius:5
     },
     searchAntonym:{
         padding:10,
-        height:475,
+        height:430,
         backgroundColor:'white',
         borderRadius:5
     },

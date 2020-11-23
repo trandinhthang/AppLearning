@@ -3,8 +3,7 @@ import {
     Text, 
     View,
     Image,   
-    TouchableOpacity,
-    Alert
+    TouchableOpacity
 } from 'react-native';
 import { Container,Tab, Tabs, ScrollableTab } from 'native-base';
 
@@ -16,7 +15,7 @@ import Styles from '../styles/Styles';
 
 const list = [
   { id: 1,
-    "name": "lutte",
+    "nameFr": "lutte",
     "data": "đấu tranh",
     "IPA": "[lyt]",
     "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0086430.mp3",
@@ -29,7 +28,7 @@ const list = [
     "image":""
   },
   { id: 2,
-    nameFr: "incendie",
+    "nameFr": "incendies",
     "data": "đám cháy",
     "IPA": "[ɛ̃sɑ̃di]",
     "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/fr_incendie.mp3",
@@ -44,16 +43,77 @@ const list = [
 ];
 
 function SearchDeTwo({route,navigation}) {
-   const {nameFr} = route.params;
+  const {value} = route.params;
+  const [isPaused, setPaused] = useState(true);
+  const found = list.filter((item)=>{return item.nameFr===value}) 
   //  const found = beasts.find(element => element === name.nameFr);
   // const found= beasts.map(function(e) { return e.name;}).indexOf('thang');
-  // const found= array.findIndex(item=>item.name==='maison')
-  const found = list.filter((item)=>{return item.name===nameFr})      
+  // const found= array.findIndex(item=>item.name==='maison')   
   return (
-    <View>
-      {found.map(e=><View><Text key={e.key}>{e.name} {e.data} {e.IPA}</Text></View>)}
-    </View>   
+    <Container>
+      <View  hasTabs/>
+      <Tabs renderTabBar={()=> <ScrollableTab style={{height:35}} />}>
+        <Tab activeTabStyle={{backgroundColor:'#5b91f5'}}  tabStyle={[Styles.searchTab]} textStyle={{color:'#0033ff'}} heading="Pháp - Việt">  
+          <View style={Styles.searchDetail}>
+            <View style={Styles.searchDetailName}>
+              <View style={{flex:1}}>
+              {found.map((e,index,ex)=>
+                <View  key={index}  style={{flexDirection:"row",justifyContent:"space-between",alignItems:"center"}}>
+                  <View >
+                    <Text style={[Styles.vocaText,{fontStyle:'italic'}]}>{e.nameFr} <Text style={{fontStyle:'italic'}}>{e.IPA}</Text></Text>
+                    <Text  style={[Styles.vocaText,{fontStyle:'italic'}]}>{e.gramma}</Text>
+                  </View>
+                  <View>
+                    <Ionicons name="mic-circle-outline" color="#0066ff" size={30}
+                              onPress={()=>setPaused(false)}>
+                      <Video
+                        source={{ uri: e.url }} 
+                        paused={isPaused} 
+                      />
+                    </Ionicons>
+                  </View>
+                </View>
+              )}    
+              </View> 
+            </View>  
+            {found.map((e,index)=>
+            <View key={index}  style={Styles.searchDetailContent}> 
+              <Text  style={{fontSize:15}}>➵{e.data.charAt(0).toUpperCase()}{e.data.substr(1)}</Text>
+              <View  style={{paddingLeft:15}}>
+                <Text >{e.examFr1.split(" ").map((item,index)=><Text key={index}>
+                  <Text  onPress={()=> navigation.navigate('deTwoSearch',{value:item})} style={{color:"#0033ff"}} >{item}</Text>
+                  <Text > </Text></Text>)} 
+                </Text>    
+                <Text style={{}}>{e.examVn1}</Text>  
+                <Text >{e.examFr2.split(" ").map((item,index)=><Text key={index}>
+                  <Text onPress={()=> navigation.navigate('deTwoSearch',{value:item})} style={{color:"#0033ff"}}>{item}</Text>
+                  <Text> </Text></Text>)} 
+                </Text>       
+                <Text style={{}}>{e.examVn2}</Text>        
+              </View>                         
+            </View>
+            )}
+          </View>
+        </Tab>
+        <Tab activeTabStyle={{backgroundColor:'#5b91f5'}} tabStyle={Styles.searchTab} textStyle={{color:'#0033ff'}} heading="Trái Nghĩa">   
+          <View style={Styles.searchDetail}>  
+            <View style={Styles.searchAntonym}>
+              {/* {antonym.map((item,index)=><Text style={{fontSize:15}} key={index}>{item}</Text>)} */}
+            </View>
+          </View>
+        </Tab>
+        <Tab activeTabStyle={{backgroundColor:'#5b91f5'}} tabStyle={Styles.searchTab} textStyle={{color:'#0033ff'}} 
+            heading="Hình Ảnh"> 
+          <View style={{alignItems:"center"}}>  
+              {/* <Image style={{width:250,height:250}} resizeMode="contain" source={{uri:image}}/>           */}
+          </View>
+        </Tab>
+      </Tabs>
+    </Container> 
+      
   );
 }
 export default SearchDeTwo;
-
+{/* <View>
+      <View key={index}><Text >{e.nameFr}</Text></View>
+</View>  */}

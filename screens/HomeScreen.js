@@ -5,54 +5,77 @@ import {
     View,
     Text,
     Image,
-    TouchableOpacity
+    TouchableOpacity,
+    ImageBackground,
+    TextInput
 } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Entypo from 'react-native-vector-icons/Entypo';
+
 import Styles from '../styles/Styles';
 import books from "../assests/images/books.png";
-import research from "../assests/images/research.png";
-import vocabulary from "../assests/images/vocabulary.png";
+import openbook from "../assests/images/open-book.png";
+import paris from "../assests/images/paris.png";
+import Home from "../assests/images/Home.png";
 //gọi các Screen khác từ đây sang App.js
 const HomeScreen =({navigation})=>{
-    return(
-        <ScrollView style={{backgroundColor:"#f2dada",paddingLeft:60,paddingRight:60,borderRadius:5}}>
-            <TouchableOpacity activeOpacity={0.2} onPress={() => navigation.navigate('Translate')}>
-                <View style={Styles.container} >
-                    <Image style={Styles.translateImage} source={research}/>
-                    <Text style={Styles.title}>Traduire Phrases</Text>
-                    <Text style={Styles.title1}>Dịch câu</Text>
+    return(      
+        <ImageBackground source={Home} style={{width:"100%",height:"100%"}}>  
+            <ScrollView>
+                <Text style={Styles.textHeader}>
+                Bonjour, bonne journée
+                </Text>
+                <View style={Styles.viewInput}>
+                    <TextInput placeholder="Muốn ghi gì thì ghi vào đây nhé !" placeholderTextColor="#239dad" style={{fontWeight:'bold',fontSize:13,width:255}} />
+                    <Entypo name='paper-plane' color='#239dad' size={16}/>
                 </View>
-            </TouchableOpacity> 
-            <TouchableOpacity activeOpacity={0.2} onPress={() => navigation.navigate('Vocabulary')}>
-                <View style={Styles.container} >
-                    <Image style={Styles.translateImage} source={vocabulary}/>
-                    <Text style={Styles.title}>Vocabulaire</Text>
-                    <Text style={Styles.title1}>Từ vựng</Text>
+                <View style={Styles.viewContent}>
+                    <View>
+                        <Text style={Styles.textContent}>Bắt đầu với những bài học</Text>
+                        <TouchableOpacity style={Styles.touchContent}>
+                            <Text style={{fontWeight:'bold',color:'white'}}>Đặt mục tiêu</Text>
+                            <Icon name='arrow-right' color='white' size={20} style={{paddingLeft:35}} />
+                        </TouchableOpacity>
+                        <TouchableOpacity style={Styles.touchContent}>
+                            <Text style={{fontWeight:'bold',color:'white'}}>Học cơ bản</Text>
+                            <Icon name='arrow-right' color='white' size={20} style={{paddingLeft:42}} />
+                        </TouchableOpacity>
+                        {/* <TouchableOpacity style={Styles.touchContent}>
+                            <Text style={{fontWeight:'bold',color:'white'}}>Học nâng cao</Text>
+                            <Icon name='arrow-right' color='white' size={20} style={{paddingLeft:26}} />
+                        </TouchableOpacity> */}
+                    </View>
+                    <Image source={paris}
+                        style={Styles.imageContent} />
                 </View>
-            </TouchableOpacity>  
-            <TouchableOpacity activeOpacity={0.2} onPress={() => navigation.navigate('Grammar')}>
-                <View style={Styles.container} >
-                    <Image style={Styles.translateImage} source={books}/>
-                    <Text style={Styles.title}>Grammaire</Text>
-                    <Text style={Styles.title1}>Ngữ pháp</Text>
-                </View>
-            </TouchableOpacity>  
-             {/* <TouchableOpacity activeOpacity={0.2} onPress={() => navigation.navigate('Grammar')}>
-                <View style={Styles.container} >
-                    <Image style={Styles.translateImage} source={books}/>
-                    <Text style={Styles.title}>Grammaire</Text>
-                    <Text style={Styles.title1}>Ngữ pháp</Text>
-                </View>
-            </TouchableOpacity>  
-             <TouchableOpacity activeOpacity={0.2} onPress={() => navigation.navigate('Grammar')}>
-                <View style={Styles.container} >
-                    <Image style={Styles.translateImage} source={books}/>
-                    <Text style={Styles.title}>Grammaire</Text>
-                    <Text style={Styles.title1}>Ngữ pháp</Text>
-                </View>
-            </TouchableOpacity>   */}
-        </ScrollView>   
+                <Text style={Styles.textContent_2}>Góc học tập</Text>
+                <TouchableOpacity activeOpacity={0.2} onPress={() => navigation.navigate('Vocabulary')}>
+                    <View style={Styles.viewCategories} >
+                        <Image style={Styles.translateImage} source={openbook}/>
+                        <View style={{paddingHorizontal:30}}>
+                            <Text style={{color:'white',fontWeight:'bold',fontSize:16}}>
+                                Vocabulaire
+                            </Text>
+                            <Text style={{color:'white',fontWeight:'bold',fontSize:16}}>Từ vựng</Text>
+                            <Text style={{color:'white',fontSize:13}}>20 chủ đề, 120 từ vựng</Text>
+                        </View>      
+                    </View>
+                </TouchableOpacity>      
+                <TouchableOpacity activeOpacity={0.2} onPress={() => navigation.navigate('Translate')}>
+                    <View style={Styles.viewCategories} >
+                        <Image style={Styles.translateImage} source={books}/>
+                        <View style={{paddingHorizontal:30}}>
+                            <Text style={{color:'white',fontWeight:'bold',fontSize:16}}>
+                                Pratiquer L'écoute
+                            </Text>
+                            <Text style={{color:'white',fontWeight:'bold',fontSize:16}}>Luyện nghe</Text>
+                             <Text style={{color:'white',fontSize:13}}>9 chủ đề, 50 bài luyện nghe</Text>
+                        </View>        
+                    </View>           
+                </TouchableOpacity>   
+                </ScrollView>                                  
+        </ImageBackground>
+         
 );     
 }
 export default HomeScreen;

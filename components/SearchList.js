@@ -75,7 +75,7 @@ export default class SearchHome extends Component {
     //xử lý function tra từ
     handleSearch =(text)=>{
         const formatedQuery = text.toLowerCase() //cho về kí tự thường
-        const data= _.filter(this.state.fullData, search=>{ //đổ dữ liệu vào mảng fullData
+        const data= _.filter(this.state.fullData, search=>{ //lọc dữ liệu vào mảng fullData
             if(search.nameFr.includes(formatedQuery)){
                 return true
             }
