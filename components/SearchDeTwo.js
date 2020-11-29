@@ -64,7 +64,7 @@ function SearchDeTwo({route,navigation}) {
                     <Text  style={[Styles.vocaText,{fontStyle:'italic'}]}>{e.gramma}</Text>
                   </View>
                   <View>
-                    <Ionicons name="mic-circle-outline" color="#0066ff" size={30}
+                    <Ionicons name="volume-high-outline" color="#0066ff" size={30}
                               onPress={()=>setPaused(false)}>
                       <Video
                         source={{ uri: e.url }} 

@@ -5,10 +5,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+
 import Icon from 'react-native-vector-icons/AntDesign';
 import IconT from 'react-native-vector-icons/Ionicons';
 import Octicons from 'react-native-vector-icons/Octicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Foundation from 'react-native-vector-icons/Foundation';
 
 import {DrawerContent}  from './screens/DrawerContent';
 import HomeScreen from "./screens/HomeScreen";
@@ -78,15 +80,15 @@ function HomeStackScreen({navigation}) {
         ),
       }}/>
       <HomeStack.Screen name="Vocabulary" component={VocabularyScreen} options={{
-        headerTitle: "Vocabulary",
+        headerTitle: "Vocabulaire",
         headerStyle: {
           backgroundColor: '#ff8000',//màu nền
           "height": 40,
         },
         headerRight: () => (
-        <IconT
+        <Foundation
           style={{marginRight:8}}
-          name="logo-apple"
+          name="book-bookmark"
           size={30}
           color="white"
         />      
@@ -145,9 +147,9 @@ function SearchStackScreen({navigation}) {
         fontSize: 20,//nét chữ//nét chữ
       },
       headerRight: () => (
-      <IconT
+      <MaterialCommunityIcons
         style={{margin:8}}
-        name="logo-snapchat"
+        name="shield-search"
         size={30}
         color="white"
       />  
@@ -163,11 +165,11 @@ function SearchStackScreen({navigation}) {
             onPress={() => navigation.openDrawer()}
           />      
           ),
-        }}  name="Search" component={SearchHome}
+        }}  name="Recherche" component={SearchHome}
       />
-      <SearchStack.Screen name="detailSearch" component={SearchDetails} options={{headerTitle: "Search",}} 
+      <SearchStack.Screen name="detailSearch" component={SearchDetails} options={{headerTitle: "Recherche",}} 
       />
-      <SearchStack.Screen name="deTwoSearch" component={SearchDeTwo} options={{headerTitle: "Search",}} 
+      <SearchStack.Screen name="deTwoSearch" component={SearchDeTwo} options={{headerTitle: "Recherche",}} 
       />
     </SearchStack.Navigator>
   );
@@ -178,11 +180,11 @@ function TabsScreen(){
     <Tab.Navigator screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
-          if (route.name === 'Home') {
+          if (route.name ==='Accueil') {
             iconName = focused ? 'ios-home' : 'ios-home-outline';
-          } else if (route.name === 'Settings') {
+          } else if (route.name === 'Réglage') {
             iconName = focused ? 'settings' : 'settings-outline';
-          }  else if (route.name === 'Search') {
+          }  else if (route.name === 'Recherche') {
             iconName = focused ? 'search-outline' : 'search-outline';
           }
           return <IconT name={iconName} size={size} color={color} />;
@@ -193,19 +195,19 @@ function TabsScreen(){
         inactiveTintColor: 'gray',
 
     }}>
-      <Tab.Screen name="Home" component={HomeStackScreen} />
-      <Tab.Screen name="Search" component={SearchStackScreen}  />
-      <Tab.Screen name="Settings" component={SettingsStackScreen}  />
+      <Tab.Screen name="Accueil" component={HomeStackScreen} />
+      <Tab.Screen name="Recherche" component={SearchStackScreen}  />
+      <Tab.Screen name="Réglage" component={SettingsStackScreen}  />
     </Tab.Navigator>
   )
 }
-export default function App() {
+const App = () =>{
   return (
     <NavigationContainer>
       <Drawer.Navigator drawerContent={props => <DrawerContent {... props}/>} >
         <Drawer.Screen name="Home" component={TabsScreen} />
-        <Drawer.Screen name="Feedback" component={SettingsStackScreen} />
       </Drawer.Navigator>    
     </NavigationContainer>
   );
 }
+export default App;

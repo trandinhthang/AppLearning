@@ -11,10 +11,9 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Entypo from 'react-native-vector-icons/Entypo';
-
 import Styles from '../styles/Styles';
-import books from "../assests/images/books.png";
-import openbook from "../assests/images/open-book.png";
+import books from '../assests/images/books.png';
+import openbook from '../assests/images/open-book.png';
 import paris from "../assests/images/paris.png";
 import Home from "../assests/images/Home.png";
 //gọi các Screen khác từ đây sang App.js
@@ -73,7 +72,7 @@ const HomeScreen =({navigation})=>{
                         </View>        
                     </View>           
                 </TouchableOpacity>   
-                </ScrollView>                                  
+            </ScrollView>                                  
         </ImageBackground>
          
 );     
