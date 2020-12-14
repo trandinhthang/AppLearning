@@ -33,7 +33,7 @@ function QuizList(){
     setGameOver(false);
     const newQuestions = await getQuizQuestions(
                         TOTAL_QUESTIONS,
-                        Difficulty.HARD
+                        Difficulty.MEDIUM
     );
     setQuestions(newQuestions);
     setScore(0);

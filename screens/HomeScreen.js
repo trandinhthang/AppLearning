@@ -20,7 +20,7 @@ import Home from "../assests/images/Home.png";
 const HomeScreen =({navigation})=>{
     return(      
         <ImageBackground source={Home} style={{width:"100%",height:"100%"}}>  
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <Text style={Styles.textHeader}>
                 Bonjour, bonne journée
                 </Text>
@@ -35,9 +35,10 @@ const HomeScreen =({navigation})=>{
                             <Text style={{fontWeight:'bold',color:'white'}}>Đặt mục tiêu</Text>
                             <Icon name='arrow-right' color='white' size={20} style={{paddingLeft:35}} />
                         </TouchableOpacity>
-                        <TouchableOpacity style={Styles.touchContent}>
-                            <Text style={{fontWeight:'bold',color:'white'}}>Học cơ bản</Text>
-                            <Icon name='arrow-right' color='white' size={20} style={{paddingLeft:42}} />
+                        <TouchableOpacity style={Styles.touchContent} activeOpacity={0.2} 
+                                        onPress={() => navigation.navigate('Exam')}>
+                            <Text style={{fontWeight:'bold',color:'white'}}>Luyện từ vựng</Text>
+                            <Icon name='arrow-right' color='white' size={20} style={{paddingLeft:25}} />
                         </TouchableOpacity>
                         {/* <TouchableOpacity style={Styles.touchContent}>
                             <Text style={{fontWeight:'bold',color:'white'}}>Học nâng cao</Text>

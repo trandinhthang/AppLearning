@@ -16,7 +16,7 @@ import {DrawerContent}  from './screens/DrawerContent';
 import HomeScreen from "./screens/HomeScreen";
 import TranslateScreen from "./screens/TranslateScreen";
 import VocabularyScreen from "./screens/VocabularyScreen";
-import GrammarScreen from "./screens/GrammarScreen";
+import ExamScreen from "./screens/ExamScreen";
 
 import QuizScreen from "./screens/QuizScreen";
 
@@ -94,7 +94,21 @@ function HomeStackScreen({navigation}) {
         />      
         ),
       }}/>
-      <HomeStack.Screen name="Grammar" component={GrammarScreen}/>
+      <HomeStack.Screen name="Exam" component={ExamScreen} options={{
+        headerTitle: "Luyện tập",
+        headerStyle: {
+          backgroundColor: '#ff8000',//màu nền
+          "height": 40,
+        },
+        headerRight: () => (
+        <Foundation
+          style={{marginRight:8}}
+          name="book-bookmark"
+          size={30}
+          color="white"
+        />      
+        ),
+      }}/>
   
     </HomeStack.Navigator>
   );

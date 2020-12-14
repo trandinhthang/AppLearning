@@ -104,6 +104,7 @@ export default class SearchHome extends Component {
             
             <List style={{backgroundColor:'#afc6f0',marginBottom:48}}>
                 <FlatList
+                    showsVerticalScrollIndicator={false}
                     data={this.state.data}
                     renderItem={this._renderItemSearch}
                     keyExtractor={(item,index)=>index.toString()}

@@ -16,9 +16,10 @@ export type Question = {
 export type QuestionState = Question & {answer: string[]};
 
 export const getQuizQuestions = async (amount: number, difficulty: Difficulty) => {
-    const endpoint =`https://opentdb.com/api.php?amount=${amount}&difficulty=${difficulty}&type=multiple`;
+    // const endpoint =`https://opentdb.com/api.php?amount=${amount}&difficulty=${difficulty}&type=multiple`;
+    const endpoint =`https://my-json-server.typicode.com/trandinhthang/quizDB/results?_limit=${amount}&difficulty=${difficulty}`;
     const data = await (await fetch(endpoint)).json();
-    const res= data.results.map((question: Question)=>({
+    const res= data.map((question: Question)=>({
         ...question,
         answers: _([...question.incorrect_answers, question.correct_answer]),
     }));

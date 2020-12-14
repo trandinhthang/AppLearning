@@ -67,6 +67,7 @@ class VocaHome extends Component{
           <Text style={[Styles.textTheme,{padding:5}]}>Chủ đề</Text>
           <View  style={{width:width,height:100,borderRadius:20,paddingLeft:8,paddingRight:16}}>
             <FlatList
+              showsHorizontalScrollIndicator={false}
               horizontal={true}
               data={dataThemes}
               keyExtractor={(item,index)=>index.toString()}
@@ -77,6 +78,7 @@ class VocaHome extends Component{
           <Text style={[Styles.textTheme,{paddingLeft:5}]}>Từ vựng</Text>
           <View style={{width:width,marginTop:5,paddingBottom:140,height:450}}>          
             <FlatList
+              showsVerticalScrollIndicator={false}
               data={dataVocabulary}
               renderItem={({item})=>this._renderItemVoca(item)}
               keyExtractor={(item,index)=>index.toString()}
