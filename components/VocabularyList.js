@@ -75,7 +75,7 @@ class VocaHome extends Component{
             /> 
           </View>
           <Text style={[Styles.textTheme,{paddingLeft:5}]}>Từ vựng</Text>
-          <View style={{width:width,marginTop:5,paddingBottom:100,height:450}}>          
+          <View style={{width:width,marginTop:5,paddingBottom:140,height:450}}>          
             <FlatList
               data={dataVocabulary}
               renderItem={({item})=>this._renderItemVoca(item)}
@@ -112,7 +112,7 @@ class VocaHome extends Component{
       return(
         <TouchableOpacity  onPress={() => navigate('DetailVoca', item)} >
           <SafeAreaView style={Styles.feedItem}>
-            <Image style={{width:120,height:100}} resizeMode="contain" source={{uri:item.image}}/>
+            <Image style={{width:80,height:60}} resizeMode="contain" source={{uri:item.image}}/>
             <View style={{flex:1}}>
               <View style={{flexDirection:"row",justifyContent:"space-between",alignItems:"center"}}>
                 <View style={{paddingLeft:20}} >

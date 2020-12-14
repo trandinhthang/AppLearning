@@ -18,7 +18,7 @@ import TranslateScreen from "./screens/TranslateScreen";
 import VocabularyScreen from "./screens/VocabularyScreen";
 import GrammarScreen from "./screens/GrammarScreen";
 
-import SettingScreen from "./screens/SettingScreen";
+import QuizScreen from "./screens/QuizScreen";
 
 import SearchHome from './components/SearchList';
 import SearchDetails from './components/SearchDetails';
@@ -27,7 +27,7 @@ import SearchDeTwo from './components/SearchDeTwo';
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
 const HomeStack = createStackNavigator();
-const SettingsStack = createStackNavigator();
+const QuizStack = createStackNavigator();
 const SearchStack = createStackNavigator();
 //Stack Screen Home
 function HomeStackScreen({navigation}) {
@@ -99,10 +99,10 @@ function HomeStackScreen({navigation}) {
     </HomeStack.Navigator>
   );
 }
-//Stack Screen Setting
-function SettingsStackScreen({navigation}) {
+//Stack Screen Quiz
+function QuizStackScreen({navigation}) {
   return (
-    <SettingsStack.Navigator screenOptions={{
+    <QuizStack.Navigator screenOptions={{
       headerTitleAlign:'center',
       headerStyle: {
       backgroundColor: '#fc4c1c',//màu nền
@@ -114,22 +114,22 @@ function SettingsStackScreen({navigation}) {
       },
     }}
     >
-    <SettingsStack.Screen options={{
-        headerTitle: "Setting",
+    <QuizStack.Screen options={{
+        headerTitle: "Quiz",
         headerLeft: () => (
         <Icon.Button
           name="menuunfold"
           size={20}
           color="white"
-          backgroundColor="blue"
+          backgroundColor="#fc4c1c"
           onPress={() => navigation.openDrawer()}
         />      
         ),
       }}  
-      name="Setting"
-      component={SettingScreen}
+      name="Quiz"
+      component={QuizScreen}
     />
-    </SettingsStack.Navigator>
+    </QuizStack.Navigator>
   );
 }
 //Stack Screen Search
@@ -182,8 +182,8 @@ function TabsScreen(){
           let iconName;
           if (route.name ==='Accueil') {
             iconName = focused ? 'ios-home' : 'ios-home-outline';
-          } else if (route.name === 'Réglage') {
-            iconName = focused ? 'settings' : 'settings-outline';
+          } else if (route.name === 'Quiz') {
+            iconName = focused ? 'md-book-sharp' : 'md-book-outline';
           }  else if (route.name === 'Recherche') {
             iconName = focused ? 'search-outline' : 'search-outline';
           }
@@ -196,8 +196,8 @@ function TabsScreen(){
 
     }}>
       <Tab.Screen name="Accueil" component={HomeStackScreen} />
-      <Tab.Screen name="Recherche" component={SearchStackScreen}  />
-      <Tab.Screen name="Réglage" component={SettingsStackScreen}  />
+      <Tab.Screen name="Quiz" component={QuizStackScreen}  />
+      <Tab.Screen name="Recherche" component={SearchStackScreen}  />    
     </Tab.Navigator>
   )
 }

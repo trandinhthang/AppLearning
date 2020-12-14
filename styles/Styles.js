@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 const Styles= StyleSheet.create({
+    //Style Home
     textHeader:{
         paddingHorizontal:20,
         fontSize:35,
@@ -68,6 +69,7 @@ const Styles= StyleSheet.create({
         paddingHorizontal:20,
         marginTop:10
     },
+    //Style translate
     translateImage:{
         width:50,
         height:50
@@ -104,6 +106,7 @@ const Styles= StyleSheet.create({
         justifyContent: 'space-between'
         
     },
+    //Style themes
     divThemes:{
         alignItems:'center',
         borderRadius:10,
@@ -127,7 +130,7 @@ const Styles= StyleSheet.create({
         fontWeight:'100'    
     },
     feedItem:{
-        height:120,
+        height:90,
         width:330,
         margin:15,
         backgroundColor:'white',
@@ -157,7 +160,8 @@ const Styles= StyleSheet.create({
         padding:5,
         height:370,
         marginTop:10
-    }, 
+    },
+    //Style search tab 
     searchTab:{
         backgroundColor:'#afc6f0',
         borderWidth:2,
