@@ -16,11 +16,12 @@ import books from '../assests/images/books.png';
 import openbook from '../assests/images/open-book.png';
 import paris from "../assests/images/paris.png";
 import Home from "../assests/images/Home.png";
+import homeLearn from "../assests/images/homeLearn.jpg"
 //gọi các Screen khác từ đây sang App.js
 const HomeScreen =({navigation})=>{
     return(      
-        <ImageBackground source={Home} style={{width:"100%",height:"100%"}}>  
-            <ScrollView showsVerticalScrollIndicator={false}>
+        <ImageBackground source={homeLearn} style={{width:"100%",height:"105%"}}>  
+            <ScrollView showsVerticalScrollIndicator={false} style={{marginBottom:25}}>
                 <Text style={Styles.textHeader}>
                 Bonjour, bonne journée
                 </Text>

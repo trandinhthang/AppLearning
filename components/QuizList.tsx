@@ -1,14 +1,15 @@
 import React, { useState, useEffect, Fragment, useRef } from "react";
-import {  View,Text,ActivityIndicator} from "react-native";
+import {  View,Text,ActivityIndicator,ImageBackground} from "react-native";
 import {  TouchableWithoutFeedback} from 'react-native-gesture-handler';
 
 import {getQuizQuestions, Difficulty, QuestionState} from './QuizUtil';
 
 import QuizQuestion from './QuizQuestion';
 import QuizAnswer from './QuizAnswer';
+import QuizImage from "../assests/images/quizschool.jpg"
 
 import Play from 'react-native-vector-icons/Feather';
-
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export type AnswerObject = {
   question: string;
@@ -49,7 +50,7 @@ function QuizList(){
       //Check if answer is corrent
       const correct = questions[number].correct_answer === answer;
       //Increment the score
-      if(correct) setScore((prev) =>  prev + 1);
+      if(correct) setScore((prev) =>  prev + 50);
       //Save answer in the array of answers
       const answerObject = {
         question: questions[number].question,
@@ -60,7 +61,7 @@ function QuizList(){
       setUserAnswers((prev) => [...prev, answerObject])
       setTimeout(()=>{
         nextQuestion();
-      },800);
+      },3000);
     }
   };
   //Next question
@@ -79,25 +80,29 @@ function QuizList(){
   }, []);
 
   return (
-    <View style={{flex:1,justifyContent:'center',position:'relative',padding:20,backgroundColor:'red'}}>
+  <ImageBackground source={QuizImage} style={{width:"100%",height:"100%"}}>  
+    <View style={{flex:1,justifyContent:'center',position:'relative',padding:15,paddingTop:2}}>
     { !loading ? <Fragment>
-      <View style={{flex:1}}>
-        <View style={{flexDirection:'row',justifyContent:'space-between',backgroundColor:'black'}}>
-          <Text style={{fontWeight:'bold', color:'white',  fontSize:16}}>
-          Question
-          </Text>
-          <Text style={{fontSize:16,color:'white'}}>
-          {number + 1} / {questions.length}
-          </Text>
-        </View>
-          <Text>Score {score}</Text>
-        <View>
-        </View>
+      <View style={{flex:1,paddingTop:15}}>
         {questions.length > 0 ?  
           <>
             <QuizQuestion questionNr={number+1}
                           question={questions[number].question}               
-            />
+            />    
+          </>
+          : null
+        } 
+        <View style={{paddingTop:5}}>
+          <View style={{justifyContent:'center',alignItems:'center',backgroundColor:'white',width:55,height:55,borderRadius:300,left:'42%'}}              
+          >
+            <Text style={{fontSize:16,color:'red'}}>
+              ♥{score} 
+            </Text> 
+          </View> 
+        </View>
+       
+        {questions.length > 0 ?  
+          <>
             <QuizAnswer answers={questions[number].answers} 
                         {...{setAnswer, checkAnswer}}
                         userAnswer={userAnswers ? userAnswers[number] : undefined}
@@ -106,25 +111,36 @@ function QuizList(){
           : null
         }  
       </View>
-      <View style={{  backgroundColor:'blue',alignItems:"center",justifyContent:'center',
-                      borderRadius:300,width:50,height:50,position:'absolute',bottom:20,right:20}}>
+      <View style={{backgroundColor:'white',alignItems:"center",justifyContent:'center',
+                    width:60,height:60,bottom:4,borderRadius:300,left:10}}
+      >
+        <Ionicons name='ios-planet-sharp' size={12} color='red' > 
+          <Text style={{fontSize:16,color:'red',fontWeight:'bold'}}>
+            {number + 1}/{questions.length}
+          </Text>
+        </Ionicons>   
+      </View> 
+      <View style={{  backgroundColor:'white',alignItems:"center",justifyContent:'center',
+                      borderRadius:300,width:50,height:50,position:'absolute',bottom:20,right:20}}
+      >
         <>
           { !gameOver && !loading && number != TOTAL_QUESTIONS -1 ?
           ( <TouchableWithoutFeedback onPress={() => nextQuestion()} >
-              <Play name='arrow-right' color='white' size={30} active={true}/>
+              <Ionicons name='rocket' color='red' size={30} active={true}/>
             </TouchableWithoutFeedback> ) :
           ( <TouchableWithoutFeedback onPress={() => startQuiz()} >
-              <Play name='play' color='white' size={30} active={true} style={{paddingLeft:5}}/>
+              <Ionicons name='ios-game-controller-sharp' color='red' size={30} active={true} />
             </TouchableWithoutFeedback>)
           }  
         </>
       </View>
       </Fragment> 
         : ( <View style={{width:'100%',alignItems:"center"}}>
-              <ActivityIndicator size="small" color="white" />
+              <ActivityIndicator size="small" color="orange" />
             </View>)
         }    
     </View>
+    </ImageBackground>
   )
 }
 export default QuizList;

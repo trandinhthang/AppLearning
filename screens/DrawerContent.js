@@ -63,7 +63,7 @@ export function DrawerContent(props) {
                                 />
                             )}
                             label="Luyện tập"
-                            onPress={() => {props.navigation.navigate('')}}
+                            onPress={() => {props.navigation.navigate('Quiz')}}
                         />
                         <DrawerItem 
                             icon={({color, size}) => (

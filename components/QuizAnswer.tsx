@@ -13,8 +13,7 @@ interface AnswerProps{
 
 function QuizAnswer ({answers,setAnswer,checkAnswer,userAnswer}: AnswerProps ) {
     return (
-        <View style={{flexDirection:'column',alignItems:'center',marginTop:15,paddingTop:14,
-                    paddingHorizontal:24.5,backgroundColor:'yellow'}}>
+        <View style={{height:'50%',flexDirection:'row',flexWrap:'wrap'}}>
             {
                 answers.map((answer, key)=>(
                     <Fragment key={answer}>

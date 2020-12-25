@@ -43,7 +43,7 @@ function HomeStackScreen({navigation}) {
       <HomeStack.Screen name="Home" component={HomeScreen}  options={{
         headerTitle: "F-Bonjour",
         headerStyle: {
-          backgroundColor: '#e67a6e',//màu nền
+          backgroundColor: '#ff6a00',//màu nền
           "height": 40,
         },
         headerLeft: () => (
@@ -51,7 +51,7 @@ function HomeStackScreen({navigation}) {
           name="menuunfold"
           size={20}
           color="white"
-          backgroundColor="#e67a6e"
+          backgroundColor="#ff6a00"
           onPress={() => navigation.openDrawer()}
         />      
         ),
@@ -119,7 +119,7 @@ function QuizStackScreen({navigation}) {
     <QuizStack.Navigator screenOptions={{
       headerTitleAlign:'center',
       headerStyle: {
-      backgroundColor: '#fc4c1c',//màu nền
+      backgroundColor: '#0aa4bf',//màu nền
       "height": 40,
       },
       headerTintColor: '#fff',//màu nút mũi tên
@@ -135,9 +135,17 @@ function QuizStackScreen({navigation}) {
           name="menuunfold"
           size={20}
           color="white"
-          backgroundColor="#fc4c1c"
+          backgroundColor="#0aa4bf"
           onPress={() => navigation.openDrawer()}
         />      
+        ),
+        headerRight: () => (
+        <Icon
+          style={{margin:8}}
+          name="star"
+          size={30}
+          color="white"
+        />  
         ),
       }}  
       name="Quiz"
