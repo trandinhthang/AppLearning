@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Fragment, useRef } from "react";
-import {  View,Text,ActivityIndicator,ImageBackground} from "react-native";
+import {  View,Text,ActivityIndicator,ImageBackground, Alert} from "react-native";
 import {  TouchableWithoutFeedback} from 'react-native-gesture-handler';
 
 import {getQuizQuestions, Difficulty, QuestionState} from './QuizUtil';
@@ -18,7 +18,8 @@ export type AnswerObject = {
   correctAnswer: string;
 }
 
-function QuizList(){
+function QuizList({route}){
+  const { diff }= route.params;
   const [loading, setLoading] = useState(false);
   const [questions, setQuestions] = useState<QuestionState[]>([]);
   const [userAnswers, setUserAnswers] = useState<AnswerObject[]>([]);
@@ -27,16 +28,28 @@ function QuizList(){
   const [TOTAL_QUESTIONS] = useState(10);
   const [number, setNumber] = useState(0);
   const setAnswer = useRef(null);
-
+  enum Difficulty{
+    EASY="easy",
+    MEDIUM="medium",
+    HARD="hard",
+  }
   //Không đồng bộ
   const startQuiz = async () =>{
     setLoading(true);
     setGameOver(false);
-    const newQuestions = await getQuizQuestions(
+    if(diff==='MEDIUM'){
+      const newQuestions = await getQuizQuestions(
                         TOTAL_QUESTIONS,
-                        Difficulty.MEDIUM
-    );
-    setQuestions(newQuestions);
+                        Difficulty.MEDIUM,
+      );
+      setQuestions(newQuestions);
+    }  else {
+      const newQuestions = await getQuizQuestions(
+                        TOTAL_QUESTIONS,
+                        Difficulty.HARD,
+      );
+      setQuestions(newQuestions);
+    }
     setScore(0);
     setUserAnswers([]);
     setNumber(0);
@@ -50,7 +63,12 @@ function QuizList(){
       //Check if answer is corrent
       const correct = questions[number].correct_answer === answer;
       //Increment the score
-      if(correct) setScore((prev) =>  prev + 50);
+      if(correct) {
+        setScore((prev) =>  prev + 50);
+        Alert.alert('Chúc mừng bạn','Chính xác ! + 50♥' );
+      } else{
+        Alert.alert('Liu liu','Sai rồi nhé ! ');
+      }
       //Save answer in the array of answers
       const answerObject = {
         question: questions[number].question,
@@ -61,7 +79,7 @@ function QuizList(){
       setUserAnswers((prev) => [...prev, answerObject])
       setTimeout(()=>{
         nextQuestion();
-      },3000);
+      },4000);
     }
   };
   //Next question
@@ -92,6 +110,7 @@ function QuizList(){
           </>
           : null
         } 
+        
         <View style={{paddingTop:5}}>
           <View style={{justifyContent:'center',alignItems:'center',backgroundColor:'white',width:55,height:55,borderRadius:300,left:'42%'}}              
           >
@@ -114,11 +133,8 @@ function QuizList(){
       <View style={{backgroundColor:'white',alignItems:"center",justifyContent:'center',
                     width:60,height:60,bottom:4,borderRadius:300,left:10}}
       >
-        <Ionicons name='ios-planet-sharp' size={12} color='red' > 
-          <Text style={{fontSize:16,color:'red',fontWeight:'bold'}}>
-            {number + 1}/{questions.length}
-          </Text>
-        </Ionicons>   
+        <Text style={{color:'red',fontSize:8}}>Độ khó</Text>
+        <Text style={{fontSize:12,color:'red'}}>{diff}</Text>
       </View> 
       <View style={{  backgroundColor:'white',alignItems:"center",justifyContent:'center',
                       borderRadius:300,width:50,height:50,position:'absolute',bottom:20,right:20}}

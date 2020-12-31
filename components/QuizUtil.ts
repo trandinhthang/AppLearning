@@ -1,10 +1,6 @@
 export const _ = (array: any[]) => [ ...array].sort(() => Math.random() - 0.7);
 
-export enum Difficulty{
-    EASY="easy",
-    MEDIUM="medium",
-    HARD="hard",
-}
+
 export type Question = {
     category: string;
     correct_answers:string;

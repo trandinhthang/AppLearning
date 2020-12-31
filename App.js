@@ -17,8 +17,9 @@ import HomeScreen from "./screens/HomeScreen";
 import TranslateScreen from "./screens/TranslateScreen";
 import VocabularyScreen from "./screens/VocabularyScreen";
 import ExamScreen from "./screens/ExamScreen";
+import WordScreen from "./screens/WordScreen"
 
-import QuizScreen from "./screens/QuizScreen";
+import QuizList from "./components/QuizList";
 
 import SearchHome from './components/SearchList';
 import SearchDetails from './components/SearchDetails';
@@ -29,6 +30,7 @@ const Tab = createBottomTabNavigator();
 const HomeStack = createStackNavigator();
 const QuizStack = createStackNavigator();
 const SearchStack = createStackNavigator();
+const WordStack = createStackNavigator();
 //Stack Screen Home
 function HomeStackScreen({navigation}) {
   return (
@@ -94,26 +96,42 @@ function HomeStackScreen({navigation}) {
         />      
         ),
       }}/>
-      <HomeStack.Screen name="Exam" component={ExamScreen} options={{
-        headerTitle: "Luyện tập",
+      <HomeStack.Screen name="Exam" component={QuizList} options={{
+        headerTitle: "Entrainement",
         headerStyle: {
-          backgroundColor: '#ff8000',//màu nền
+          backgroundColor: '#0aa4bf',//màu nền
           "height": 40,
         },
+        headerTintColor: '#fff',
         headerRight: () => (
-        <Foundation
+        <Icon
           style={{marginRight:8}}
-          name="book-bookmark"
+          name="star"
           size={30}
           color="white"
         />      
         ),
       }}/>
-  
+      <WordStack.Screen name="Word" component={WordScreen} options={{
+        headerTitle: "Remplir Mot",
+        headerStyle: {
+          backgroundColor: 'green',//màu nền
+          "height": 40,
+        },
+        headerTintColor: '#fff',
+        headerRight: () => (
+        <IconT
+          style={{marginRight:8}}
+          name="md-school"
+          size={30}
+          color="white"
+        />      
+        ),
+      }}/>
     </HomeStack.Navigator>
   );
 }
-//Stack Screen Quiz
+/*Stack Screen Quiz
 function QuizStackScreen({navigation}) {
   return (
     <QuizStack.Navigator screenOptions={{
@@ -153,7 +171,7 @@ function QuizStackScreen({navigation}) {
     />
     </QuizStack.Navigator>
   );
-}
+}*/
 //Stack Screen Search
 function SearchStackScreen({navigation}) {
   return (
@@ -202,11 +220,11 @@ function TabsScreen(){
     <Tab.Navigator screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
-          if (route.name ==='Accueil') {
+          if (route.name ==='Chính') {
             iconName = focused ? 'ios-home' : 'ios-home-outline';
-          } else if (route.name === 'Quiz') {
-            iconName = focused ? 'md-book-sharp' : 'md-book-outline';
-          }  else if (route.name === 'Recherche') {
+          /*} else if (route.name === 'Quiz') {
+            iconName = focused ? 'md-book-sharp' : 'md-book-outline';*/
+          }  else if (route.name === 'Từ điển') {
             iconName = focused ? 'search-outline' : 'search-outline';
           }
           return <IconT name={iconName} size={size} color={color} />;
@@ -217,9 +235,8 @@ function TabsScreen(){
         inactiveTintColor: 'gray',
 
     }}>
-      <Tab.Screen name="Accueil" component={HomeStackScreen} />
-      <Tab.Screen name="Quiz" component={QuizStackScreen}  />
-      <Tab.Screen name="Recherche" component={SearchStackScreen}  />    
+      <Tab.Screen name="Chính" component={HomeStackScreen} />
+      <Tab.Screen name="Từ điển" component={SearchStackScreen}  />    
     </Tab.Navigator>
   )
 }

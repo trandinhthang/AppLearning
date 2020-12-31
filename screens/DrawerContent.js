@@ -30,7 +30,18 @@ export function DrawerContent(props) {
                                 />
                             )}
                             label="Trang chủ"
-                            onPress={() => {props.navigation.navigate('Accueil')}}
+                            onPress={() => {props.navigation.navigate('Chính')}}
+                        />
+                        <DrawerItem 
+                            icon={({color, size}) => (
+                                <Icon 
+                                name="google-translate" 
+                                color='#0276c9'
+                                size={28}
+                                />
+                            )}
+                            label="Dịch từ"
+                            onPress={() => {props.navigation.navigate('Translate')}}
                         />
                         <DrawerItem 
                             icon={({color, size}) => (
@@ -41,7 +52,7 @@ export function DrawerContent(props) {
                                 />
                             )}
                             label="Từ điển"
-                            onPress={() => {props.navigation.navigate('Recherche')}}
+                            onPress={() => {props.navigation.navigate('Từ điển')}}
                         />
                         <DrawerItem 
                             icon={({color, size}) => (
@@ -57,36 +68,36 @@ export function DrawerContent(props) {
                         <DrawerItem 
                             icon={({color, size}) => (
                                 <Icon 
-                                name="align-vertical-bottom" 
-                                color='#0276c9'
-                                size={30}
-                                />
-                            )}
-                            label="Luyện tập"
-                            onPress={() => {props.navigation.navigate('Quiz')}}
-                        />
-                        <DrawerItem 
-                            icon={({color, size}) => (
-                                <Icon 
                                 name="heart-flash" 
                                 color='#0276c9'
                                 size={30}
                                 />
                             )}
                             label="Yêu thích"
-                            onPress={() => {props.navigation.navigate('')}}
+
                         />                  
                         <DrawerItem 
                             icon={({color, size}) => (
                                 <Icon 
-                                name="star" 
+                                name="align-vertical-bottom" 
                                 color='#0276c9'
                                 size={30}
                                 />
                             )}
                             label="Đánh giá"
-                            onPress={() => {props.navigation.navigate('')}}
-                        />        
+                            
+                        /> 
+                        <DrawerItem 
+                            icon={({color, size}) => (
+                                <Icon 
+                                name="file-question" 
+                                color='#0276c9'
+                                size={30}
+                                />
+                            )}
+                            label="Hướng dẫn"
+                            
+                        />       
                     </Drawer.Section>
                 </View>
             </DrawerContentScrollView>

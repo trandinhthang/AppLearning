@@ -65,7 +65,7 @@ class VocaHome extends Component{
       return(
         <SafeAreaView style={{backgroundColor:'#f7f0e6'}}>
           <Text style={[Styles.textTheme,{padding:5}]}>Chủ đề</Text>
-          <View  style={{width:width,height:100,borderRadius:20,paddingLeft:8,paddingRight:16}}>
+          <View  style={{width:width,height:105,borderRadius:20,paddingLeft:8,paddingRight:16}}>
             <FlatList
               showsHorizontalScrollIndicator={false}
               horizontal={true}
@@ -76,7 +76,7 @@ class VocaHome extends Component{
             /> 
           </View>
           <Text style={[Styles.textTheme,{paddingLeft:5}]}>Từ vựng</Text>
-          <View style={{width:width,marginTop:5,paddingBottom:140,height:450}}>          
+          <View style={{width:width,marginTop:5,paddingBottom:95,height:450}}>          
             <FlatList
               showsVerticalScrollIndicator={false}
               data={dataVocabulary}

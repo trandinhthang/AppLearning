@@ -1,7 +1,7 @@
 
 import React, { Component } from "react";
 import { StyleSheet, Text, View,Button } from 'react-native'
-import ExamList from '../exam/ExamList';
+import ExamList from '../components/QuizList.tsx';
 
 export default function QuizScreen(){
   return (

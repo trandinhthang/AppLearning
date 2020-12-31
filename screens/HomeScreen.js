@@ -17,6 +17,7 @@ import openbook from '../assests/images/open-book.png';
 import paris from "../assests/images/paris.png";
 import Home from "../assests/images/Home.png";
 import homeLearn from "../assests/images/homeLearn.jpg"
+import word from "../assests/images/word.png"
 //gọi các Screen khác từ đây sang App.js
 const HomeScreen =({navigation})=>{
     return(      
@@ -32,24 +33,37 @@ const HomeScreen =({navigation})=>{
                 <View style={Styles.viewContent}>
                     <View>
                         <Text style={Styles.textContent}>Bắt đầu với những bài học</Text>
-                        <TouchableOpacity style={Styles.touchContent}>
+                        {/* <TouchableOpacity style={Styles.touchContent}>
                             <Text style={{fontWeight:'bold',color:'white'}}>Đặt mục tiêu</Text>
                             <Icon name='arrow-right' color='white' size={20} style={{paddingLeft:35}} />
-                        </TouchableOpacity>
+                        </TouchableOpacity> */}
                         <TouchableOpacity style={Styles.touchContent} activeOpacity={0.2} 
-                                        onPress={() => navigation.navigate('Exam')}>
-                            <Text style={{fontWeight:'bold',color:'white'}}>Luyện từ vựng</Text>
+                                        onPress={() => navigation.navigate('Exam',{diff:'MEDIUM'})}>
+                            <Text style={{fontWeight:'bold',color:'white'}}>Bài tập cơ bản</Text>
                             <Icon name='arrow-right' color='white' size={20} style={{paddingLeft:25}} />
                         </TouchableOpacity>
-                        {/* <TouchableOpacity style={Styles.touchContent}>
-                            <Text style={{fontWeight:'bold',color:'white'}}>Học nâng cao</Text>
-                            <Icon name='arrow-right' color='white' size={20} style={{paddingLeft:26}} />
-                        </TouchableOpacity> */}
+                        <TouchableOpacity style={Styles.touchContent} activeOpacity={0.2} 
+                                        onPress={() => navigation.navigate('Exam',{diff:'HARD'})}>
+                            <Text style={{fontWeight:'bold',color:'white'}}>Bài tập nâng cao </Text>
+                            <Icon name='arrow-right' color='white' size={20} style={{paddingLeft:5}} />
+                        </TouchableOpacity>                     
                     </View>
                     <Image source={paris}
                         style={Styles.imageContent} />
                 </View>
                 <Text style={Styles.textContent_2}>Góc học tập</Text>
+                <TouchableOpacity activeOpacity={0.2} onPress={() => navigation.navigate('Translate')}>
+                    <View style={Styles.viewCategories} >
+                        <Image style={Styles.translateImage} source={books}/>
+                        <View style={{paddingHorizontal:30}}>
+                            <Text style={{color:'white',fontWeight:'bold',fontSize:16}}>
+                                Traduction
+                            </Text>
+                            <Text style={{color:'white',fontWeight:'bold',fontSize:16}}>Dịch từ</Text>
+                             <Text style={{color:'white',fontSize:13}}>5000 từ chuẩn Pháp </Text>
+                        </View>        
+                    </View>           
+                </TouchableOpacity>  
                 <TouchableOpacity activeOpacity={0.2} onPress={() => navigation.navigate('Vocabulary')}>
                     <View style={Styles.viewCategories} >
                         <Image style={Styles.translateImage} source={openbook}/>
@@ -61,19 +75,19 @@ const HomeScreen =({navigation})=>{
                             <Text style={{color:'white',fontSize:13}}>20 chủ đề, 120 từ vựng</Text>
                         </View>      
                     </View>
-                </TouchableOpacity>      
-                <TouchableOpacity activeOpacity={0.2} onPress={() => navigation.navigate('Translate')}>
-                    <View style={Styles.viewCategories} >
-                        <Image style={Styles.translateImage} source={books}/>
-                        <View style={{paddingHorizontal:30}}>
-                            <Text style={{color:'white',fontWeight:'bold',fontSize:16}}>
-                                Pratiquer L'écoute
-                            </Text>
-                            <Text style={{color:'white',fontWeight:'bold',fontSize:16}}>Luyện nghe</Text>
-                             <Text style={{color:'white',fontSize:13}}>9 chủ đề, 50 bài luyện nghe</Text>
-                        </View>        
-                    </View>           
                 </TouchableOpacity>   
+                <TouchableOpacity activeOpacity={0.2} onPress={() => navigation.navigate('Word')}>
+                    <View style={Styles.viewCategories} >
+                        <Image style={Styles.translateImage} source={word}/>
+                        <View style={{paddingHorizontal:30}}>
+                            <Text style={{color:'white',fontWeight:'bold',fontSize:16}}>                       
+                                Leçons mémoire
+                            </Text>
+                            <Text style={{color:'white',fontWeight:'bold',fontSize:16}}>Bài học trí nhớ</Text>
+                            <Text style={{color:'white',fontSize:13}}>Điền từ vựng</Text>
+                        </View>      
+                    </View>
+                </TouchableOpacity>     
             </ScrollView>                                  
         </ImageBackground>
          

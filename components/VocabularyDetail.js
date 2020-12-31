@@ -21,7 +21,7 @@ import Styles from '../styles/Styles';
 var {height,width}= Dimensions.get("window");
 
 function VocaDetail({route,navigation}) {
-  const {nameFr,nameVn,IPA,image,url,exVn1,exFr1,exVn2,exFr2} = route.params;
+  const {nameFr,nameVn,IPA,image,url,exVn1,exFr1,exVn2,exFr2,others} = route.params;
 
   const [isPaused, setPaused] = useState(true);
   return (
@@ -52,6 +52,9 @@ function VocaDetail({route,navigation}) {
               <Text style={{color:"#0033ff",fontSize:16,paddingBottom:5}}>{exFr2}</Text>
               <Text style={{color:"#3d7ef5",fontSize:16,paddingBottom:5}}>{exVn2}</Text>
             </View>
+            {others.map( (item,index) =>
+              <Text key={index} style={{color:"#0022ff",fontSize:16,paddingTop:5}}>{item}</Text>
+            )}
           </View> 
         {/* <View  style={{alignItems:'center'}} >
           <Text style={{fontSize:15,color:'#696666'}}>Nhấp vào thẻ để nghe phát âm</Text>

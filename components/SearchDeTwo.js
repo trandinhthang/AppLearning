@@ -60,8 +60,8 @@ function SearchDeTwo({route,navigation}) {
               {found.map((e,index,ex)=>
                 <View  key={index}  style={{flexDirection:"row",justifyContent:"space-between",alignItems:"center"}}>
                   <View >
-                    <Text style={[Styles.vocaText,{fontStyle:'italic'}]}>{e.nameFr} <Text style={{fontStyle:'italic'}}>{e.IPA}</Text></Text>
-                    <Text  style={[Styles.vocaText,{fontStyle:'italic'}]}>{e.gramma}</Text>
+                    <Text style={Styles.vocaText}>{e.nameFr} <Text >{e.IPA}</Text></Text>
+                    <Text  style={Styles.vocaText}>{e.gramma}</Text>
                   </View>
                   <View>
                     <Ionicons name="volume-high-outline" color="#0066ff" size={30}

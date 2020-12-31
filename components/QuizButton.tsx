@@ -14,11 +14,12 @@ interface ButtonProps{
 const QuizButton =({answer, onPress, correct,disabled})=> {
     return (
         <View style={styles.container}>
-            <TouchableOpacity {...{onPress}} 
-                style={[styles.inner,{borderColor:correct ? "#f72525" : "white" },
-                        {backgroundColor: !disabled ? "#25b8d9" : "#25b8d9"}]}
+            <TouchableOpacity {...{onPress}}  activeOpacity={0.5}
+                style={[styles.inner,{borderColor:correct ? "#00add4" : "white" },
+                        {borderWidth:correct ? 3 : 2},
+                        {backgroundColor: disabled ? "#fab546" : "#25b8d9"}]}
             >
-                <Text style={{...styles.label,color: correct ? "#f72525" : "white"}}>
+                <Text style={{...styles.label,color: correct ? "#00add4" : "white"}}>
                 {answer}
                 </Text>
             </TouchableOpacity>  
@@ -37,8 +38,7 @@ const styles =StyleSheet.create({
         flex:1,
         alignItems:'center',
         justifyContent:'center',
-        borderRadius:18,
-        borderWidth:2
+        borderRadius:18
     },
     label:{
         fontSize:18,

@@ -6,7 +6,8 @@ import {
   StyleSheet,
   Input,
   View,
-  Button
+  Button,
+  Alert
 } from 'react-native';
 import Styles from '../styles/Styles';
 import AudioTranslate from './AudioTranslate';
@@ -31,19 +32,14 @@ export default class TranslateList extends Component {
           {this.state.from} --- {this.state.to}
         </Text>
         <View style={{flex:1}}>
-          <View style={{flexDirection:"row"}}>
             <View>
               <TextInput
-              placeholder="Tìm kiếm/Chercher"
+              placeholder="Điền từ cần dịch"
               style={Styles.textInput}
               onChangeText={(e) => this.setState({input: e})}
               onSubmitEditing={(e) => this.showMeaning(e) }
             />  
             </View>
-            <View style={{backgroundColor:'#FFF',height:36,width:40,marginTop:5,paddingLeft:2,paddingTop:8}}>
-              <AudioTraslate_/>
-            </View>
-          </View>
         </View> 
         <View style={Styles.fixToText}>
           <Button 
@@ -60,7 +56,7 @@ export default class TranslateList extends Component {
           />
         </View>
         <Text  style={Styles.textTo}>{this.state.to}</Text> 
-        <Text style={Styles.textOutput}>{ this.state.output } <AudioTranslate /> </Text>  
+        <Text style={Styles.textOutput}>{ this.state.output } </Text>  
       </ScrollView>
     )
   }
@@ -90,6 +86,6 @@ export default class TranslateList extends Component {
     if (meaningDe) {
         this.switchLanguage(true)
     }
-    this.setState({output: meaning || meaningDe || alert('Câu của bạn không tìm thấy!!!')})
+    this.setState({output: meaning || meaningDe || Alert.alert('Hệ thống thông báo','Từ của bạn không tìm thấy')})
   }
 }

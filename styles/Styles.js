@@ -26,6 +26,7 @@ const Styles= StyleSheet.create({
         marginHorizontal:20,
         marginTop:25,
         paddingLeft:30,
+        paddingBottom:14,
         paddingVertical:10,
         backgroundColor:'#fcf1e8'
     },
@@ -54,7 +55,7 @@ const Styles= StyleSheet.create({
     viewCategories:{
         flexDirection:'row',
         alignItems:'center',
-        backgroundColor:'#f79b7c',
+        backgroundColor:'#f7b181',
         borderRadius:20,
         marginHorizontal:20,
         marginTop:5,
@@ -77,13 +78,15 @@ const Styles= StyleSheet.create({
     parent: {
         marginLeft:5
     },
-    textInput:{   
-        marginTop:5,//lề trên
-        marginLeft:5,
+    textInput:{  
+        paddingLeft:8, 
+        padding:30,
+        margin:5,//lề trên
         backgroundColor:"white",
-        width:330,
+        borderRadius:15
     },
     textTo:{
+        fontSize:16,
         marginTop:5,//lề trên
         marginLeft:5,
         marginRight:5,
@@ -94,8 +97,9 @@ const Styles= StyleSheet.create({
         marginLeft:5,
         marginTop:5,
         marginRight:5,
-        height: 100,
-        padding:8
+        height: 200,
+        padding:8,
+        borderRadius:15
     },
     fixToText:{
         borderRadius:10,
@@ -130,7 +134,7 @@ const Styles= StyleSheet.create({
         fontWeight:'100'    
     },
     feedItem:{
-        height:90,
+        height:102,
         width:330,
         margin:15,
         backgroundColor:'white',
@@ -184,13 +188,13 @@ const Styles= StyleSheet.create({
     searchDetailContent:{
         padding:10,
         marginTop:5,
-        height:375,
+        height:420,
         backgroundColor:'white',
         borderRadius:5
     },
     searchAntonym:{
         padding:10,
-        height:430,
+        height:475,
         backgroundColor:'white',
         borderRadius:5
     },

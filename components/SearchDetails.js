@@ -28,8 +28,8 @@ function SearchDetails({route,navigation}) {
               <View style={{flex:1}}>
                 <View style={{flexDirection:"row",justifyContent:"space-between",alignItems:"center"}}>
                   <View  >
-                    <Text style={[Styles.vocaText,{fontStyle:'italic'}]}>{nameFr} <Text style={{fontStyle:'italic'}}>{IPA}</Text></Text>
-                     <Text style={[Styles.vocaText,{fontStyle:'italic'}]}>{gramma}</Text>
+                    <Text style={Styles.vocaText}>{nameFr} <Text >{IPA}</Text></Text>
+                     <Text style={Styles.vocaText}>{gramma}</Text>
                   </View> 
                   <View>
                     <Ionicons name="volume-high-outline" color="#0066ff" size={30}
@@ -77,7 +77,7 @@ function SearchDetails({route,navigation}) {
           heading="Trái Nghĩa">   
           <View style={Styles.searchDetail}>  
             <View style={Styles.searchAntonym}>
-              {antonym.map((item,index)=><Text style={{fontSize:15}} key={index}>{item}</Text>)}
+              {antonym.map((item,index)=><Text style={{fontSize:15,color:'#0033ff'}} key={index}>{item}</Text>)}
             </View>
           </View>
         </Tab>
