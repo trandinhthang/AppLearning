@@ -124,7 +124,7 @@ const Styles= StyleSheet.create({
         paddingRight:100
     },
     vocaFrTitle:{
-        fontSize:22,
+        fontSize:20,
         color:'#001dfc',
         fontWeight:'bold'    
     },
@@ -134,7 +134,7 @@ const Styles= StyleSheet.create({
         fontWeight:'100'    
     },
     feedItem:{
-        height:102,
+        height:75,
         width:330,
         margin:15,
         backgroundColor:'white',
@@ -144,7 +144,7 @@ const Styles= StyleSheet.create({
         padding:5,
         alignItems:"center",
         flexDirection:"row",
-        marginVertical:8
+        marginVertical:4
     },
     vocaDetail:{
         padding:5,

@@ -25,7 +25,7 @@ export default class SearchHome extends Component {
     //fetch data từ server
     requestAPISearch= _.debounce(()=>{
         this.setState({loading:true})
-        const apiURL="https://my-json-server.typicode.com/trandinhthang/mockjson/search"
+        const apiURL="http://my-json-server.typicode.com/trandinhthang/jsonDictionary/search"
         fetch(apiURL).then((res)=>res.json())
         .then((resJson)=>{
             this.setState({

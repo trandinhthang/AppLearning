@@ -39,6 +39,19 @@ const list = [
     "examVn2":"Chống hoả hoạn",			
     "antonym":[],
     "image":""
+  },
+  { id: 3,
+    "nameFr": "voiture",
+    "data": "xe",
+    "IPA": "[vwatyʀ]",
+    "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0013310.mp3",
+    "gramma":"Danh từ giống cái",
+    "examFr1":"Voiture attelée",
+    "examVn1":"Xe súc vật kéo",	
+    "examFr2":"Voiture de course",
+    "examVn2":"Xe đua",			
+    "antonym":[],
+    "image":"https://cdn.pixabay.com/photo/2016/11/23/17/24/automobile-1853936_960_720.jpg"
   }
 ];
 
@@ -78,7 +91,7 @@ function SearchDeTwo({route,navigation}) {
             </View>  
             {found.map((e,index)=>
             <View key={index}  style={Styles.searchDetailContent}> 
-              <Text  style={{fontSize:15}}>➵{e.data.charAt(0).toUpperCase()}{e.data.substr(1)}</Text>
+              <Text  style={{fontSize:15}}>‣{e.data.charAt(0).toUpperCase()}{e.data.substr(1)}</Text>
               <View  style={{paddingLeft:15}}>
                 <Text >{e.examFr1.split(" ").map((item,index)=><Text key={index}>
                   <Text  onPress={()=> navigation.navigate('deTwoSearch',{value:item})} style={{color:"#0033ff"}} >{item}</Text>
@@ -89,25 +102,33 @@ function SearchDeTwo({route,navigation}) {
                   <Text onPress={()=> navigation.navigate('deTwoSearch',{value:item})} style={{color:"#0033ff"}}>{item}</Text>
                   <Text> </Text></Text>)} 
                 </Text>       
-                <Text style={{}}>{e.examVn2}</Text>        
+                <Text style={{}}>{e.examVn2}</Text>     
               </View>                         
             </View>
             )}
           </View>
         </Tab>
-        <Tab activeTabStyle={{backgroundColor:'#5b91f5'}} tabStyle={Styles.searchTab} textStyle={{color:'#0033ff'}} heading="Trái Nghĩa">   
-          <View style={Styles.searchDetail}>  
-            <View style={Styles.searchAntonym}>
-              {/* {antonym.map((item,index)=><Text style={{fontSize:15}} key={index}>{item}</Text>)} */}
-            </View>
-          </View>
-        </Tab>
-        <Tab activeTabStyle={{backgroundColor:'#5b91f5'}} tabStyle={Styles.searchTab} textStyle={{color:'#0033ff'}} 
-            heading="Hình Ảnh"> 
-          <View style={{alignItems:"center"}}>  
-              {/* <Image style={{width:250,height:250}} resizeMode="contain" source={{uri:image}}/>           */}
-          </View>
-        </Tab>
+
+        {found.map( (item,index) =>     
+          (item.antonym.length) > 0 ?
+            <Tab key={index} activeTabStyle={{backgroundColor:'#5b91f5'}} tabStyle={Styles.searchTab} textStyle={{color:'#0033ff'}} heading="Trái Nghĩa">   
+              <View style={Styles.searchDetail}>  
+                <View style={Styles.searchAntonym}>
+                  <Text >{item.antonym}</Text>
+                </View>
+              </View>
+            </Tab> : null
+        )}
+        
+        {found.map( (item,index) =>
+          (item .image !== "") ?
+            <Tab key={index} activeTabStyle={{backgroundColor:'#5b91f5'}} tabStyle={Styles.searchTab} 
+            textStyle={{color:'#0033ff'}} heading="Hình Ảnh"> 
+              <View  style={{alignItems:"center"}}>  
+                  <Image  style={{width:250,height:250}} resizeMode="contain" source={{uri:item.image}}/>          
+              </View>
+            </Tab>  : null 
+        )}             
       </Tabs>
     </Container> 
       

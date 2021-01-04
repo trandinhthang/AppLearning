@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, TextInput,Image,TouchableOpacity } from 'react-native'
+import { Text, View, TextInput,Image,TouchableOpacity, Alert} from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 class WordScreen extends Component {
@@ -135,9 +135,9 @@ class WordScreen extends Component {
                 <TouchableOpacity onPress={ () => {
                     if( word1===answer1 && word2===answer2 && word3===answer3 && word4===answer4 && word5===answer5)
                     {
-                        alert("Chính xác")
+                        Alert.alert("Chúc mừng","Bạn đã điền chính xác")
                     } else{
-                        alert("Bạn đã điền sai")
+                        Alert.alert("Liu Liu","Bạn đã điền sai")
                     }
                 }}>
                     <Text style={{color:'green', fontWeight:'bold'}} >   KIỂM TRA </Text>

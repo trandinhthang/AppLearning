@@ -44,7 +44,7 @@ function SearchDetails({route,navigation}) {
               </View> 
             </View>  
             <View style={Styles.searchDetailContent}> 
-              {data.map((item,index)=><Text style={{fontSize:15}} key={index}>➵{item.charAt(0).toUpperCase()}{item.substr(1)}</Text>)}
+              {data.map((item,index)=><Text style={{fontSize:15}} key={index}>‣{item.charAt(0).toUpperCase()}{item.substr(1)}</Text>)}
               <View style={{paddingLeft:15}}>
                 <Text>{examFr1.split(" ").map((item,index)=><Text key={index}>
                   <Text  onPress={()=> navigation.navigate('deTwoSearch',{value:item})} 
@@ -73,20 +73,25 @@ function SearchDetails({route,navigation}) {
             </View>
           </View>
         </Tab>
-        <Tab activeTabStyle={{backgroundColor:'#5b91f5'}} tabStyle={Styles.searchTab} textStyle={{color:'#0033ff'}} 
+    
+        { (antonym.length > 0 ) ?
+         <Tab activeTabStyle={{backgroundColor:'#5b91f5'}} tabStyle={Styles.searchTab} textStyle={{color:'#0033ff'}} 
           heading="Trái Nghĩa">   
           <View style={Styles.searchDetail}>  
             <View style={Styles.searchAntonym}>
               {antonym.map((item,index)=><Text style={{fontSize:15,color:'#0033ff'}} key={index}>{item}</Text>)}
             </View>
           </View>
-        </Tab>
+        </Tab> : null
+        }
+        { (image !== "") ?
         <Tab activeTabStyle={{backgroundColor:'#5b91f5'}} tabStyle={Styles.searchTab} textStyle={{color:'#0033ff'}} 
           heading="Hình Ảnh"> 
           <View style={{alignItems:"center"}}>  
               <Image style={{width:250,height:250}} resizeMode="contain" source={{uri:image}}/>          
           </View>
-        </Tab>
+        </Tab> : null
+        }
       </Tabs>
     </Container> 
   );

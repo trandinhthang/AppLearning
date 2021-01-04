@@ -65,7 +65,7 @@ class VocaHome extends Component{
       return(
         <SafeAreaView style={{backgroundColor:'#f7f0e6'}}>
           <Text style={[Styles.textTheme,{padding:5}]}>Chủ đề</Text>
-          <View  style={{width:width,height:105,borderRadius:20,paddingLeft:8,paddingRight:16}}>
+          <View  style={{width:width,height:95,borderRadius:20,paddingLeft:8,paddingRight:16}}>
             <FlatList
               showsHorizontalScrollIndicator={false}
               horizontal={true}
@@ -76,7 +76,7 @@ class VocaHome extends Component{
             /> 
           </View>
           <Text style={[Styles.textTheme,{paddingLeft:5}]}>Từ vựng</Text>
-          <View style={{width:width,marginTop:5,paddingBottom:95,height:450}}>          
+          <View style={{width:width,marginTop:5,paddingBottom:95,height:458}}>          
             <FlatList
               showsVerticalScrollIndicator={false}
               data={dataVocabulary}
@@ -94,7 +94,7 @@ class VocaHome extends Component{
         onPress={()=>this.setState({selectThemes:item.id})}
         style={[Styles.divThemes,{backgroundColor:'white',borderWidth: 2,borderColor: 'orange'}]}
       >
-            <Image style={{width:100,height:50}}
+            <Image style={{width:100,height:40}}
               resizeMode="contain"
               source={{uri:item.image}}
             />
@@ -114,7 +114,7 @@ class VocaHome extends Component{
       return(
         <TouchableOpacity  onPress={() => navigate('DetailVoca', item)} >
           <SafeAreaView style={Styles.feedItem}>
-            <Image style={{width:80,height:60}} resizeMode="contain" source={{uri:item.image}}/>
+            <Image style={{width:80,height:50}} resizeMode="contain" source={{uri:item.image}}/>
             <View style={{flex:1}}>
               <View style={{flexDirection:"row",justifyContent:"space-between",alignItems:"center"}}>
                 <View style={{paddingLeft:20}} >
