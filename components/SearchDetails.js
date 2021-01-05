@@ -3,7 +3,8 @@ import {
     Text, 
     View,
     Image,   
-    TouchableOpacity
+    TouchableOpacity,
+    TextInput
 } from 'react-native';
 import { Container,Tab, Tabs, ScrollableTab } from 'native-base';
 
@@ -33,7 +34,7 @@ function SearchDetails({route,navigation}) {
                   </View> 
                   <View>
                     <Ionicons name="volume-high-outline" color="#0066ff" size={30}
-                              onPress={()=>setPaused(false)}>
+                              onPress={()=>setPaused(!isPaused)}>
                       <Video
                         source={{ uri: url }} 
                         paused={isPaused} 
@@ -75,24 +76,35 @@ function SearchDetails({route,navigation}) {
         </Tab>
     
         { (antonym.length > 0 ) ?
-         <Tab activeTabStyle={{backgroundColor:'#5b91f5'}} tabStyle={Styles.searchTab} textStyle={{color:'#0033ff'}} 
+          <Tab activeTabStyle={{backgroundColor:'#5b91f5'}} tabStyle={Styles.searchTab} textStyle={{color:'#0033ff'}} 
           heading="Trái Nghĩa">   
-          <View style={Styles.searchDetail}>  
-            <View style={Styles.searchAntonym}>
-              {antonym.map((item,index)=><Text style={{fontSize:15,color:'#0033ff'}} key={index}>{item}</Text>)}
+            <View style={Styles.searchDetail}>  
+              <View style={Styles.searchAntonym}>
+                {antonym.map((item,index)=><Text style={{fontSize:15,color:'#0033ff'}} key={index}>{item}</Text>)}
+              </View>
             </View>
-          </View>
-        </Tab> : null
+          </Tab> : null
         }
         { (image !== "") ?
-        <Tab activeTabStyle={{backgroundColor:'#5b91f5'}} tabStyle={Styles.searchTab} textStyle={{color:'#0033ff'}} 
-          heading="Hình Ảnh"> 
-          <View style={{alignItems:"center"}}>  
-              <Image style={{width:250,height:250}} resizeMode="contain" source={{uri:image}}/>          
-          </View>
-        </Tab> : null
+          <Tab activeTabStyle={{backgroundColor:'#5b91f5'}} tabStyle={Styles.searchTab} textStyle={{color:'#0033ff'}} 
+            heading="Hình Ảnh"> 
+            <View style={{alignItems:"center"}}>  
+                <Image style={{width:250,height:250}} resizeMode="contain" source={{uri:image}}/>          
+            </View>
+          </Tab> : null
         }
-      </Tabs>
+        <Tab activeTabStyle={{backgroundColor:'#5b91f5'}} tabStyle={Styles.searchTab} textStyle={{color:'#0033ff'}} 
+          heading="Ghi chú">   
+            <View style={{height:'100%',alignItems:"center",backgroundColor:'#afc6f0'}}>  
+                <TextInput
+                  placeholder="Ghi chú sẽ tự động được lưu"
+                  style={[Styles.textInput,{marginTop:50}]}
+                  // onChangeText={(e) => this.setState({input: e})}
+                  // onSubmitEditing={(e) => this.showMeaning(e) }
+                />  
+            </View>
+        </Tab>
+      </Tabs> 
     </Container> 
   );
 }

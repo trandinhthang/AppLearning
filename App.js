@@ -45,7 +45,7 @@ function HomeStackScreen({navigation}) {
       <HomeStack.Screen name="Home" component={HomeScreen}  options={{
         headerTitle: "F-Bonjour",
         headerStyle: {
-          backgroundColor: '#ff6a00',//màu nền
+          backgroundColor: '#f77468',//màu nền
           "height": 40,
         },
         headerLeft: () => (
@@ -53,7 +53,7 @@ function HomeStackScreen({navigation}) {
           name="menuunfold"
           size={20}
           color="white"
-          backgroundColor="#ff6a00"
+          backgroundColor="#f77468"
           onPress={() => navigation.openDrawer()}
         />      
         ),

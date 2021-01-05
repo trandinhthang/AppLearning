@@ -41,7 +41,7 @@ export default class SearchHome extends Component {
     renderFooter=()=>{
         if(!this.state.loading) return null
         return (         
-            <View style={{height:480,width:"100%",backgroundColor:"#afc6f0",justifyContent:"center"}}>
+            <View style={{height:480,width:"100%",backgroundColor:"#afc6f0",marginTop:130}}>
                 <ActivityIndicator size="small" color="#0000ff" />
             </View>
         )

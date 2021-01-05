@@ -15,14 +15,14 @@ import Styles from '../styles/Styles';
 import books from '../assests/images/books.png';
 import openbook from '../assests/images/open-book.png';
 import paris from "../assests/images/paris.png";
-import Home from "../assests/images/Home.png";
+import Home from "../assests/images/Home_1.png";
 import homeLearn from "../assests/images/homeLearn.jpg"
 import word from "../assests/images/word.png"
 //gọi các Screen khác từ đây sang App.js
 const HomeScreen =({navigation})=>{
     return(      
-        <ImageBackground source={homeLearn} style={{width:"100%",height:"105%"}}>  
-            <ScrollView showsVerticalScrollIndicator={false} style={{marginBottom:25}}>
+        <ImageBackground source={Home} style={{width:"101%",height:"120%"}}>  
+            <ScrollView showsVerticalScrollIndicator={false} style={{marginBottom:110}}>
                 <Text style={Styles.textHeader}>
                 Bonjour, bonne journée
                 </Text>

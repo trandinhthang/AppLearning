@@ -3,7 +3,8 @@ import {
     Text, 
     View,
     Image,   
-    TouchableOpacity
+    TouchableOpacity,
+    TextInput
 } from 'react-native';
 import { Container,Tab, Tabs, ScrollableTab } from 'native-base';
 
@@ -78,7 +79,7 @@ function SearchDeTwo({route,navigation}) {
                   </View>
                   <View>
                     <Ionicons name="volume-high-outline" color="#0066ff" size={30}
-                              onPress={()=>setPaused(false)}>
+                              onPress={()=>setPaused(!isPaused)}>
                       <Video
                         source={{ uri: e.url }} 
                         paused={isPaused} 
@@ -128,7 +129,18 @@ function SearchDeTwo({route,navigation}) {
                   <Image  style={{width:250,height:250}} resizeMode="contain" source={{uri:item.image}}/>          
               </View>
             </Tab>  : null 
-        )}             
+        )}     
+        <Tab activeTabStyle={{backgroundColor:'#5b91f5'}} tabStyle={Styles.searchTab} textStyle={{color:'#0033ff'}} 
+          heading="Ghi chú">   
+            <View style={{height:'100%',alignItems:"center",backgroundColor:'#afc6f0'}}>  
+                <TextInput
+                  placeholder="Ghi chú sẽ tự động được lưu"
+                  style={[Styles.textInput,{marginTop:50}]}
+                  // onChangeText={(e) => this.setState({input: e})}
+                  // onSubmitEditing={(e) => this.showMeaning(e) }
+                />  
+            </View>
+        </Tab> 
       </Tabs>
     </Container> 
       

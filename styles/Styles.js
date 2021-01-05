@@ -134,7 +134,7 @@ const Styles= StyleSheet.create({
         fontWeight:'100'    
     },
     feedItem:{
-        height:75,
+        height:82,
         width:330,
         margin:15,
         backgroundColor:'white',

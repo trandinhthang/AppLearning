@@ -1,12 +1,12 @@
 import React, { useState, useEffect, Fragment, useRef } from "react";
-import {  View,Text,ActivityIndicator,ImageBackground, Alert} from "react-native";
+import {  View,Text,ActivityIndicator,ImageBackground,Image, Alert} from "react-native";
 import {  TouchableWithoutFeedback} from 'react-native-gesture-handler';
 
 import {getQuizQuestions, Difficulty, QuestionState} from './QuizUtil';
 
 import QuizQuestion from './QuizQuestion';
 import QuizAnswer from './QuizAnswer';
-import QuizImage from "../assests/images/quizschool.jpg"
+import QuizImage from "../assests/images/quizschool.png"
 
 import Play from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -151,10 +151,12 @@ function QuizList({route}){
         </>
       </View>
       </Fragment> 
-        : ( <View style={{width:'100%',alignItems:"center"}}>
-              <ActivityIndicator size="small" color="orange" />
-            </View>)
-        }    
+        : (
+            <View style={{alignItems:"center"}}>
+              <ActivityIndicator size="small" color="white" />
+            </View> 
+          )
+      }    
     </View>
     </ImageBackground>
   )
