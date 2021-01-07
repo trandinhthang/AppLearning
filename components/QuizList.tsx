@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Fragment, useRef } from "react";
-import {  View,Text,ActivityIndicator,ImageBackground,Image, Alert} from "react-native";
+import {  View,Text,ActivityIndicator,ImageBackground,Image, Alert, Modal} from "react-native";
 import {  TouchableWithoutFeedback} from 'react-native-gesture-handler';
 
 import {getQuizQuestions, Difficulty, QuestionState} from './QuizUtil';
@@ -28,6 +28,10 @@ function QuizList({route}){
   const [TOTAL_QUESTIONS] = useState(10);
   const [number, setNumber] = useState(0);
   const setAnswer = useRef(null);
+  // set hiển thị modal
+  const [isTrue, setTrue] = useState(false);
+  const [isFalse, setFalse] = useState(false);
+
   enum Difficulty{
     EASY="easy",
     MEDIUM="medium",
@@ -65,9 +69,9 @@ function QuizList({route}){
       //Increment the score
       if(correct) {
         setScore((prev) =>  prev + 50);
-        Alert.alert('Chúc mừng bạn','Chính xác ! + 50♥' );
-      } else{
-        Alert.alert('Liu liu','Sai rồi nhé ! ');
+        setTrue(true);
+      } else{  
+        setFalse(true);
       }
       //Save answer in the array of answers
       const answerObject = {
@@ -76,10 +80,16 @@ function QuizList({route}){
         correct,
         correctAnswer: questions[number].correct_answer
       };
+
+      setTimeout(() => {
+        setTrue(false);
+        setFalse(false)
+      }, 2000);
+
       setUserAnswers((prev) => [...prev, answerObject])
       setTimeout(()=>{
         nextQuestion();
-      },4000);
+      },3000);
     }
   };
   //Next question
@@ -97,8 +107,30 @@ function QuizList({route}){
     startQuiz();
   }, []);
 
-  return (
-  <ImageBackground source={QuizImage} style={{width:"100%",height:"100%"}}>  
+  return (  
+  <ImageBackground source={QuizImage} style={{width:"100%",height:"100%"}}> 
+    {/* view modal when correct */}
+    { (isTrue) ? 
+      <Modal animationType="slide" transparent visible={true}>
+        <View style={{  flex: 1,borderRadius:20,alignItems: 'center',backgroundColor: 'green',
+                        justifyContent: 'center',marginTop:250,marginLeft:50,marginRight:50,marginBottom:200 }}>
+        <Text style={{fontSize: 16, color: 'white'}}>
+            Bạn đã trả lời đúng
+        </Text>
+        </View>
+      </Modal> : null
+    }
+    {/* view modal when incorrect */}
+    { (isFalse) ? 
+    <Modal animationType="slide" transparent visible={true}>
+        <View style={{  flex: 1,borderRadius:20,alignItems: 'center',backgroundColor: 'green',
+                        justifyContent: 'center',marginTop:250,marginLeft:50,marginRight:50,marginBottom:200 }}>
+          <Text style={{fontSize: 16, color: 'white'}}>
+              Bạn đã trả lời sai
+          </Text>
+        </View>
+      </Modal> : null
+    }
     <View style={{flex:1,justifyContent:'center',position:'relative',padding:15,paddingTop:2}}>
     { !loading ? <Fragment>
       <View style={{flex:1,paddingTop:15}}>
@@ -109,8 +141,7 @@ function QuizList({route}){
             />    
           </>
           : null
-        } 
-        
+        }      
         <View style={{paddingTop:5}}>
           <View style={{justifyContent:'center',alignItems:'center',backgroundColor:'white',width:55,height:55,borderRadius:300,left:'42%'}}              
           >
@@ -118,8 +149,7 @@ function QuizList({route}){
               ♥{score} 
             </Text> 
           </View> 
-        </View>
-       
+        </View>     
         {questions.length > 0 ?  
           <>
             <QuizAnswer answers={questions[number].answers} 

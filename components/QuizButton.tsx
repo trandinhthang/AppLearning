@@ -1,5 +1,5 @@
-import React from 'react';
-import {Text,View,TouchableOpacity, StyleSheet} from 'react-native';
+import React, {useState} from 'react';
+import {Text,View,TouchableOpacity, StyleSheet,Modal} from 'react-native';
 import {RectButton} from 'react-native-gesture-handler';
 import {elevate} from 'react-native-elevate';
 
@@ -19,12 +19,12 @@ const QuizButton =({answer, onPress, correct,disabled})=> {
                         {borderWidth:correct ? 3 : 2},
                         {backgroundColor: disabled ? "#fab546" : "#25b8d9"}]}
             >
-                <Text style={{...styles.label,color: correct ? "#00add4" : "white"}}>
-                {answer}
+                <Text style={{...styles.label,color: correct ? "#00add4" : "white"}} 
+               >
+                {answer}          
                 </Text>
-            </TouchableOpacity>  
-        </View>
-           
+            </TouchableOpacity>
+        </View>         
     )
 }
 const styles =StyleSheet.create({

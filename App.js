@@ -18,6 +18,7 @@ import TranslateScreen from "./screens/TranslateScreen";
 import VocabularyScreen from "./screens/VocabularyScreen";
 import ExamScreen from "./screens/ExamScreen";
 import WordScreen from "./screens/WordScreen"
+import TestScreen from './screens/Test'
 
 import QuizList from "./components/QuizList";
 
@@ -31,6 +32,7 @@ const HomeStack = createStackNavigator();
 const QuizStack = createStackNavigator();
 const SearchStack = createStackNavigator();
 const WordStack = createStackNavigator();
+const TestStack = createStackNavigator();
 //Stack Screen Home
 function HomeStackScreen({navigation}) {
   return (
@@ -114,6 +116,22 @@ function HomeStackScreen({navigation}) {
       }}/>
       <WordStack.Screen name="Word" component={WordScreen} options={{
         headerTitle: "Remplir Mot",
+        headerStyle: {
+          backgroundColor: 'green',//màu nền
+          "height": 40,
+        },
+        headerTintColor: '#fff',
+        headerRight: () => (
+        <IconT
+          style={{marginRight:8}}
+          name="md-school"
+          size={30}
+          color="white"
+        />      
+        ),
+      }}/>
+       <TestStack.Screen name="Test" component={TestScreen} options={{
+        headerTitle: "Test",
         headerStyle: {
           backgroundColor: 'green',//màu nền
           "height": 40,

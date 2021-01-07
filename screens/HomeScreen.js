@@ -88,6 +88,18 @@ const HomeScreen =({navigation})=>{
                         </View>      
                     </View>
                 </TouchableOpacity>     
+                {/* <TouchableOpacity activeOpacity={0.2} onPress={() => navigation.navigate('Test')}>
+                    <View style={Styles.viewCategories} >
+                        <Image style={Styles.translateImage} source={word}/>
+                        <View style={{paddingHorizontal:30}}>
+                            <Text style={{color:'white',fontWeight:'bold',fontSize:16}}>                       
+                                Leçons mémoire
+                            </Text>
+                            <Text style={{color:'white',fontWeight:'bold',fontSize:16}}>Bài học trí nhớ</Text>
+                            <Text style={{color:'white',fontSize:13}}>Điền từ vựng</Text>
+                        </View>      
+                    </View>
+                </TouchableOpacity>      */}
             </ScrollView>                                  
         </ImageBackground>
          

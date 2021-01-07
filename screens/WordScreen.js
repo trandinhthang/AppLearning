@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import { Text, View, TextInput,Image,TouchableOpacity, Alert} from 'react-native'
+import { Text, View, TextInput,Image,TouchableOpacity, Alert, Modal} from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 class WordScreen extends Component {
     constructor(props){
         super(props)
         this.state={
+            modalVisible: false,
             word1: "A",
             word2: "",
             word3: "I",
@@ -16,8 +17,20 @@ class WordScreen extends Component {
             answer3: "I",
             answer4: "O",
             answer5: "N",
+            
         }
     }
+
+    showModal = () => {
+        this.setState({
+            modalVisible: true,
+        });
+        setTimeout(() => {
+            this.setState({
+                modalVisible: false,
+            });
+        }, 2000);
+    };
 
     componentDidMount=() =>{
         this.refs.word1ref.focus()
@@ -128,22 +141,32 @@ class WordScreen extends Component {
                 source={{uri: 'https://image.freepik.com/free-vector/plane-service-isolated-flat-vector-illustration-cartoon-mechanics-repairing-airplane-before-flight-adding-fuel-aircraft-maintenance-aviation-concept_74855-10134.jpg'}}/>
             </View>
             <View style={{ flexDirection:"row",justifyContent:'center',width:"100%",height:50,paddingTop:20}}>
-                <View style={{  backgroundColor:'white',width:100,height:50,alignItems:'center',
-                                justifyContent:'center', borderRadius:20,borderWidth:0.5,borderColor:'green'
-
-                }}>
-                <TouchableOpacity onPress={ () => {
+                <TouchableOpacity onPress={ () => {  
                     if( word1===answer1 && word2===answer2 && word3===answer3 && word4===answer4 && word5===answer5)
                     {
-                        Alert.alert("Chúc mừng","Bạn đã điền chính xác")
+                        this.showModal();
                     } else{
-                        Alert.alert("Liu Liu","Bạn đã điền sai")
+                        this.showModal();
                     }
                 }}>
-                    <Text style={{color:'green', fontWeight:'bold'}} >   KIỂM TRA </Text>
-                </TouchableOpacity>
-                </View>      
-            </View>     
+                    <View style={{  backgroundColor:'white',width:100,height:50,alignItems:'center',
+                                    justifyContent:'center', borderRadius:20,borderWidth:0.5,borderColor:'green'}}>
+                        <Text style={{color:'green', fontWeight:'bold'}} >   KIỂM TRA </Text>
+                    </View>       
+                </TouchableOpacity>  
+            </View> 
+            <Modal animationType="slide" transparent visible={this.state.modalVisible}>
+                <View style={{  flex: 1,borderRadius:20,alignItems: 'center',backgroundColor: 'green',
+                                justifyContent: 'center',marginTop:250,marginLeft:50,marginRight:50,marginBottom:200 }}>
+                {( word1===answer1 && word2===answer2 && word3===answer3 && word4===answer4 && word5===answer5)?
+                    <Text style={{fontSize: 16, color: 'white'}}>
+                        Đúng rồi
+                    </Text> :  <Text style={{fontSize: 16, color: 'white'}}>
+                        Sai rồi
+                    </Text>
+                }
+                </View>
+            </Modal>    
         </View>   
         )
     }
