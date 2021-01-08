@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Text, View, TextInput,Image,TouchableOpacity, Alert, Modal} from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons';
-
+import Fail from '../assests/images/false.png'
+import Win from '../assests/images/true.png'
 class WordScreen extends Component {
     constructor(props){
         super(props)
@@ -29,7 +30,7 @@ class WordScreen extends Component {
             this.setState({
                 modalVisible: false,
             });
-        }, 2000);
+        }, 2100);
     };
 
     componentDidMount=() =>{
@@ -155,18 +156,32 @@ class WordScreen extends Component {
                     </View>       
                 </TouchableOpacity>  
             </View> 
-            <Modal animationType="slide" transparent visible={this.state.modalVisible}>
-                <View style={{  flex: 1,borderRadius:20,alignItems: 'center',backgroundColor: 'green',
-                                justifyContent: 'center',marginTop:250,marginLeft:50,marginRight:50,marginBottom:200 }}>
-                {( word1===answer1 && word2===answer2 && word3===answer3 && word4===answer4 && word5===answer5)?
-                    <Text style={{fontSize: 16, color: 'white'}}>
-                        Đúng rồi
-                    </Text> :  <Text style={{fontSize: 16, color: 'white'}}>
-                        Sai rồi
+            {( word1===answer1 && word2===answer2 && word3===answer3 && word4===answer4 && word5===answer5)?
+                <Modal animationType="slide" transparent visible={this.state.modalVisible}>
+                    <View style={{  flex: 1,borderRadius:20,borderWidth:2,borderColor:'green',alignItems:'center',backgroundColor: 'white',
+                                    justifyContent:'center',marginTop:250,marginLeft:50,marginRight:50,marginBottom:200 }}>
+                    <Image source={Win} style={{width:60,height:60}}/>
+                    <Text style={{fontSize: 20, color: 'green',fontWeight:'bold'}}>
+                        Ố la la !
                     </Text>
-                }
-                </View>
-            </Modal>    
+                    <Text style={{fontSize: 16, color: 'green'}}>
+                        Bạn đã trả lời chính xác
+                    </Text>
+                    </View>
+                </Modal> : 
+                <Modal animationType="slide" transparent visible={this.state.modalVisible}>
+                    <View style={{  flex: 1,borderRadius:20,borderWidth:2,borderColor:'red',alignItems:'center',backgroundColor: 'white',
+                                    justifyContent:'center',marginTop:250,marginLeft:50,marginRight:50,marginBottom:200 }}>
+                    <Image source={Fail} style={{width:60,height:60}}/>
+                    <Text style={{fontSize: 20, color: 'red',fontWeight:'bold'}}>
+                        Oh no no !
+                    </Text>
+                    <Text style={{fontSize: 16, color: 'red'}}>
+                        Bạn đã trả lời sai
+                    </Text>
+                    </View>
+                </Modal>
+            }   
         </View>   
         )
     }

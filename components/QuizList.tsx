@@ -10,6 +10,8 @@ import QuizImage from "../assests/images/quizschool.png"
 
 import Play from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Fail from '../assests/images/false.png'
+import Win from '../assests/images/true.png'
 
 export type AnswerObject = {
   question: string;
@@ -84,12 +86,12 @@ function QuizList({route}){
       setTimeout(() => {
         setTrue(false);
         setFalse(false)
-      }, 2000);
+      }, 2100);
 
       setUserAnswers((prev) => [...prev, answerObject])
       setTimeout(()=>{
         nextQuestion();
-      },3000);
+      },3600);
     }
   };
   //Next question
@@ -112,22 +114,30 @@ function QuizList({route}){
     {/* view modal when correct */}
     { (isTrue) ? 
       <Modal animationType="slide" transparent visible={true}>
-        <View style={{  flex: 1,borderRadius:20,alignItems: 'center',backgroundColor: 'green',
-                        justifyContent: 'center',marginTop:250,marginLeft:50,marginRight:50,marginBottom:200 }}>
-        <Text style={{fontSize: 16, color: 'white'}}>
-            Bạn đã trả lời đúng
+        <View style={{  flex: 1,borderRadius:20,borderWidth:2,borderColor:'green',alignItems:'center',backgroundColor: 'white',
+                        justifyContent:'center',marginTop:250,marginLeft:50,marginRight:50,marginBottom:200 }}>
+        <Image source={Win} style={{width:60,height:60}}/>
+        <Text style={{fontSize: 20, color: 'green',fontWeight:'bold'}}>
+            Ố la la !
+        </Text>
+        <Text style={{fontSize: 16, color: 'green'}}>
+            Bạn đã trả lời chính xác
         </Text>
         </View>
       </Modal> : null
     }
     {/* view modal when incorrect */}
     { (isFalse) ? 
-    <Modal animationType="slide" transparent visible={true}>
-        <View style={{  flex: 1,borderRadius:20,alignItems: 'center',backgroundColor: 'green',
-                        justifyContent: 'center',marginTop:250,marginLeft:50,marginRight:50,marginBottom:200 }}>
-          <Text style={{fontSize: 16, color: 'white'}}>
-              Bạn đã trả lời sai
-          </Text>
+      <Modal animationType="slide" transparent visible={true}>
+        <View style={{  flex: 1,borderRadius:20,borderWidth:2,borderColor:'red',alignItems:'center',backgroundColor: 'white',
+                        justifyContent:'center',marginTop:250,marginLeft:50,marginRight:50,marginBottom:200 }}>
+        <Image source={Fail} style={{width:60,height:60}}/>
+        <Text style={{fontSize: 20, color: 'red',fontWeight:'bold'}}>
+            Oh no no !
+        </Text>
+        <Text style={{fontSize: 16, color: 'red'}}>
+            Bạn đã trả lời sai
+        </Text>
         </View>
       </Modal> : null
     }

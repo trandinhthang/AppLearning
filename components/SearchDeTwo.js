@@ -59,10 +59,14 @@ const list = [
 function SearchDeTwo({route,navigation}) {
   const {value} = route.params;
   const [isPaused, setPaused] = useState(true);
+  const setAudio = () => {
+    setPaused(false);
+    setTimeout(() => {
+      setPaused(true);
+    }, 1000);
+  };
   const found = list.filter((item)=>{return item.nameFr===value}) 
-  //  const found = beasts.find(element => element === name.nameFr);
-  // const found= beasts.map(function(e) { return e.name;}).indexOf('thang');
-  // const found= array.findIndex(item=>item.name==='maison')   
+ 
   return (
     <Container>
       <View  hasTabs/>
@@ -79,7 +83,7 @@ function SearchDeTwo({route,navigation}) {
                   </View>
                   <View>
                     <Ionicons name="volume-high-outline" color="#0066ff" size={30}
-                              onPress={()=>setPaused(!isPaused)}>
+                              onPress={()=>setAudio()}>
                       <Video
                         source={{ uri: e.url }} 
                         paused={isPaused} 

@@ -24,6 +24,12 @@ var {height,width}= Dimensions.get("window");
 function VocaDetail({route,navigation}) {
   const {nameFr,nameVn,IPA,image,url,exVn1,exFr1,exVn2,exFr2,others} = route.params;
   const [isPaused, setPaused] = useState(true); 
+  const setAudio = () => {
+    setPaused(false);
+    setTimeout(() => {
+      setPaused(true);
+    }, 1000);
+  };
   return (
     <View style={{height:height,width:width,paddingTop:35,alignItems:"center",backgroundColor:'#f7f0e6'}}> 
       
@@ -40,7 +46,7 @@ function VocaDetail({route,navigation}) {
               </View>  
               <View>
                 <Ionicons name='volume-high-outline' size={30} color='#0033ff' activeOpacity={0.2} 
-                          onPress={()=>setPaused(!isPaused)}>
+                          onPress={()=>setAudio()}>
                   <Video 
                     source={{ uri: url }} 
                     paused={isPaused}

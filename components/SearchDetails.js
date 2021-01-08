@@ -17,6 +17,12 @@ import Styles from '../styles/Styles';
 function SearchDetails({route,navigation}) {
   const {nameFr,data,IPA,url,gramma,antonym,image,examFr1,examVn1,examFr2,examVn2} = route.params;
   const [isPaused, setPaused] = useState(true);
+  const setAudio = () => {
+    setPaused(false);
+    setTimeout(() => {
+      setPaused(true);
+    }, 1000);
+  };
 
   return (
     <Container>
@@ -34,7 +40,7 @@ function SearchDetails({route,navigation}) {
                   </View> 
                   <View>
                     <Ionicons name="volume-high-outline" color="#0066ff" size={30}
-                              onPress={()=>setPaused(!isPaused)}>
+                              onPress={()=>setAudio()}>
                       <Video
                         source={{ uri: url }} 
                         paused={isPaused} 

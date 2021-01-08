@@ -15,11 +15,11 @@ const QuizButton =({answer, onPress, correct,disabled})=> {
     return (
         <View style={styles.container}>
             <TouchableOpacity {...{onPress}}  activeOpacity={0.5}
-                style={[styles.inner,{borderColor:correct ? "#00add4" : "white" },
+                style={[styles.inner,{borderColor:correct ? "#07008c" : "white" },
                         {borderWidth:correct ? 3 : 2},
-                        {backgroundColor: disabled ? "#fab546" : "#25b8d9"}]}
+                        {backgroundColor:"#25b8d9"}]}
             >
-                <Text style={{...styles.label,color: correct ? "#00add4" : "white"}} 
+                <Text style={{...styles.label,color: "white"}} 
                >
                 {answer}          
                 </Text>
