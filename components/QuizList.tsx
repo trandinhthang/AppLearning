@@ -10,8 +10,8 @@ import QuizImage from "../assests/images/quizschool.png"
 
 import Play from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import Fail from '../assests/images/false.png'
-import Win from '../assests/images/true.png'
+import Fail from '../assests/images/checkFalse.png'
+import Win from '../assests/images/checkTrue.png'
 
 export type AnswerObject = {
   question: string;
@@ -86,12 +86,12 @@ function QuizList({route}){
       setTimeout(() => {
         setTrue(false);
         setFalse(false)
-      }, 2100);
+      }, 2000);
 
       setUserAnswers((prev) => [...prev, answerObject])
       setTimeout(()=>{
         nextQuestion();
-      },3600);
+      },3300);
     }
   };
   //Next question
@@ -116,7 +116,7 @@ function QuizList({route}){
       <Modal animationType="slide" transparent visible={true}>
         <View style={{  flex: 1,borderRadius:20,borderWidth:2,borderColor:'green',alignItems:'center',backgroundColor: 'white',
                         justifyContent:'center',marginTop:250,marginLeft:50,marginRight:50,marginBottom:200 }}>
-        <Image source={Win} style={{width:60,height:60}}/>
+        <Image source={Win} style={{width:70,height:70}}/>
         <Text style={{fontSize: 20, color: 'green',fontWeight:'bold'}}>
             Ố la la !
         </Text>
@@ -131,7 +131,7 @@ function QuizList({route}){
       <Modal animationType="slide" transparent visible={true}>
         <View style={{  flex: 1,borderRadius:20,borderWidth:2,borderColor:'red',alignItems:'center',backgroundColor: 'white',
                         justifyContent:'center',marginTop:250,marginLeft:50,marginRight:50,marginBottom:200 }}>
-        <Image source={Fail} style={{width:60,height:60}}/>
+        <Image source={Fail} style={{width:70,height:70}}/>
         <Text style={{fontSize: 20, color: 'red',fontWeight:'bold'}}>
             Oh no no !
         </Text>

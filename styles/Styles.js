@@ -6,7 +6,7 @@ const Styles= StyleSheet.create({
         fontSize:35,
         paddingTop:20,
         fontWeight:'bold',
-        color:'white'
+        color:'#239dad'
     },
     viewInput:{
         flexDirection:'row',

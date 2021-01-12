@@ -15,7 +15,7 @@ const QuizButton =({answer, onPress, correct,disabled})=> {
     return (
         <View style={styles.container}>
             <TouchableOpacity {...{onPress}}  activeOpacity={0.5}
-                style={[styles.inner,{borderColor:correct ? "#07008c" : "white" },
+                style={[styles.inner,{borderColor:correct ? "green" : "white" },
                         {borderWidth:correct ? 3 : 2},
                         {backgroundColor:"#25b8d9"}]}
             >

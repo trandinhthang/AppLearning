@@ -47,7 +47,7 @@ function HomeStackScreen({navigation}) {
       <HomeStack.Screen name="Home" component={HomeScreen}  options={{
         headerTitle: "F-Bonjour",
         headerStyle: {
-          backgroundColor: '#f77468',//màu nền
+          backgroundColor: '#52a5f2',//màu nền
           "height": 40,
         },
         headerLeft: () => (
@@ -55,7 +55,7 @@ function HomeStackScreen({navigation}) {
           name="menuunfold"
           size={20}
           color="white"
-          backgroundColor="#f77468"
+          backgroundColor="#52a5f2"
           onPress={() => navigation.openDrawer()}
         />      
         ),
@@ -250,7 +250,7 @@ function TabsScreen(){
       })}
       tabBarOptions={{
         activeTintColor: '#fc4c1c',
-        inactiveTintColor: 'gray',
+        inactiveTintColor: '#52a5f2',
 
     }}>
       <Tab.Screen name="Chính" component={HomeStackScreen} />

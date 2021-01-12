@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Text, View, TextInput,Image,TouchableOpacity, Alert, Modal} from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import Fail from '../assests/images/false.png'
-import Win from '../assests/images/true.png'
+import Fail from '../assests/images/checkFalse.png'
+import Win from '../assests/images/checkTrue.png'
 class WordScreen extends Component {
     constructor(props){
         super(props)
@@ -30,7 +30,7 @@ class WordScreen extends Component {
             this.setState({
                 modalVisible: false,
             });
-        }, 2100);
+        }, 2000);
     };
 
     componentDidMount=() =>{
@@ -160,7 +160,7 @@ class WordScreen extends Component {
                 <Modal animationType="slide" transparent visible={this.state.modalVisible}>
                     <View style={{  flex: 1,borderRadius:20,borderWidth:2,borderColor:'green',alignItems:'center',backgroundColor: 'white',
                                     justifyContent:'center',marginTop:250,marginLeft:50,marginRight:50,marginBottom:200 }}>
-                    <Image source={Win} style={{width:60,height:60}}/>
+                    <Image source={Win} style={{width:70,height:70}}/>
                     <Text style={{fontSize: 20, color: 'green',fontWeight:'bold'}}>
                         Ố la la !
                     </Text>
@@ -172,7 +172,7 @@ class WordScreen extends Component {
                 <Modal animationType="slide" transparent visible={this.state.modalVisible}>
                     <View style={{  flex: 1,borderRadius:20,borderWidth:2,borderColor:'red',alignItems:'center',backgroundColor: 'white',
                                     justifyContent:'center',marginTop:250,marginLeft:50,marginRight:50,marginBottom:200 }}>
-                    <Image source={Fail} style={{width:60,height:60}}/>
+                    <Image source={Fail} style={{width:70,height:70}}/>
                     <Text style={{fontSize: 20, color: 'red',fontWeight:'bold'}}>
                         Oh no no !
                     </Text>
