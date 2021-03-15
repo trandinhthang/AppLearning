@@ -17,6 +17,8 @@ target 'LearnApp' do
 
   pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
 
+  pod 'react-native-voice', :path => '../node_modules/react-native-voice'
+
   target 'LearnAppTests' do
     inherit! :complete
     # Pods for testing

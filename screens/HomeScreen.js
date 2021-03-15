@@ -52,7 +52,7 @@ const HomeScreen =({navigation})=>{
                         style={Styles.imageContent} />
                 </View>
                 <Text style={Styles.textContent_2}>Góc học tập</Text>
-                <TouchableOpacity activeOpacity={0.2} onPress={() => navigation.navigate('Translate')}>
+                {/* <TouchableOpacity activeOpacity={0.2} onPress={() => navigation.navigate('Translate')}>
                     <View style={Styles.viewCategories} >
                         <Image style={Styles.translateImage} source={books}/>
                         <View style={{paddingHorizontal:30}}>
@@ -63,7 +63,7 @@ const HomeScreen =({navigation})=>{
                              <Text style={{color:'white',fontSize:13}}>5000 từ chuẩn Pháp </Text>
                         </View>        
                     </View>           
-                </TouchableOpacity>  
+                </TouchableOpacity>   */}
                 <TouchableOpacity activeOpacity={0.2} onPress={() => navigation.navigate('Vocabulary')}>
                     <View style={Styles.viewCategories} >
                         <Image style={Styles.translateImage} source={openbook}/>
@@ -88,18 +88,30 @@ const HomeScreen =({navigation})=>{
                         </View>      
                     </View>
                 </TouchableOpacity>     
-                {/* <TouchableOpacity activeOpacity={0.2} onPress={() => navigation.navigate('Test')}>
+                <TouchableOpacity activeOpacity={0.2} onPress={() => navigation.navigate('Test')}>
                     <View style={Styles.viewCategories} >
                         <Image style={Styles.translateImage} source={word}/>
                         <View style={{paddingHorizontal:30}}>
                             <Text style={{color:'white',fontWeight:'bold',fontSize:16}}>                       
                                 Leçons mémoire
                             </Text>
-                            <Text style={{color:'white',fontWeight:'bold',fontSize:16}}>Bài học trí nhớ</Text>
+                            <Text style={{color:'white',fontWeight:'bold',fontSize:16}}>Test Voice</Text>
                             <Text style={{color:'white',fontSize:13}}>Điền từ vựng</Text>
                         </View>      
                     </View>
-                </TouchableOpacity>      */}
+                </TouchableOpacity>  
+                <TouchableOpacity activeOpacity={0.2} onPress={() => navigation.navigate('Network')}>
+                    <View style={Styles.viewCategories} >
+                        <Image style={Styles.translateImage} source={word}/>
+                        <View style={{paddingHorizontal:30}}>
+                            <Text style={{color:'white',fontWeight:'bold',fontSize:16}}>                       
+                                Leçons mémoire
+                            </Text>
+                            <Text style={{color:'white',fontWeight:'bold',fontSize:16}}>Test Voice</Text>
+                            <Text style={{color:'white',fontSize:13}}>Điền từ vựng</Text>
+                        </View>      
+                    </View>
+                </TouchableOpacity>     
             </ScrollView>                                  
         </ImageBackground>
          

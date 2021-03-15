@@ -85,6 +85,13 @@ const Styles= StyleSheet.create({
         backgroundColor:"white",
         borderRadius:15
     },
+    textInput2:{  
+        paddingLeft:8, 
+        padding:120,
+        margin:5,//lề trên
+        backgroundColor:"white",
+        borderRadius:15
+    },
     textTo:{
         fontSize:16,
         marginTop:5,//lề trên

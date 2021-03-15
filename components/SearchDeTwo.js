@@ -139,7 +139,7 @@ function SearchDeTwo({route,navigation}) {
             <View style={{height:'100%',alignItems:"center",backgroundColor:'#afc6f0'}}>  
                 <TextInput
                   placeholder="Ghi chú sẽ tự động được lưu"
-                  style={[Styles.textInput,{marginTop:50}]}
+                  style={[Styles.textInput2,{marginTop:50}]}
                   // onChangeText={(e) => this.setState({input: e})}
                   // onSubmitEditing={(e) => this.showMeaning(e) }
                 />  

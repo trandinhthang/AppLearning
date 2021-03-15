@@ -1,84 +1,264 @@
-// import React,{useState} from 'react'
-// import { View, Text,Modal, StyleSheet } from 'react-native'
-// import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import React, { Component } from 'react';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableHighlight,
+} from 'react-native';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import VoiceBtn from "../assests/images/buttonVoice.png";
+import Voice, {
+  SpeechRecognizedEvent,
+  SpeechResultsEvent,
+  SpeechErrorEvent,
+} from '@react-native-voice/voice';
 
-// export default function Test() {
-//     const [modalOpen, setModalOpen] = useState(false);
-//     return (
-//         <View >
-//             <Text>Helllllloooooo</Text>
-//             <Modal visible={modalOpen} animationType='slide'>
-//                 <View style={styles.modalToggle}>
-//                     <Text>Hello</Text>
+type Props = {};
+type State = {
+  recognized: string;
+  pitch: string;
+  error: string;
+  end: string;
+  started: string;
+  results: string[];
+  partialResults: string[];
+};
 
-//                 </View>
-//                 <Icon name='arrow-right' size={20} onPress={ () => setModalOpen(false)}/>
-//             </Modal>
-//             <Icon name='arrow-left' size={20} onPress={ () => setModalOpen(true)}/>
-//         </View>
-       
-//     )
-// }
-// const styles = StyleSheet.create({
-//     modalToggle: {
-//         marginBottom: 10,
-//         borderColor:"red",
-//         borderWidth:2,
-//         padding:10,
-//         borderRadius:10,
-//         alignSelf:'center'
-//     }
-// })
-import React, {useState} from 'react';
-import {Modal, Text, TouchableHighlight, View} from 'react-native';
-
-const Test = () => {
-  const [modalVisible, setModalVisible] = useState(false);
-
-  const showModal = () => {
-    setModalVisible(true);
-    setTimeout(() => {
-      setModalVisible(false);
-    }, 500);
+class Test extends Component<Props, State> {
+  state = {
+    recognized: '',
+    pitch: '',
+    error: '',
+    end: '',
+    started: '',
+    results: [],
+    partialResults: [],
+    rateStar : false
   };
 
-  return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: 'white',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}>
-      <Modal
-        animationType="slide"
-        transparent
-        visible={modalVisible}
-        onRequestClose={() => {
-          console.log('Modal has been closed.');
-        }}>
-        <View
-          style={{
-            flex: 1,
-            alignItems: 'center',
-            backgroundColor: 'gray',
-            justifyContent: 'center',
-            margin: 25,
-          }}>
-          <Text style={{fontSize: 16, color: 'white'}}>
-            This modal will close in Five Seconds..
-          </Text>
-        </View>
-      </Modal>
+  constructor(props: Props) {
+    super(props);
+    Voice.onSpeechStart = this.onSpeechStart;
+    Voice.onSpeechRecognized = this.onSpeechRecognized;
+    Voice.onSpeechEnd = this.onSpeechEnd;
+    Voice.onSpeechError = this.onSpeechError;
+    Voice.onSpeechResults = this.onSpeechResults;
+    Voice.onSpeechPartialResults = this.onSpeechPartialResults;
+    Voice.onSpeechVolumeChanged = this.onSpeechVolumeChanged;
+  }
 
-      <TouchableHighlight
-        onPress={() => {
-          showModal();
-        }}>
-        <Text>Show Modal</Text>
-      </TouchableHighlight>
-    </View>
-  );
-};
+  componentWillUnmount() {
+    Voice.destroy().then(Voice.removeAllListeners);
+  }
+
+  onSpeechStart = (e: any) => {
+    console.log('onSpeechStart: ', e);
+    this.setState({
+      started: '√',
+    });
+  };
+
+  onSpeechRecognized = (e: SpeechRecognizedEvent) => {
+    // console.log('onSpeechRecognized: ', e);
+    this.setState({
+      recognized: '√',
+    });
+  };
+
+  onSpeechEnd = (e: any) => {
+    console.log('onSpeechEnd: ', e);
+    this.setState({
+      end: '√',
+    });
+  };
+
+  onSpeechError = (e: SpeechErrorEvent) => {
+    console.log('onSpeechError: ', e);
+    this.setState({
+      error: JSON.stringify(e.error),
+    });
+  };
+
+  onSpeechResults = (e: SpeechResultsEvent) => {
+    console.log('onSpeechResults: ', e);
+    this.setState({
+      results: e.value,
+    });
+  };
+
+  onSpeechPartialResults = (e: SpeechResultsEvent) => {
+    console.log('onSpeechPartialResults: ', e);
+    this.setState({
+      partialResults: e.value,
+    });
+    if(String(this.state.partialResults) !== "ça va"){
+      this.setState({ rateStar: false })
+    } else {
+      this.setState({ rateStar: true })
+    }
+  };
+
+  onSpeechVolumeChanged = (e: any) => {
+    // console.log('onSpeechVolumeChanged: ', e);
+    this.setState({
+      pitch: e.value,
+    });
+  };
+
+  _startRecognizing = async () => {
+    this.setState({
+      recognized: '',
+      pitch: '',
+      error: '',
+      started: '',
+      results: [],
+      partialResults: [],
+      end: '',
+    });
+
+    try {
+      await Voice.start('fr');
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  _stopRecognizing = async () => {
+    try {
+      await Voice.stop();
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  _cancelRecognizing = async () => {
+    try {
+      await Voice.cancel();
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  _destroyRecognizer = async () => {
+    try {
+      await Voice.destroy();
+    } catch (e) {
+      console.error(e);
+    }
+    this.setState({
+      recognized: '',
+      pitch: '',
+      error: '',
+      started: '',
+      results: [],
+      partialResults: [],
+      end: '',
+    });
+  };
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={{ fontSize:25}}> Đọc câu này : Ça va </Text>
+        { (this.state.rateStar) ? <View style={{  flexDirection:'row'}}>
+                                    <AntDesign name="smileo" color="orange" size={25} />  
+                                  </View>  
+                                : <View style={{  flexDirection:'row'}}>
+                                    <AntDesign name="meh" color="gray" size={25} />  
+                                  </View>
+        }
+        {/* <Text style={styles.welcome}>Welcome to React Native Voice!</Text>
+        <Text style={styles.instructions}>
+          Press the button and start speaking.
+        </Text> */}
+        {/* <Text style={styles.stat}>{`Started: ${this.state.started}`}</Text> */}
+        {/* <Text style={styles.stat}>{`Recognized: ${
+          this.state.recognized
+        }`}</Text>
+        <Text style={styles.stat}>{`Pitch: ${this.state.pitch}`}</Text>
+        <Text style={styles.stat}>{`Error: ${this.state.error}`}</Text>
+        <Text style={styles.stat}>Results</Text>
+        {this.state.results.map((result, index) => {
+          return (
+            <Text key={`result-${index}`} style={styles.stat}>
+              {result}
+            </Text>
+          );
+        })} */}
+        {/* <Text style={styles.stat}>Partial Results</Text>
+        {this.state.partialResults.map((result, index) => {
+          return (
+            <Text key={`partial-result-${index}`} style={styles.stat}>
+              {result}
+            </Text>
+            
+          );
+        })} */}
+        {/* <Text style={styles.stat}>{`End: ${this.state.end}`}</Text> */}
+        <TouchableHighlight onPress={this._startRecognizing}>
+          <Image style={styles.button} source={VoiceBtn} />
+        </TouchableHighlight>
+        {/* <TouchableHighlight onPress={this._stopRecognizing}>
+          <Text style={styles.action}>Stop Recognizing</Text>
+        </TouchableHighlight> */}
+        {/* <TouchableHighlight onPress={this._cancelRecognizing}>
+          <Text style={styles.action}>Cancel</Text>
+        </TouchableHighlight> */}
+        {/* <TouchableHighlight onPress={this._destroyRecognizer}>
+          <Text style={styles.action}>Destroy</Text>
+        </TouchableHighlight> */}
+        
+        <View>
+          { (this.state.rateStar) ? <View style={{  flexDirection:'row'}}>
+                                      <AntDesign name="star" color="orange" size={25} />  
+                                      <AntDesign name="star" color="orange" size={25} />  
+                                      <AntDesign name="star" color="orange" size={25} />  
+                                    </View>  
+                                  : <View style={{  flexDirection:'row'}}>
+                                      <AntDesign name="star" color="gray" size={25} />  
+                                      <AntDesign name="star" color="gray" size={25} />  
+                                      <AntDesign name="star" color="gray" size={25} />  
+                                    </View>
+          }
+        </View>
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  button: {
+    width: 50,
+    height: 50,
+  },
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+  action: {
+    textAlign: 'center',
+    color: '#0000FF',
+    marginVertical: 5,
+    fontWeight: 'bold',
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
+  stat: {
+    textAlign: 'center',
+    color: '#B0171F',
+    marginBottom: 1,
+  },
+});
 
 export default Test;
