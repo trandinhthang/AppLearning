@@ -30,6 +30,7 @@ function VocaDetail({route,navigation}) {
       setPaused(true);
     }, 1000);
   };
+  
   return (
     <View style={{height:height,width:width,paddingTop:35,alignItems:"center",backgroundColor:'#f7f0e6'}}> 
       

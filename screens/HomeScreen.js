@@ -12,10 +12,10 @@ import {
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Entypo from 'react-native-vector-icons/Entypo';
 import Styles from '../styles/Styles';
-import books from '../assests/images/books.png';
 import openbook from '../assests/images/open-book.png';
 import paris from "../assests/images/paris.png";
 import Home from "../assests/images/homefrance.png";
+import Voice from '../assests/images/voice.png';
 
 import word from "../assests/images/word.png"
 //gọi các Screen khác từ đây sang App.js
@@ -90,17 +90,17 @@ const HomeScreen =({navigation})=>{
                 </TouchableOpacity>     
                 <TouchableOpacity activeOpacity={0.2} onPress={() => navigation.navigate('Test')}>
                     <View style={Styles.viewCategories} >
-                        <Image style={Styles.translateImage} source={word}/>
+                        <Image style={Styles.translateImage} source={Voice}/>
                         <View style={{paddingHorizontal:30}}>
                             <Text style={{color:'white',fontWeight:'bold',fontSize:16}}>                       
                                 Leçons mémoire
                             </Text>
                             <Text style={{color:'white',fontWeight:'bold',fontSize:16}}>Test Voice</Text>
-                            <Text style={{color:'white',fontSize:13}}>Điền từ vựng</Text>
+                            <Text style={{color:'white',fontSize:13}}>Luyện phát âm</Text>
                         </View>      
                     </View>
                 </TouchableOpacity>  
-                <TouchableOpacity activeOpacity={0.2} onPress={() => navigation.navigate('Network')}>
+                {/* <TouchableOpacity activeOpacity={0.2} onPress={() => navigation.navigate('Network')}>
                     <View style={Styles.viewCategories} >
                         <Image style={Styles.translateImage} source={word}/>
                         <View style={{paddingHorizontal:30}}>
@@ -111,7 +111,7 @@ const HomeScreen =({navigation})=>{
                             <Text style={{color:'white',fontSize:13}}>Điền từ vựng</Text>
                         </View>      
                     </View>
-                </TouchableOpacity>     
+                </TouchableOpacity>      */}
             </ScrollView>                                  
         </ImageBackground>
          

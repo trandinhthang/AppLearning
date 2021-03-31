@@ -40,6 +40,7 @@ class WordScreen extends Component {
     render() {
         const {word1,word2,word3,word4,word5,answer1,answer2,answer3,answer4,answer5} = this.state;
         return (
+            
         <View style={{backgroundColor:'white',height:"100%",width:"100%"}}>
             <Text style={{fontSize:17,paddingTop:10,padding:25,color:'green',fontWeight:'bold'}}>Điền từ còn thiếu vào ô trống - Hình ảnh gợi ý </Text>
             <View style={{justifyContent:"space-evenly", flexDirection:"row",height:160}}>

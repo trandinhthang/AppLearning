@@ -42,7 +42,6 @@ function HomeStackScreen({navigation}) {
       headerTitleAlign:'center',
       headerTintColor: '#fff',//màu nút mũi tên
       headerTitleStyle: {
-      fontFamily:"Vaptimi",
       fontSize: 20,//nét chữ
       },
     }}>
@@ -133,7 +132,7 @@ function HomeStackScreen({navigation}) {
         ),
       }}/>
       <TestStack.Screen name="Test" component={TestScreen} options={{
-        headerTitle: "Test",
+        headerTitle: "Luyện phát âm",
         headerStyle: {
           backgroundColor: 'green',//màu nền
           "height": 40,
@@ -272,7 +271,7 @@ function TabsScreen(){
 
     }}>
       <Tab.Screen name="Chính" component={HomeStackScreen} />
-      <Tab.Screen name="Từ điển" component={SearchStackScreen}  />    
+      {/* <Tab.Screen name="Từ điển" component={SearchStackScreen}  />     */}
     </Tab.Navigator>
   )
 }
