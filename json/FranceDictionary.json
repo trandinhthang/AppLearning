@@ -1,0 +1,342 @@
+{
+    "FranceDictionary": [
+        {
+            "id": 1,
+            "nameFr": "absent",
+            "data": [
+                "vắng mặt",
+                "thiếu"
+            ],
+            "IPA": "[apsɑ̃]",
+            "url": "https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0000210.mp3",
+            "gramma": "Danh từ giống đực",
+            "examFr1": "La gaieté est absente de cette maison",
+            "examVn1": "Căn nhà này thiếu sự vui tươi",
+            "examFr2": "Il est absent de son bureau",
+            "examVn2": "Ông ta không có mặt ở văn phòng",
+            "antonym": [
+                "Présent",
+                "Có mặt, hiện tại, này",
+                " Dire du mal des absents",
+                " Nói xấu những người vắng mặt"
+            ],
+            "image": ""
+        },
+        {
+            "id": 2,
+            "nameFr": "aller",
+            "data": [
+                "đi"
+            ],
+            "IPA": "[ale]",
+            "url": "https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0036840.mp3",
+            "gramma": "Nội động từ",
+            "examFr1": "Aller à pied /à cheval /en voiture",
+            "examVn1": "Đi bộ/đi ngựa/đi xe ô-tô",
+            "examFr2": "Allez plus vite !",
+            "examVn2": "Đi nhanh lên!",
+            "antonym": [
+                "Rester",
+                "Còn lại, ở lại",
+                " Château dont il ne reste que des ruines",
+                " Lâu đài chỉ còn lại những tàn tích"
+            ],
+            "image": "https://cdn.pixabay.com/photo/2017/09/03/17/26/woman-2711279_960_720.jpg"
+        },
+        {
+            "id": 3,
+            "nameFr": "année",
+            "data": [
+                "năm",
+                "tuổi"
+            ],
+            "IPA": "[ane]",
+            "url": "https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0101210.mp3",
+            "gramma": "Danh từ giống cái",
+            "examFr1": "Etudiant de deuxième année",
+            "examVn1": "Sinh viên năm hai",
+            "examFr2": "Elle est dans sa dix-huitième année",
+            "examVn2": "Cô ta đang tuổi mười tám",
+            "antonym": [],
+            "image": ""
+        },
+        {
+            "id": 4,
+            "nameFr": "aujourd'hui",
+            "data": [
+                "hôm nay",
+                "ngày nay",
+                "đời nay"
+            ],
+            "IPA": "[oʒuʀdɥi]",
+            "url": "https://www.collinsdictionary.com/sounds/hwd_sounds/fr_aujourd_hui.mp3",
+            "gramma": "Trạng từ",
+            "examFr1": "Il doit partir dès aujourd'hui",
+            "examVn1": "Nó phải ra đi ngay ngày hôm nay",
+            "examFr2": "Les jeunes d'aujourd'hui",
+            "examVn2": "Thanh niên thời nay",
+            "antonym": [],
+            "image": ""
+        },
+        {
+            "id": 5,
+            "nameFr": "avion",
+            "data": [
+                "máy bay",
+                "phi cơ"
+            ],
+            "IPA": "[avjɔ̃]",
+            "url": "https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0002020.mp3",
+            "gramma": "Danh từ giống đực",
+            "examFr1": "Avion de lutte contre les incendies",
+            "examVn1": "Máy bay chữa cháy",
+            "examFr2": "Avion à réaction",
+            "examVn2": "Máy bay phản lực",
+            "antonym": [],
+            "image": "https://cdn.pixabay.com/photo/2017/09/06/12/55/virgin-2721333_960_720.jpg"
+        },
+        {
+            "id": 6,
+            "nameFr": "croître ",
+            "data": [
+                "mọc",
+                "sinh trưởng"
+            ],
+            "IPA": "[kʀwatʀ]",
+            "url": "https://www.collinsdictionary.com/sounds/hwd_sounds/fr_croitre.mp3",
+            "gramma": "Động từ",
+            "examFr1": "Les végétaux croissent lentement",
+            "examVn1": "Cây sinh trưởng chậm",
+            "examFr2": "",
+            "examVn2": "",
+            "antonym": [
+                "Baisser",
+                "Hạ thấp",
+                " Baisser un tableau",
+                " Hạ thấp bức tranh"
+            ],
+            "image": ""
+        },
+        {
+            "id": 7,
+            "nameFr": "économie",
+            "IPA": "[ekɔnɔmi]",
+            "data": [
+                "tiết kiệm"
+            ],
+            "url": "https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0027870.mp3",
+            "gramma": "Danh từ giống cái",
+            "examFr1": "Avoir le sens de l'économie",
+            "examVn1": "Có tính tiết kiệm",
+            "examFr2": "",
+            "examVn2": "",
+            "antonym": [],
+            "image": ""
+        },
+        {
+            "id": 8,
+            "nameFr": "élever",
+            "IPA": "[el(ə)ve]",
+            "data": [
+                "chăn nuôi",
+                "nuôi nấng"
+            ],
+            "url": "https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0010890.mp3",
+            "gramma": "Động từ",
+            "examFr1": "Élever des lapins",
+            "examVn1": "Nuôi thỏ",
+            "examFr2": "Élever un enfant",
+            "examVn2": "Nuôi nấng một đứa trẻ",
+            "antonym": [],
+            "image": ""
+        },
+        {
+            "id": 9,
+            "nameFr": "érable",
+            "IPA": "[eʀabl]",
+            "data": [
+                "cây thích"
+            ],
+            "url": "https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0052010.mp3",
+            "gramma": "Danh từ giống đực",
+            "examFr1": "",
+            "examVn1": "",
+            "examFr2": "",
+            "examVn2": "",
+            "antonym": [],
+            "image": ""
+        },
+        {
+            "id": 10,
+            "nameFr": "maison",
+            "IPA": "[eʀabl]",
+            "data": [
+                "cây thích"
+            ],
+            "url": "https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0052010.mp3",
+            "gramma": "Danh từ giống đực",
+            "examFr1": "",
+            "examVn1": "",
+            "examFr2": "",
+            "examVn2": "",
+            "antonym": [],
+            "image": ""
+        },
+        {
+            "id": 11,
+            "nameFr": "a",
+            "IPA": "[eʀabl]",
+            "data": [
+                "cây thích"
+            ],
+            "url": "https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0052010.mp3",
+            "gramma": "Danh từ giống đực",
+            "examFr1": "",
+            "examVn1": "",
+            "examFr2": "",
+            "examVn2": "",
+            "antonym": [],
+            "image": ""
+        }
+    ],
+    "themes": [
+        {
+            "id": 1,
+            "name": "Transport",
+            "vietsub": "Phương tiện",
+            "image": "https://cdn2.iconfinder.com/data/icons/scenarium-vol-3-1/128/049_airplane_transport_clouds_fly_flight-256.png"
+        },
+        {
+            "id": 2,
+            "name": "Fruits",
+            "vietsub": "Trái cây",
+            "image": "https://www.flaticon.com/premium-icon/icons/svg/528/528407.svg"
+        },
+        {
+            "id": 3,
+            "name": "Animaux",
+            "vietsub": "Động vật",
+            "image": "https://www.flaticon.com/premium-icon/icons/svg/449/449631.svg"
+        },
+        {
+            "id": 4,
+            "name": "Météo",
+            "vietsub": "Thời tiết",
+            "image": "https://www.flaticon.com/premium-icon/icons/svg/3059/3059351.svg"
+        }
+    ],
+    "vocabulary" : [
+        {
+            "key": 1,
+            "nameFr": "comment",
+            "nameVn": "Máy bay",
+            "IPA": "[avjɔ̃]",
+            "categorie": 1,
+            "image": "https://lh3.googleusercontent.com/fife/ABSRlIotessP8oga2D1_fkml8B0nkEeUOXviTaKCzIs_TCyQkCps0AfhDNM-1rOvv-RfHFfn5MH_FmuBw1e7-548PZpHznSFgJ7-c_R7rWW2tYb3gSBPOX3cU_Kun6_gQpehUAfMKJxi9NvwMkDF126SJwdabTrjXfqkbevuzwiphSi1Y8Tdpdk1-zwuzgfdQ-njmLelgJ8WZHcFXSTtpBypQ2OeIjEdU5Z8Me0wBnI_9ok0kT6vLBwYcPhFbRz9yN7tEXvZwTrvZEZ01jltn3gIhzIGV-GOFJOq7U7VaRhd4E575leT1gsa3JMA5O2rsUKCPN2d11MOq_Q0Kh16p57JeyrsQ89V-GpUpVBQAjp4hdMC789-Ra9yfHNkve-OaRqQLmfurzi-TT6p0S3BjR63MJm-976kqY85HYDfxT0iloVS9G7B7lyTkh5Dz9ITIq0KtahbGuLwDGsnQQUtIDbB2WWD4kbG1BfXGcj3k61L0IYTWray5r_jaotjadjmQlwX6rj9YP8R_KSrbaQ07f96tZ1WkQrNFxPNSVOhax5IjZiCBS489vqqCjCr6Vkj569ZT3GNE4QuudAZLA9DzsdQHfkf7hpak-YlvNVVVYK3Zl5CSv8RouUgu08FTRk8Ur-HCrm5WX1WPkvSsOzE3otdI76lniIERSypw3Er3c8l-Tb9fzyiO6RACaToOqzqUFaHgseSGYimEeIrtQvWoqfhhNXN68Dmz9GapmS99Q=s256-no?authuser=0",
+            "url": "https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0002020.mp3",
+            "exFr1": "Avion à réaction",
+            "exVn1": "Máy bay phản lực",
+            "exFr2": "Avion supersonique",
+            "exVn2": "Máy bay siêu âm",
+            "others": [
+                ""
+            ]
+        },
+        {
+            "key": 2,
+            "nameFr": "hélicoptère",
+            "nameVn": "Trực thăng",
+            "IPA": "[elikɔptɛʀ]",
+            "categorie": 1,
+            "image": "https://lh3.googleusercontent.com/fife/ABSRlIohphh6fslbt1LFjkbXx6fWD0yze4sHuYflkAycB3CVXNSCp53BcO7rYpZUaYC9RNbGkXK6i5jXaPfRzGdqE67sHQ9loBRfDoPlNxlIC_8_mcl3Ezo0Sp8KkK_GFfZjf-ZQULMUCvol1esFKtFSPZt9O2aCIvJ50m9VO_KS0hlhATQQUjshnxIW73Q_pvxFmVEfqKVe14VkwmptygLKkAppVbcVqCmte8uJDxf2JYyU1Q4kTwSWon3q4i9Xn9FWMrlSS3a4ndhxRrzr8h4IylQV40VJBC0S8B6ct_gk47IsfzMmvX0gwkumFl38M1akTJOHGrikyQ7S44PxjLrqdWbLTrYeo71yj-oeRTMI4cb053fLe0AAj90fjOalQV5XKN5o5glLxSxY1I9fCyxooYa18u7MeEbAswT6NCYDGsrDRedROFz4_FWJ0aK4NEG495FpF-fGPA7kIeAaUFIUP5AIhuX9fcGylAd7lWUZ9HCFOSlhh_KRqf_JsvGxAdva8oB77UgZE4PjUh7j5fhFH9AGJK5RSHDSphyEZSgX9tMqHSCmx4v_aV61fK3jBLsLJF0YtvLNpR4Fp2MvStMKRr9aWWJRd2t-Iw9YzMNN7fuZ1BQbGmI3_wNdsFw4TFM-XVvS14E8tePUhwVMAnzWGdAyidnr_q7jTOcLq6nsdtpnaWQWTRxstjptzuM_7Uin5b1o3pGRbmFlmRqunBRWBMZ1YLfug6jijfLwWw=s256-no?authuser=0",
+            "url": "https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0040140.mp3",
+            "exFr1": "",
+            "exVn1": "",
+            "exFr2": "",
+            "exVn2": "",
+            "others": [
+                ""
+            ]
+        },
+        {
+            "key": 3,
+            "nameFr": "ambulance",
+            "nameVn": "Xe cứu thương",
+            "IPA": "[ɑ̃bylɑ̃s]",
+            "categorie": 1,
+            "image": "https://lh3.googleusercontent.com/fife/ABSRlIrNI7tAy7Eq0iT2HNhnEivLBu_hyFqf8rKDLrbQDGZLe5-j5usklx63r38y2shqdGBI3CpQ0R2QT90rYz1OTJWijJiGeItMVTQYLco9B6Yl4VXMK7ESQNNzrR8K9KlNnnW7DVIMAob2AQLz7NdLb_9-4z_CPWHdz7jgntcsBPnkIYG4mr0-Eol_ooBuJFZFlLJWTwogzfNKiVCi1sb8v7uSUZNIxS17KOSr9-c1dIPyWqgGnGIBHNQqm9rFUcSF6wVtcR_q0bE-YbZ8oYSP2_lId3ZFcsyAw-aP8mINTgnCxg5ScrW98FhLeqENwKO9JUXJc1w2q95-aPxlfhM8WD24DAsU5jNZTZCbPiCeXNjL2Mb6hCX36BtUtq_7zwQaAaVA_wH1Kd0V1vchRgWRuh4ZwwIhcZCgIqiBIbsTnHBInJGxEp_MJSZTZGJNLAPdevhSVLPPybKxEwOctXvsYnEPXNWJsJBzlSvbCfPS5slbaQH_YOjPBYPFNh7miTbaN0tHwzUoaQQ0nYNmGM3PjNq07dLJ-cVeGanpK45Q4zkapeT63m7ptJsSfnh253yobzxDdbZEUP4sxf4g8S2HP962f-e1CJedz83RecdN3FzDHK21zhlFSfErXilVsAqyB21P8zNE1QlFpl2FWMKgzlGS08Sil29CFRP9dskaJXItr7C0PP7J9qEeta7zP1PTK-OUXrvp2zBEKkHxQtmcCFcgyVT_IeojLsV75w=s256-no?authuser=0",
+            "url": "https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0002780.mp3",
+            "exFr1": "",
+            "exVn1": "",
+            "exFr2": "",
+            "exVn2": "",
+            "others": [
+                ""
+            ]
+        },
+        {
+            "key": 4,
+            "nameFr": "camion",
+            "nameVn": "Xe tải",
+            "IPA": "[kamjɔ̃]",
+            "categorie": 1,
+            "image": "https://lh3.googleusercontent.com/fife/ABSRlIrpbZol0P6s5iggnZN-_wO_3gFZ2-ZXC3kiYpv8EVGGN2rkp-pvQfGsCj9bC7lRo4J8ycpEtPKWZIJGAcNXl5suQtU8TI3BFdKiLy8GATV6vgr0PzRxlUhybt0AInLj1y6YB8oO6pAATdIsNO4v6xel2mMLNATRlSlsEWXQTC-MuqgqbJGQWu0DMnQjv7vVGlb0s-_kn7SjzItJBMuNC4t6_UBByTW-uKgkaz5IgT0vZOfkrlwAVhMoOn9dEP82LftOorSv07tUv7Kwtz82xrBWouyZjvw7saiij095cozyRhRBTjHGPZmLddNDbN8bXXh535rDFW9nvHHL5xT3oeteUPhyrjdMewyRjIJjbbN9x1W5VLXfQMCM1i1hmn9J72s1ujde1qgfKKLiRhPc7jCbo8yfSlR4lUmZ7Aw42-PdTcgKdhlluHJhyHq_j2VEG_3rKCPM_F1SyIjyOsifLj3eBoLsAvFjWnDEhMud5ti40DTs14BvlLoLKUvowDB4SRnxncxC-mLX_R8t3dcTyhwOjGqvFo5FR1Um3uacIsAlDkFL8IQ8ENpZQNIGRmI6EtTD2KZIDaqy9VHDznKeTfvOfgFjASqpZcb7UE5hKQgdLV7USMyxW8wQcWlxWIPBzAf8GQJoM65kjY3UcJYtj_B5DqyrpufSkQ4tabPws8O93s0nksjjN43T44WdaGyalJh909Tne1gMtz0YpUsiuyEb6oAydbxn4XtEBg=s512-no?authuser=0",
+            "url": "https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0050470.mp3",
+            "exFr1": "Camion amphibie",
+            "exVn1": "Xe tải lội nước",
+            "exFr2": "Camion chenillé",
+            "exVn2": "Xe tải bánh xích",
+            "others": [
+                ""
+            ]
+        },
+        {
+            "key": 5,
+            "nameFr": "ananas",
+            "nameVn": "Trái dứa",
+            "IPA": "[anana(s)]",
+            "categorie": 2,
+            "image": "https://lh3.googleusercontent.com/fife/ABSRlIpx5jJTr0XjrzVBuAbqn9w5NZuZm6GyfbulzdViOCWYgbP63vtPVF-IbfA_pJ5wKr4pxbPZg-Penn1X1mppvAO9BcCtFp6Z8XfIjlpXkA3CTlgEmNkAMxZzPfCR9okb9piSPFDVRewL8WfFkB4w7JnEYgl3dm3prSkAmu4z_iNOm_RRk_L_Xa--1cmuC8ShRlzA0EX6q3KWvIjWOK_oCsXa9F-xtAqArY0nsom84w81FAioTnWG0duOOUZ4BYsI6TEA_vFTAV9jC9v2Kn4Ts9ztxtz6KVOtfUW3tDsMewJwY8XsZ2ltyIJD0qkU5iizP-BfhdbihMENgJvP3NiQGkB0mEiVNHTsoWhJr38BiN97WGz3PNaTd5apB2KyNe_S_jd7nWek5G9E8cUXH12jpeYFZB7bJ7fr0iOVKODETw2l_bQArm8He7kPnBr5Gno6MS48aA80zxKrzIpTbJX620mnwzzAIWtJtueT12qbCGfOvLkfRO87GyedTR0NQzo17QifL_urUfuDfXgMndY4TIo9BAXFxN4Cp-RcclC6iZ8Y_l6P2FSVAxxqgPzsP1TIdR84MRbFpNgcBUq_eFPUuNi09GSNFmWFG9Is3bugQGRf70s3yUf6OX2svJf9w7f4nCeU8BIkJRsCHG3C4jcL4tlm3WF0WQxmlvaHOrVDM9L54V3yja_5vRKdVXLOkXOvVCIc_AEK5TKwZ8S7sF_ijqYRwGvF22BfGJqrwA=s256-no?authuser=0",
+            "url": "https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0064640.mp3",
+            "exFr1": "",
+            "exVn1": "",
+            "exFr2": "",
+            "exVn2": "",
+            "others": [
+                ""
+            ]
+        },
+        {
+            "key": 6,
+            "nameFr": "pomme",
+            "nameVn": "Trái táo",
+            "IPA": "[pɔm]",
+            "categorie": 2,
+            "image": "https://lh3.googleusercontent.com/fife/ABSRlIoCG3iNKSWdJXCu2C1ubstqWfZa-uwHrMQfWBX7WrCpELHMUVThe_6S6rdVvFojqI1FGg3gtL_PJrIIDt-JIsBpUWnWwCdUv6brbFt6uzxHn6t1sg7A98hXmgzp3-NdXHv23MsReExb63aZg2s0KlzFu14KYYN_K2fcuvAhSTt1vm03apvZ4kYeCE4WvfPqLAlkN3h5gKWkig0jvWsr7ezxPWKMjlX-3sSCIm5WDxo1XQK8_oen7_FzZG9vadLj4CShBhOwKcfIPi9FZtrnsL094ugDknsclfDRxzF1__hQEESuxvTDfQeGbdJc0MsuagTViXsRLMmiaoemZAzIQClUx2Nz8tI37zyRpeS7ZogZTOKHjobpobfztADYuWEGVSwCeHWCXaz6m1HsVnu2Ah_oeob7ck62oCvlK_1hzV25xB-8Bdl2gLZNaVPne_-eyCQJyDLjKrDX-G129UZngidZdo99bGtzqjpZaS8junjFVP-yieUM9EgqUAhgN5La4YVy4ogdjWwmPk5nC_ZFK7e_JFUHqTczFOa4oAzdv0snc8w8_a4lxySl46mCI1amu7WyAS6yP1O45U_iakw-AOrmJqWiS234i7lGGHpFi_Iqc4YSg6RALEuTWkZyDWqrdHuwcZM02ouPf6ngchqLTWXrzhHVUixl39rDf7Kx4wRcP_0hnlmvDUF4n2D66sjAAeCOEmbOVtJDfdUI13guMLb9rD3dofu4sX5myQ=s256-no?authuser=0",
+            "url": "https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0003820.mp3",
+            "exFr1": "",
+            "exVn1": "",
+            "exFr2": "",
+            "exVn2": "",
+            "others": [
+                ""
+            ]
+        },
+        {
+            "key": 7,
+            "nameFr": "banane",
+            "nameVn": "Trái chuối",
+            "IPA": "[banan]",
+            "categorie": 2,
+            "image": "https://lh3.googleusercontent.com/fife/ABSRlIptTwaoWwTTnhGElGKg_YWmkgiEd7K0Cz73yYLOuGPO3OasuWco0vo_2lIXOq0c07no4nrGCWLzmF24qu6sVBwQ0laPM_fr1PPeZS77g9ANHxyfo17M8T3qIObcS7MeWZs2H7pD2vYqh2dLvI0nHbW_cASpzj7pfBwq6GlQ8wkH-LuuKtICMexWMhVopWXCiesMsjNLlovpPzrsQ2EdVUh2CZIwc6WrAHjJ0ksBVdateV_xVSsChfFvBrxfDOaYYcSIl6xJ6UMRNRc4E_AEVJANwg57JbDCNWJ04XAK6DChhVNuoqfbQsvuYY1uYr4ICeBtQXqTBZBAtuIMz7UiXwqRbiRk7nXsTqY9_8jxrqYfW0SJDYD-Y5Tk0PhTLo11vT0iqJSzISL38EeCtSO3K89Ffa5jOUs-_Ej6ZkrHa-wUE3aftoZ74VVLPBkQr-hQh3mjdFSZaSLE94oGrLamNEqcQUDT-xclhIidkHHKsA4NFGBWkZ2MuJEWq9K5IxI7RlahGG-suFUQFlBA8Am54Ih6mz6MG2PdpH10F-7MM7xGdxaosM-3DswgskF4Dw8MVfaXu6lstnbKCk2w7QpSwW-TP2aivXITTmtFd6ZwlM4a_zxtkRGZX7wxvJ2r5k39H9ZSLvbnj_TigcB5C0uI2ONvG1rueyJ1DReM8dY3zDJLRlTSG7CwIQCw0JnDwZKf1VRFF5Hn20YRneheQ-RdiktQXzmldByJb5AVZw=s256-no?authuser=0",
+            "url": "https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0006470.mp3",
+            "exFr1": "",
+            "exVn1": "",
+            "exFr2": "",
+            "exVn2": "",
+            "others": [
+                ""
+            ]
+        }
+    ]
+}

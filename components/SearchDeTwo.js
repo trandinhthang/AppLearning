@@ -13,48 +13,7 @@ import Icon from 'react-native-vector-icons/AntDesign';
 
 import Video from 'react-native-video';
 import Styles from '../styles/Styles';
-
-const list = [
-  { id: 1,
-    "nameFr": "lutte",
-    "data": "đấu tranh",
-    "IPA": "[lyt]",
-    "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0086430.mp3",
-    "gramma":"Danh từ giống cái",
-    "examFr1":"Lutte des classes",
-    "examVn1":"Đấu tranh giai cấp",	
-    "examFr2":"Luttes politiques, religieuses",
-    "examVn2":"Đấu tranh chính trị, tôn giáo",			
-    "antonym":[],
-    "image":""
-  },
-  { id: 2,
-    "nameFr": "incendies",
-    "data": "đám cháy",
-    "IPA": "[ɛ̃sɑ̃di]",
-    "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/fr_incendie.mp3",
-    "gramma":"Danh từ giống đực",
-    "examFr1":"Incendie de forêt",
-    "examVn1":"Đám cháy rừng",	
-    "examFr2":"Lutte contre l'incendie",
-    "examVn2":"Chống hoả hoạn",			
-    "antonym":[],
-    "image":""
-  },
-  { id: 3,
-    "nameFr": "voiture",
-    "data": "xe",
-    "IPA": "[vwatyʀ]",
-    "url":"https://www.collinsdictionary.com/sounds/hwd_sounds/FR-W0013310.mp3",
-    "gramma":"Danh từ giống cái",
-    "examFr1":"Voiture attelée",
-    "examVn1":"Xe súc vật kéo",	
-    "examFr2":"Voiture de course",
-    "examVn2":"Xe đua",			
-    "antonym":[],
-    "image":"https://cdn.pixabay.com/photo/2016/11/23/17/24/automobile-1853936_960_720.jpg"
-  }
-];
+const FranceDictionary = require('../json/FranceDictionary.json');
 
 function SearchDeTwo({route,navigation}) {
   const {value} = route.params;
@@ -65,7 +24,7 @@ function SearchDeTwo({route,navigation}) {
       setPaused(true);
     }, 1000);
   };
-  const found = list.filter((item)=>{return item.nameFr===value}) 
+  const found = FranceDictionary.FranceDictionary.filter((item)=>{return item.nameFr===value}) 
  
   return (
     <Container>
@@ -96,7 +55,7 @@ function SearchDeTwo({route,navigation}) {
             </View>  
             {found.map((e,index)=>
             <View key={index}  style={Styles.searchDetailContent}> 
-              <Text  style={{fontSize:15}}>‣{e.data.charAt(0).toUpperCase()}{e.data.substr(1)}</Text>
+              {e.data.map((item,index)=><Text style={{fontSize:15}} key={index}>‣{item.charAt(0).toUpperCase()}{item.substr(1)}</Text>)}
               <View  style={{paddingLeft:15}}>
                 <Text >{e.examFr1.split(" ").map((item,index)=><Text key={index}>
                   <Text  onPress={()=> navigation.navigate('deTwoSearch',{value:item})} style={{color:"#0033ff"}} >{item}</Text>

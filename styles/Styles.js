@@ -61,7 +61,7 @@ const Styles= StyleSheet.create({
         marginTop:5,
         marginBottom:5,
         paddingLeft:20,
-        paddingVertical:20
+        paddingVertical:10
     },
     textContent_2:{
         color:'#239dad',
@@ -72,8 +72,8 @@ const Styles= StyleSheet.create({
     },
     //Style translate
     translateImage:{
-        width:50,
-        height:50
+        width:70,
+        height:70
     },
     parent: {
         marginLeft:5

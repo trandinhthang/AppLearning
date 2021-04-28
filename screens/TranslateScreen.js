@@ -1,13 +1,13 @@
-import React,{Component} from 'react';
+import React, {Component} from 'react';
 import {ScrollView} from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 import TranslateList from '../components/TranslateList';
 
 export default function TranslateScreen() {
   return (
-    <ScrollView style={{backgroundColor:"#afc6f0"}}>     
-     <TranslateList />
+    <ScrollView style={{backgroundColor: '#afc6f0'}}>
+      <TranslateList />
     </ScrollView>
   );
 }

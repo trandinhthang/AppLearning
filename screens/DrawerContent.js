@@ -40,8 +40,8 @@ export function DrawerContent(props) {
                                 size={28}
                                 />
                             )}
-                            label="Dịch từ"
-                            onPress={() => {props.navigation.navigate('Translate')}}
+                            label="Góp ý"
+                            onPress={() => {props.navigation.navigate('Feedback')}}
                         />
                         <DrawerItem 
                             icon={({color, size}) => (
@@ -65,7 +65,7 @@ export function DrawerContent(props) {
                             label="Từ vựng"
                             onPress={() => {props.navigation.navigate('Vocabulary')}}
                         />
-                        <DrawerItem 
+                        {/* <DrawerItem 
                             icon={({color, size}) => (
                                 <Icon 
                                 name="heart-flash" 
@@ -75,7 +75,7 @@ export function DrawerContent(props) {
                             )}
                             label="Yêu thích"
 
-                        />                  
+                        />                   */}
                         <DrawerItem 
                             icon={({color, size}) => (
                                 <Icon 
@@ -84,7 +84,7 @@ export function DrawerContent(props) {
                                 size={30}
                                 />
                             )}
-                            label="Đánh giá"
+                            label="Góp ý"
                             
                         /> 
                         <DrawerItem 
