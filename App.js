@@ -11,6 +11,7 @@ import IconT from 'react-native-vector-icons/Ionicons';
 import Octicons from 'react-native-vector-icons/Octicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Foundation from 'react-native-vector-icons/Foundation';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 import { DrawerContent } from './screens/DrawerContent';
 import HomeScreen from "./screens/HomeScreen";
@@ -138,14 +139,14 @@ function HomeStackScreen({ navigation }) {
       <TestStack.Screen name="Feedback" component={FeedbackScreen} options={{
         headerTitle: "Góp ý",
         headerStyle: {
-          backgroundColor: 'green',//màu nền
+          backgroundColor: 'coral',//màu nền
           "height": 40,
         },
         headerTintColor: '#fff',
         headerRight: () => (
-          <IconT
+          <MaterialIcons
             style={{ marginRight: 8 }}
-            name="md-school"
+            name="feedback"
             size={30}
             color="white"
           />

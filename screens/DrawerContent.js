@@ -9,6 +9,7 @@ import {
 } from '@react-navigation/drawer';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 export function DrawerContent(props) {
 
@@ -32,7 +33,7 @@ export function DrawerContent(props) {
                             label="Trang chủ"
                             onPress={() => {props.navigation.navigate('Chính')}}
                         />
-                        <DrawerItem 
+                        {/* <DrawerItem 
                             icon={({color, size}) => (
                                 <Icon 
                                 name="google-translate" 
@@ -42,8 +43,8 @@ export function DrawerContent(props) {
                             )}
                             label="Góp ý"
                             onPress={() => {props.navigation.navigate('Feedback')}}
-                        />
-                        <DrawerItem 
+                        /> */}
+                        {/* <DrawerItem 
                             icon={({color, size}) => (
                                 <Icon 
                                 name="text-box-search" 
@@ -53,7 +54,7 @@ export function DrawerContent(props) {
                             )}
                             label="Từ điển"
                             onPress={() => {props.navigation.navigate('Từ điển')}}
-                        />
+                        /> */}
                         <DrawerItem 
                             icon={({color, size}) => (
                                 <Icon 
@@ -78,14 +79,14 @@ export function DrawerContent(props) {
                         />                   */}
                         <DrawerItem 
                             icon={({color, size}) => (
-                                <Icon 
-                                name="align-vertical-bottom" 
+                                <MaterialIcons 
+                                name="feedback" 
                                 color='#0276c9'
                                 size={30}
                                 />
                             )}
                             label="Góp ý"
-                            
+                            onPress={() => {props.navigation.navigate('Feedback')}}
                         /> 
                         <DrawerItem 
                             icon={({color, size}) => (

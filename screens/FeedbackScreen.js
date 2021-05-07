@@ -53,34 +53,36 @@ export default class FeedbackScreen extends Component {
     render() {
         return (
 
-            <View style={{ backgroundColor: '', height: '100%' }}>
-                {/* <Label> </Label> */}
-                <View style={{ margin: 50, marginLeft: 20, marginRight: 20, backgroundColor: 'white' }}>
-                    <Label style={{}} >Email</Label>
+            <View style={{ backgroundColor: 'oldlace', height: '100%' }}>
+                <Label style={{fontWeight:'bold', color:'#f02005', fontSize:30, textAlign:'center'}}> 
+                    Xin chào
+                </Label>
+                <Label style={{fontWeight:'bold', color:'#f02005', fontSize:20, textAlign:'center',margin:10}}> 
+                   Hãy gửi phản hồi của các bạn
+                </Label>
+                <View style={{margin:20}}>
+                    <TextInput 
+                        style={{backgroundColor:'white'}}
+                       selectionColor="orange"
+                        mode='outlined'
+                        style={{width:'100%'}}
+                        label="Email"
+                        value={this.state.email}
+                        onChangeText={(email) => this.setState({ email })} />
+                    <TextInput 
+                      
+                        mode='outlined'
+                        style={{width:'100%',height:100}}
+                        label="Nội dung"
+                        value={this.state.text}
+                        onChangeText={(text) => this.setState({ text })} />
 
-                        <TextInput 
-                            mode='outlined'
-                            style={{width:'100%'}}
-                            label="Email"
-                            value={this.state.email}
-                            onChangeText={(email) => this.setState({ email })} />
-                   
-                    <Label >Nội dung</Label>
-
-                    <Item style={{ margin: 20, marginLeft: 20 }} >
-                        <TextInput
-                            mode='outlined'
-                            style={{width:'100%'}}
-                            label="Nội dung"
-                            value={this.state.text}
-                            onChangeText={(text) => this.setState({ text })} />
-                    </Item>
-
-                    <Button style={{ backgroundColor: 'oldlace', left: '70%' }} onPress={() => this.saveItem()}>
-                        <Text style={{ color: "coral" }}>Gửi góp ý</Text>
+                    <Button style={{ backgroundColor: 'coral', width:'80%',margin:30 }} onPress={() => this.saveItem()}>
+                        <Text style={{ color: "white" ,left:'300%'}}>Gửi góp ý</Text>
                     </Button>
                 </View>
             </View>
+
 
 
         )
