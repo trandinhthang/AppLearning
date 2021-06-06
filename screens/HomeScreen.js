@@ -108,9 +108,9 @@ const HomeScreen = ({ navigation }) => {
                         </View>
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.2} onPress={() => navigation.navigate('Exam', { diff: 'HARD' })}>
+                {/* <TouchableOpacity activeOpacity={0.2} onPress={() => navigation.navigate('Exam', { diff: 'HARD' })}>
                     <View style={Styles.viewCategories} >
-                        {/* <Image style={Styles.translateImage} source={word}/> */}
+                     
                         <LottieView
                             style={Styles.translateImage}
                             source={require('../assests/animation/exam2.json')}
@@ -126,10 +126,10 @@ const HomeScreen = ({ navigation }) => {
                             <Text style={{ color: 'white', fontSize: 13 }}>Bài học trắc ngiệm 2</Text>
                         </View>
                     </View>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
                 <TouchableOpacity activeOpacity={0.2} onPress={() => navigation.navigate('Word')}>
                     <View style={Styles.viewCategories} >
-                        {/* <Image style={Styles.translateImage} source={word}/> */}
+
                         <LottieView
                             style={{paddingLeft:5,height:60}}
                             source={require('../assests/animation/quiz.json')}
@@ -152,32 +152,3 @@ const HomeScreen = ({ navigation }) => {
     );
 }
 export default HomeScreen;
-
-// constructor(props){
-//     super(props);
-//     this.state={
-//         categories:[
-//         {id:'1', name:'Dịch từ',name1:'Traduire mots'},
-//         {id:'2', name:'Từ vựng',name1:'Vocabulaire'},  
-//         {id:'3', name:'Ngữ pháp',name1:'Grammaire'}, 
-//         {id:'4', name:'Luyện tập',name1:'Grammaire'},           
-//         ]   
-//     };
-//     }
-// render(){
-//     const {navigation} =this.props;
-//     const {categories} =this.state;
-//     return(
-//         <FlatList
-//         data={categories}
-//         renderItem={({item})=> <CategoryList category={item} onPress={() => 
-//             navigation.navigate("Translate",{ name: item.name },{name1:item.name1}  
-//         )} />}
-//         keyExtractor={item => item.id}
-//         contentContainerStyle={{backgroundColor:"#e1e1e6",paddingLeft:50,paddingRight:50}}
-//         /> 
-//     )
-// }
-/* <CategoryList name="Dịch từ" name1=""  />
-<CategoryList name="Từ vựng" name1="Vocabulaire" onPress={() => navigation.navigate('Vocabulary')} />
-<CategoryList name="Ngữ pháp" name1="Grammaire" onPress={() => navigation.navigate('Grammar')} /> */

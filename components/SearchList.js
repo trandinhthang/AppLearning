@@ -22,6 +22,12 @@ export default class SearchHome extends Component {
       query: ""
     };
   }
+  async componentDidMount() {
+    const data = await fetch("https://api-fr-vn.herokuapp.com/");
+    const data_ = await data.json();
+    console.log(`data_`, data_)
+  }
+
   // componentDidMount() {
   //   this.requestAPISearch()
   // }

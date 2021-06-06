@@ -16,7 +16,17 @@ const Styles= StyleSheet.create({
         marginHorizontal:20,
         marginTop:20,
         paddingLeft:25,
-        height:38
+        height:53
+    },
+    viewInput2:{
+        flexDirection:'row',
+        alignItems:'center',
+        backgroundColor:'white',
+        borderRadius:12,
+        marginHorizontal:20,
+        marginTop:20,
+        paddingLeft:25,
+        height:100
     },
     viewContent:{
         flexDirection:'row',

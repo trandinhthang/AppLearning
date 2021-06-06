@@ -22,6 +22,7 @@ import WordScreen from "./screens/WordScreen";
 import FeedbackScreen from './screens/FeedbackScreen';
 import NetworkScreen from './screens/Network';
 import VideoScreen from './screens/VideoScreen';
+import FillWordScreen from './screens/WordScreen';
 
 import QuizList from "./components/QuizList";
 
@@ -38,6 +39,7 @@ const WordStack = createStackNavigator();
 const TestStack = createStackNavigator();
 const NetworkStack = createStackNavigator();
 const VideoStack = createStackNavigator();
+const FillWordStack = createStackNavigator();
 
 //Stack Screen Home
 function HomeStackScreen({ navigation }) {
@@ -168,6 +170,7 @@ function HomeStackScreen({ navigation }) {
           />
         ),
       }} />
+     
     </HomeStack.Navigator>
   );
 }

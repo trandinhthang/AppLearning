@@ -1,13 +1,17 @@
 import * as React from 'react';
 import { Component } from 'react';
-import { View, Text, } from 'react-native';
+import { View, Text,Image,TextInput ,ToastAndroid} from 'react-native';
 import { Container, Header, Content, Form, Item, Label, Button, Textarea } from 'native-base';
-import { TextInput } from 'react-native-paper';
+
+import {StyleSheet} from 'react-native';
 
 import * as firebase from 'firebase';
 import { firebaseConfig } from '../config';
-
-
+import { ScrollView } from 'react-native-gesture-handler';
+import { ImageBackground } from 'react-native';
+import Home from "../assests/images/homefrance.png";
+import Styles from '../styles/Styles';
+import Entypo from 'react-native-vector-icons/Entypo';
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
 }
@@ -35,7 +39,7 @@ export default class FeedbackScreen extends Component {
         const date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
 
         const myFeedback = firebase.database().ref("myFeedback");
-        if (this.state.text.length > 10 || this.state.text.length < 50) {
+        if (this.state.text.length > 10 && this.state.text.length < 50) {
             myFeedback.push().set({
                 email: this.state.email,
                 text: this.state.text,
@@ -43,49 +47,70 @@ export default class FeedbackScreen extends Component {
             })
             this.setState({ email: "" });
             this.setState({ text: "" });
-            alert("Phản hồi thành công")
+            ToastAndroid.show("Phản hồi thành công !", ToastAndroid.SHORT);
         } else {
-            alert("Vui lòng nhập nội dung từ 10-50 kí tự")
+            ToastAndroid.show("Vui lòng nhập phản hồi !", ToastAndroid.SHORT);
         }
 
     }
 
     render() {
         return (
-
-            <View style={{ backgroundColor: 'oldlace', height: '100%' }}>
-                <Label style={{fontWeight:'bold', color:'#f02005', fontSize:30, textAlign:'center'}}> 
-                    Xin chào
-                </Label>
-                <Label style={{fontWeight:'bold', color:'#f02005', fontSize:20, textAlign:'center',margin:10}}> 
-                   Hãy gửi phản hồi của các bạn
-                </Label>
+             <ScrollView showsVerticalScrollIndicator={false} >
+                
+                 <View style={Styles.viewInput}>
+                    <TextInput placeholder="Email !" 
+                    placeholderTextColor="#239dad" 
+                    style={{ fontWeight: 'bold', fontSize: 13, width: 255 }} 
+                    value={this.state.email}
+                    onChangeText={(email) => this.setState({ email })} 
+                    />
+                    <Entypo name='paper-plane' color='#239dad' size={16} />
+                </View>
+                
+                 <View style={Styles.viewInput2}>
+                    <TextInput placeholder="Gõ phản hồi tại đây !" 
+                    placeholderTextColor="#239dad" style={{ fontWeight: 'bold', fontSize: 13, width: 255 }} 
+                    value={this.state.text}
+                    onChangeText={(text) => this.setState({ text })}
+                    numberOfLines = {5}
+                    multiline = {true}
+                    />
+                    
+                    <Entypo name='paper-plane' color='#239dad' size={16} />
+                </View>
                 <View style={{margin:20}}>
-                    <TextInput 
-                        style={{backgroundColor:'white'}}
-                       selectionColor="orange"
-                        mode='outlined'
-                        style={{width:'100%'}}
-                        label="Email"
-                        value={this.state.email}
-                        onChangeText={(email) => this.setState({ email })} />
-                    <TextInput 
-                      
-                        mode='outlined'
-                        style={{width:'100%',height:100}}
-                        label="Nội dung"
-                        value={this.state.text}
-                        onChangeText={(text) => this.setState({ text })} />
-
-                    <Button style={{ backgroundColor: 'coral', width:'80%',margin:30 }} onPress={() => this.saveItem()}>
+                <Button style={{ backgroundColor: 'coral', width:'80%',margin:30 }} onPress={() => this.saveItem()}>
                         <Text style={{ color: "white" ,left:'300%'}}>Gửi góp ý</Text>
                     </Button>
                 </View>
-            </View>
 
+            </ScrollView>
 
-
+           
         )
     }
 }
 
+const styles= StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    image: {
+        width: 300,
+        height: 150,
+        marginVertical:10
+    },
+    textTitle: {
+        color: '#fc4c1c',
+        fontSize: 20,
+        marginVertical: 10
+    },
+    textBody: {
+        fontSize: 16
+    }
+    
+
+})
