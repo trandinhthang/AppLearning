@@ -95,13 +95,13 @@ class VocaDetailTest extends Component<Props, State>{
     }, 1000);
   };
 
-  compomentWillDidmount() {
-    Voice.destroy().then(Voice.removeAllListeners);
+  // compomentWillDidmount() {
+  //   Voice.destroy().then(Voice.removeAllListeners);
 
-    //check wifi connectivity
-    this.NetInfoSubcribtion && this.NetInfoSubcribtion();
-    Voice.destroy().then(Voice.removeAllListeners);
-  }
+  //   //check wifi connectivity
+  //   this.NetInfoSubcribtion && this.NetInfoSubcribtion();
+  //   Voice.destroy().then(Voice.removeAllListeners);
+  // }
   // phát âm
   onSpeechStart = (e: any) => {
     console.log('onSpeechStart: ', e);
@@ -132,7 +132,7 @@ class VocaDetailTest extends Component<Props, State>{
     if (String(this.state.partialResults) !== this.state.nameFr) {
       console.log(this.state.nameFr)
 
-      this.setState({ rateStar: false })
+      this.setState({ rateStar: true })
     } else {
       console.log(this.state.nameFr)
     

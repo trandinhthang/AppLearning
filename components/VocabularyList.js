@@ -65,10 +65,10 @@ class VocaHome extends Component<Props, State>{
           this._handleConnectivityChange,
       );
     }
-    compomentWillDidmount() {
-        this.NetInfoSubcribtion && this.NetInfoSubcribtion();
-        Voice.destroy().then(Voice.removeAllListeners);
-    }
+    // compomentWillDidmount() {
+    //     this.NetInfoSubcribtion && this.NetInfoSubcribtion();
+    //     Voice.destroy().then(Voice.removeAllListeners);
+    // }
 
     _handleConnectivityChange = (state) => {
         this.setState( { connection_status: state.isConnected })

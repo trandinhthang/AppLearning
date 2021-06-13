@@ -22,9 +22,9 @@ const WordScreen = ({navigation}) => {
                 <SafeAreaView style={Styles.item}>
                     <View style={Styles.itemContent}>
                         <Image
-                            style={Styles.image}
+                            style={{width:80,height:80}}
                             resizeMode="contain"
-                            source={{uri:"https://i.pinimg.com/564x/f6/74/47/f674475070ac5c9b0e938428458c8226.jpg"}}
+                            source={{uri:item.image}}
                          
                         />
                         <View style={Styles.textContent}>

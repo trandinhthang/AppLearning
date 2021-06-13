@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Text, View, TextInput,Image,TouchableOpacity, Alert, Modal} from 'react-native'
+import { Text, View, TextInput,Image,TouchableOpacity, ToastAndroid, Modal} from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Fail from '../assests/images/checkFalse.png'
 import Win from '../assests/images/checkTrue.png'
@@ -32,14 +32,18 @@ const QuizFillWord = ({
     
     if (actQuiz < numOfQuiz -1 ) {
       if (result === data.word) {
-        console.log("Chức mừng");
-        onSetActQuiz(actQuiz + 1);
-        setOtp(Array(text.length + 1).fill(""));
+        ToastAndroid.show("Chính xác 💙💙💙 !", ToastAndroid.SHORT);
+        setTimeout(() => {
+          onSetActQuiz(actQuiz + 1);
+          setOtp(Array(text.length + 1).fill(""));
+        },2000)
+       
       } else {
-        console.log("Sai rồi nhé");
+        ToastAndroid.show("Không chính xác 😥😥😥 !", ToastAndroid.SHORT);
       }
     } else {
-      onSetStep(2);
+      onSetActQuiz(0);
+      setOtp(Array(text.length + 1).fill(""));
     }
   };
 
@@ -70,7 +74,7 @@ const QuizFillWord = ({
       
               {data.image ? 
               <Image style={{width:250,height:150}}  
-              source={{uri:"https://i.pinimg.com/564x/f6/74/47/f674475070ac5c9b0e938428458c8226.jpg"}}/>
+              source={{uri:data.image}}/>
                : <Text>{ data.reverse}</Text>} 
                 
             </View>

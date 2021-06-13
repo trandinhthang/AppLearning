@@ -2,33 +2,60 @@
   "themeQuiz": [
     {
       "id": 1,
-      "theme": "Điển từ vào ô trống cấp độ 1",
-      "image": "https://image.flaticon.com/icons/png/512/2636/2636403.png"
+      "theme": "Điền từ vào ô trống - Động vật",
+      "image": "https://image.flaticon.com/icons/png/512/3608/3608382.png"
     },
     {
       "id": 2,
-      "theme": "Điển từ vào ô trống cấp độ 2",
-      "image": "https://image.flaticon.com/icons/png/512/2636/2636403.png"
+      "theme": "Điền từ vào ô trống - Phương tiện",
+      "image": "https://image.flaticon.com/icons/png/512/3097/3097145.png"
+    },
+    {
+      "id": 3,
+      "theme": "Điền từ vào ô trống - Du lịch",
+      "image": "https://image.flaticon.com/icons/png/512/2248/2248315.png"
+    },
+    {
+      "id": 4,
+      "theme": "Điền từ vào ô trống - Gia đình",
+      "image": "https://image.flaticon.com/icons/png/512/3097/3097951.png"
+    },
+    {
+      "id": 5,
+      "theme": "Điền từ vào ô trống - Trường học",
+      "image": "https://image.flaticon.com/icons/png/512/3171/3171493.png"
     }
   ],
   "dataQuiz": [
     {
       "id": 1,
       "themeId": 1,
-      "word": "bonjour",
-      "image": "https://image.flaticon.com/icons/png/512/2636/2636403.png"
+      "word": "chat",
+      "image": "https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554__340.jpg"
     },
     {
       "id": 2,
-      "themeId": 2,
-      "word": "salut",
-      "reverse": "tulsa"
+      "themeId": 1,
+      "word": "chien",
+      "image": "https://cdn.pixabay.com/photo/2020/11/12/15/45/dog-5735837__340.jpg"
     },
     {
       "id": 3,
       "themeId": 1,
-      "word": "comment",
-      "image": ""
+      "word": "renard",
+      "image": "https://cdn.pixabay.com/photo/2016/12/05/11/39/fox-1883658__340.jpg"
+    },
+    {
+      "id": 4,
+      "themeId": 1,
+      "word": "lapin",
+      "image": "https://cdn.pixabay.com/photo/2020/04/07/20/36/bunny-5014814__340.jpg"
+    },
+    {
+      "id": 5,
+      "themeId": 1,
+      "word": "oiseau",
+      "image": "https://cdn.pixabay.com/photo/2017/05/08/13/15/bird-2295431__480.jpg"
     }
   ]
 }

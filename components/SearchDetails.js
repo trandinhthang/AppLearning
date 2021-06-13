@@ -40,7 +40,7 @@ function SearchDetails({route,navigation}) {
                   </View> 
                   <View>
                     <Ionicons name="volume-high-outline" color="#0066ff" size={30}
-                              onPress={()=>setAudio()}>
+                              onPress={()=>{setAudio()}}>
                       <Video
                         source={{ uri: url }} 
                         paused={isPaused} 
