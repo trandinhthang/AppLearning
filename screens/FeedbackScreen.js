@@ -12,6 +12,7 @@ import { ImageBackground } from 'react-native';
 import Home from "../assests/images/homefrance.png";
 import Styles from '../styles/Styles';
 import Entypo from 'react-native-vector-icons/Entypo';
+
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
 }

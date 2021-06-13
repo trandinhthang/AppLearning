@@ -20,6 +20,7 @@ import VocabularyScreen from "./screens/VocabularyScreen";
 import ExamScreen from "./screens/ExamScreen";
 import WordScreen from "./screens/WordScreen";
 import FeedbackScreen from './screens/FeedbackScreen';
+import FrenchVietScreen from './screens/FrenchVietScreen'
 import NetworkScreen from './screens/Network';
 import VideoScreen from './screens/VideoScreen';
 import FillWordScreen from './screens/WordScreen';
@@ -133,6 +134,22 @@ function HomeStackScreen({ navigation }) {
           <IconT
             style={{ marginRight: 8 }}
             name="md-school"
+            size={30}
+            color="white"
+          />
+        ),
+      }} />
+      <TestStack.Screen name="FrenchViet" component={FrenchVietScreen} options={{
+        headerTitle: "Từ điển Pháp Việt",
+        headerStyle: {
+          backgroundColor: 'coral',//màu nền
+          "height": 40,
+        },
+        headerTintColor: '#fff',
+        headerRight: () => (
+          <MaterialCommunityIcons
+            style={{ marginRight: 8 }}
+            name="shield-search"
             size={30}
             color="white"
           />
@@ -258,6 +275,7 @@ function SearchStackScreen({ navigation }) {
     </SearchStack.Navigator>
   );
 }
+
 //Tab Screen 
 function TabsScreen() {
   return (

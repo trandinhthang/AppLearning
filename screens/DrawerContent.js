@@ -66,7 +66,7 @@ export function DrawerContent(props) {
                             label="Từ vựng"
                             onPress={() => {props.navigation.navigate('Vocabulary')}}
                         />
-                        {/* <DrawerItem 
+                        <DrawerItem 
                             icon={({color, size}) => (
                                 <Icon 
                                 name="heart-flash" 
@@ -74,9 +74,9 @@ export function DrawerContent(props) {
                                 size={30}
                                 />
                             )}
-                            label="Yêu thích"
-
-                        />                   */}
+                            label="Từ điển Pháp Việt"
+                            onPress={() => {props.navigation.navigate('FrenchViet')}}
+                        />                  
                         <DrawerItem 
                             icon={({color, size}) => (
                                 <MaterialIcons 
