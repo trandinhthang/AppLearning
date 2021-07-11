@@ -1,10 +1,10 @@
 export const firebaseConfig = {
-  apiKey: 'AIzaSyAD1yJjrTvFl95nc4qCytSM5-dPDH6MBKI',
-  authDomain: 'feedback-france.firebaseapp.com',
-  databaseURL: 'https://feedback-france-default-rtdb.firebaseio.com',
-  projectId: 'feedback-france',
-  storageBucket: 'feedback-france.appspot.com',
-  messagingSenderId: '631153248396',
-  appId: '1:631153248396:web:b8aa3dbbbc17bcbdbc53a9',
-  measurementId: 'G-29ZB7CPQE7',
+  apiKey: 'AIzaSyCqP7RIzfKDRSkr4C_qfvYEjehdHz9L7sg',
+  authDomain: 'feedbackfr-97414.firebaseapp.com',
+  databaseURL: 'https://feedbackfr-97414-default-rtdb.firebaseio.com',
+  projectId: 'feedbackfr-97414',
+  storageBucket: 'feedbackfr-97414.appspot.com',
+  messagingSenderId: '786903590118',
+  appId: '1:786903590118:web:3eb6bbf243ab26e78e8727',
+  measurementId: 'G-DK7PKCNXFL',
 };

@@ -1,12 +1,6 @@
-import React,{useState} from 'react';
-import {
-    Text, 
-    View,
-    Image,   
-    TouchableOpacity,
-    TextInput
-} from 'react-native';
-import { Container,Tab, Tabs, ScrollableTab } from 'native-base';
+import React, {useState} from 'react';
+import {Text, View, Image, TouchableOpacity, TextInput} from 'react-native';
+import {Container, Tab, Tabs, ScrollableTab} from 'native-base';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Icon from 'react-native-vector-icons/AntDesign';
@@ -14,8 +8,20 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import Video from 'react-native-video';
 import Styles from '../styles/Styles';
 
-function SearchDetails({route,navigation}) {
-  const {nameFr,data,IPA,url,gramma,antonym,image,examFr1,examVn1,examFr2,examVn2} = route.params;
+function SearchDetails({route, navigation}) {
+  const {
+    nameFr,
+    data,
+    IPA,
+    url,
+    gramma,
+    antonym,
+    image,
+    examFr1,
+    examVn1,
+    examFr2,
+    examVn2,
+  } = route.params;
   const [isPaused, setPaused] = useState(true);
   const setAudio = () => {
     setPaused(false);
@@ -26,44 +32,78 @@ function SearchDetails({route,navigation}) {
 
   return (
     <Container>
-      <View  hasTabs/>
-      <Tabs renderTabBar={()=> <ScrollableTab style={{height:35}} />}>
-        <Tab activeTabStyle={{backgroundColor:'#5b91f5'}}  tabStyle={[Styles.searchTab]} textStyle={{color:'#0033ff'}} 
-          heading="Pháp-Việt">  
+      <View hasTabs />
+      <Tabs renderTabBar={() => <ScrollableTab style={{height: 35}} />}>
+        <Tab
+          activeTabStyle={{backgroundColor: '#5b91f5'}}
+          tabStyle={[Styles.searchTab]}
+          textStyle={{color: '#0033ff'}}
+          heading="Việt-Pháp">
           <View style={Styles.searchDetail}>
             <View style={Styles.searchDetailName}>
-              <View style={{flex:1}}>
-                <View style={{flexDirection:"row",justifyContent:"space-between",alignItems:"center"}}>
-                  <View  >
-                    <Text style={Styles.vocaText}>{nameFr} <Text >{IPA}</Text></Text>
-                     <Text style={Styles.vocaText}>{gramma}</Text>
-                  </View> 
+              <View style={{flex: 1}}>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                  }}>
                   <View>
-                    <Ionicons name="volume-high-outline" color="#0066ff" size={30}
-                              onPress={()=>{setAudio()}}>
-                      <Video
-                        source={{ uri: url }} 
-                        paused={isPaused} 
-                      />
+                    <Text style={Styles.vocaText}>
+                      {nameFr} <Text>{IPA}</Text>
+                    </Text>
+                    <Text style={Styles.vocaText}>{gramma}</Text>
+                  </View>
+                  <View>
+                    <Ionicons
+                      name="volume-high-outline"
+                      color="#0066ff"
+                      size={30}
+                      onPress={() => {
+                        setAudio();
+                      }}>
+                      <Video source={{uri: url}} paused={isPaused} />
                     </Ionicons>
                   </View>
                 </View>
-              </View> 
-            </View>  
-            <View style={Styles.searchDetailContent}> 
-              {data.map((item,index)=><Text style={{fontSize:15}} key={index}>‣{item.charAt(0).toUpperCase()}{item.substr(1)}</Text>)}
-              <View style={{paddingLeft:15}}>
-                <Text>{examFr1.split(" ").map((item,index)=><Text key={index}>
-                  <Text  onPress={()=> navigation.navigate('deTwoSearch',{value:item})} 
-                    style={{color:"#0033ff"}} >{item}</Text>
-                  <Text > </Text></Text>)} 
-                </Text>    
-                <Text style={{}}>{examVn1}</Text>  
-                <Text>{examFr2.split(" ").map((item,index)=><Text key={index}>
-                  <Text onPress={()=> alert(item)} style={{color:"#0033ff"}}>{item}</Text>
-                  <Text> </Text></Text>)} 
-                </Text>       
-                <Text style={{}}>{examVn2}</Text>      
+              </View>
+            </View>
+            <View style={Styles.searchDetailContent}>
+              {data.map((item, index) => (
+                <Text style={{fontSize: 15}} key={index}>
+                  ‣{item.charAt(0).toUpperCase()}
+                  {item.substr(1)}
+                </Text>
+              ))}
+              <View style={{paddingLeft: 15}}>
+                <Text>
+                  {examFr1.split(' ').map((item, index) => (
+                    <Text key={index}>
+                      <Text
+                        onPress={() =>
+                          navigation.navigate('deTwoSearch', {value: item})
+                        }
+                        style={{color: '#0033ff'}}>
+                        {item}
+                      </Text>
+                      <Text> </Text>
+                    </Text>
+                  ))}
+                </Text>
+                <Text style={{}}>{examVn1}</Text>
+                <Text>
+                  {examFr2.split(' ').map((item, index) => (
+                    <Text key={index}>
+                      <Text
+                        onPress={() => alert(item)}
+                        style={{color: '#0033ff'}}>
+                        {item}
+                      </Text>
+                      <Text> </Text>
+                    </Text>
+                  ))}
+                </Text>
+                <Text style={{}}>{examVn2}</Text>
                 {/* {exam.map((item,index)=><Text key={index}>–
                   <Text  onPress={()=> alert(item)}  style={{color:'#ff0000'}}  > {item.split(' ')[0]} </Text>
                   <Text  onPress={()=> alert(item)}  style={{color:'#003cff'}}  > {item.split(' ')[1]} </Text>
@@ -75,43 +115,65 @@ function SearchDetails({route,navigation}) {
                   <Text  onPress={()=> alert('k')}  style={{color:'#000000'}}  > {item.split(' ')[7]} </Text>
                   <Text  onPress={()=> alert('l')}  style={{color:'#2b0303'}}  > {item.split(' ')[8]} </Text>
                 </Text> 
-                )}  */}     
-              </View>                         
+                )}  */}
+              </View>
             </View>
           </View>
         </Tab>
-    
-        { (antonym.length > 0 ) ?
-          <Tab activeTabStyle={{backgroundColor:'#5b91f5'}} tabStyle={Styles.searchTab} textStyle={{color:'#0033ff'}} 
-          heading="Trái Nghĩa">   
-            <View style={Styles.searchDetail}>  
+
+        {antonym.length > 0 ? (
+          <Tab
+            activeTabStyle={{backgroundColor: '#5b91f5'}}
+            tabStyle={Styles.searchTab}
+            textStyle={{color: '#0033ff'}}
+            heading="Trái Nghĩa">
+            <View style={Styles.searchDetail}>
               <View style={Styles.searchAntonym}>
-                {antonym.map((item,index)=><Text style={{fontSize:15,color:'#0033ff'}} key={index}>{item}</Text>)}
+                {antonym.map((item, index) => (
+                  <Text style={{fontSize: 15, color: '#0033ff'}} key={index}>
+                    {item}
+                  </Text>
+                ))}
               </View>
             </View>
-          </Tab> : null
-        }
-        { (image !== "") ?
-          <Tab activeTabStyle={{backgroundColor:'#5b91f5'}} tabStyle={Styles.searchTab} textStyle={{color:'#0033ff'}} 
-            heading="Hình Ảnh"> 
-            <View style={{alignItems:"center"}}>  
-                <Image style={{width:250,height:250}} resizeMode="contain" source={{uri:image}}/>          
+          </Tab>
+        ) : null}
+        {image !== '' ? (
+          <Tab
+            activeTabStyle={{backgroundColor: '#5b91f5'}}
+            tabStyle={Styles.searchTab}
+            textStyle={{color: '#0033ff'}}
+            heading="Hình Ảnh">
+            <View style={{alignItems: 'center'}}>
+              <Image
+                style={{width: 250, height: 250}}
+                resizeMode="contain"
+                source={{uri: image}}
+              />
             </View>
-          </Tab> : null
-        }
-        <Tab activeTabStyle={{backgroundColor:'#5b91f5'}} tabStyle={Styles.searchTab} textStyle={{color:'#0033ff'}} 
-          heading="Ghi chú">   
-            <View style={{height:'100%',alignItems:"center",backgroundColor:'#afc6f0'}}>  
-                <TextInput
-                  placeholder="Ghi chú sẽ tự động được lưu"
-                  style={[Styles.textInput2,{marginTop:50}]}
-                  // onChangeText={(e) => this.setState({input: e})}
-                  // onSubmitEditing={(e) => this.showMeaning(e) }
-                />  
-            </View>
+          </Tab>
+        ) : null}
+        <Tab
+          activeTabStyle={{backgroundColor: '#5b91f5'}}
+          tabStyle={Styles.searchTab}
+          textStyle={{color: '#0033ff'}}
+          heading="Ghi chú">
+          <View
+            style={{
+              height: '100%',
+              alignItems: 'center',
+              backgroundColor: '#afc6f0',
+            }}>
+            <TextInput
+              placeholder="Ghi chú sẽ tự động được lưu"
+              style={[Styles.textInput2, {marginTop: 50}]}
+              // onChangeText={(e) => this.setState({input: e})}
+              // onSubmitEditing={(e) => this.showMeaning(e) }
+            />
+          </View>
         </Tab>
-      </Tabs> 
-    </Container> 
+      </Tabs>
+    </Container>
   );
 }
 export default SearchDetails;
