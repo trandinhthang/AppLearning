@@ -34,21 +34,11 @@ import Voice, {
 } from '@react-native-voice/voice';
 
 //phát âm
-type Props = {};
-type State = {
-  recognized: string;
-  pitch: string;
-  error: string;
-  end: string;
-  started: string;
-  results: string[];
-  partialResults: string[];
-};
 
 var { height, width } = Dimensions.get("window");
 
-class VocaDetailTest extends Component<Props, State>{
-  constructor(props: Props) {
+class VocaDetailTest extends Component{
+  constructor() {
     super(props);
     // phát âm
     Voice.onSpeechStart = this.onSpeechStart;
@@ -103,28 +93,28 @@ class VocaDetailTest extends Component<Props, State>{
   //   Voice.destroy().then(Voice.removeAllListeners);
   // }
   // phát âm
-  onSpeechStart = (e: any) => {
+  onSpeechStart = (e) => {
     console.log('onSpeechStart: ', e);
     this.setState({
       started: '√',
     });
   };
 
-  onSpeechEnd = (e: any) => {
+  onSpeechEnd = (e) => {
     console.log('onSpeechEnd: ', e);
     this.setState({
       end: '√',
     });
   };
 
-  onSpeechResults = (e: SpeechResultsEvent) => {
+  onSpeechResults = (e) => {
     console.log('onSpeechResults: ', e);
     this.setState({
       results: e.value,
     });
   };
 
-  onSpeechPartialResults = (e: SpeechResultsEvent) => {
+  onSpeechPartialResults = (e) => {
     console.log('onSpeechPartialResults: ', e);
     this.setState({
       partialResults: e.value,

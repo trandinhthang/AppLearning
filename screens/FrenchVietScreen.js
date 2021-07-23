@@ -1,20 +1,15 @@
 import * as React from 'react';
-import {Component} from 'react';
+
 import {View, Text, TextInput} from 'react-native';
 import {ScrollView, useWindowDimensions} from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import HTML from 'react-native-render-html';
+import VoiceFranceViet from '../components/VoiceFranceViet'
 
-const htmlContent = `
-    <h1>This HTML snippet is now rendered with native components !</h1>
-    <h2>Enjoy a webview-free and blazing fast application</h2>
-    <img src="https://i.imgur.com/dHLmxfO.jpg?2" />
-    <em style="textAlign: center;">Look at how happy this native cat is</em>
-`;
 const FrenchVietScreen = () => {
   const contentWidth = useWindowDimensions().width;
   const contentHeight = useWindowDimensions().height;
-  const [word, setWord] = React.useState('');
+  const [word, setWord] = React.useState("");
   const [data, setData] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
 
@@ -34,7 +29,12 @@ const FrenchVietScreen = () => {
     setData(null);
     setLoading(true);
     searchAPI(word);
+    
   };
+
+  const getSearch = (data) => {
+    setWord(data.join())
+  }
 
   return (
     <View>
@@ -51,10 +51,12 @@ const FrenchVietScreen = () => {
         <TextInput
           placeholder="Pháp Việt !"
           placeholderTextColor="#239dad"
-          style={{fontWeight: 'bold', fontSize: 16, width: 255}}
+          style={{fontWeight: 'bold', fontSize: 16, width: 240}}
           value={word}
           onChangeText={setWord}
         />
+     
+        <VoiceFranceViet getSearch={getSearch} />
         <AntDesign
           onPress={() => onSubmit()}
           name="search1"
@@ -63,6 +65,7 @@ const FrenchVietScreen = () => {
           style={{marginRight: 20}}
         />
       </View>
+     
       <View
         style={{
           backgroundColor: 'white',
